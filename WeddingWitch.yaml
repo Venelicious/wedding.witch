@@ -1,0 +1,13 @@
+name: Spieler{player}
+game: Wedding Witch
+requires:
+  version: 0.6.7
+Wedding Witch:
+  progression_balancing: 50
+  accessibility: full
+  transformEnd: 3
+  difficulty: normal
+  starting_exp_type: auto
+  flower_checks_normal: -1
+  flower_checks_hard: -1
+  flower_checks_nightmare: -1

@@ -1,0 +1,2 @@
+namespace BepInEx { public static class Paths { public static string BepInExRootPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "WW-profile-tests-"+System.Guid.NewGuid().ToString("N")); } }
+namespace WeddingWitchArchipelago { public static class Plugin { public static TestLogger Logger = new TestLogger(); } public class TestLogger { public void LogInfo(string x) {} public void LogError(string x) { throw new System.Exception(x); } } }

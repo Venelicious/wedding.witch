@@ -1,0 +1,29 @@
+name: Publish tested release
+on:
+  push:
+    branches: [main]
+    paths: ['release/**', '.github/workflows/release.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: wedding-witch-release
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify release artifacts
+        run: python3 tools/verify_release.py
+      - name: Publish prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION=$(python3 -c "import json; print(json.load(open('release/manifest.json'))['version'])")
+          TAG="v$VERSION"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release already exists; refusing to replace immutable assets."
+            exit 1
+          fi
+          gh release create "$TAG" release/* --target "$GITHUB_SHA" --prerelease --title "Wedding Witch Archipelago $VERSION" --notes-file RELEASE-NOTES.md

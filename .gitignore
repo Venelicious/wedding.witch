@@ -1,0 +1,32 @@
+DECOMP_INFO.md
+# Decompiler / IL2CPP dump output (regenerate with tools/decompile.sh)
+.decomp/
+
+# Python venv for asset-extraction tooling
+.venv/
+__pycache__/
+*.pyc
+
+# Extracted assets. The whole tree is untracked, text included: it is the game's own
+# content, and this repo is public. Regenerate it with tools/extract_*.py.
+ref/
+
+# C# build output
+bin/
+obj/
+[Bb]in/
+[Oo]bj/
+lib/
+*.csproj.user
+
+
+# Local player data and build staging
+*.apsave
+*.archipelago
+*.b64
+players-*/
+test-seed/
+ready-*/
+multiworld-validation/
+world-tests.*.log
+launcher/*.exe
