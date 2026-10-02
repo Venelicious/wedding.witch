@@ -2,7 +2,15 @@
 
 Archipelago-Integration für Wedding Witch (Windows/Steam). Solo und Multiworld mit 142 Checks, dauerhaften passiven und Standard-Skill-Stufen, Tranktyp- und Schwierigkeitsfreigaben.
 
+English: Wedding Witch Archipelago for Windows/Steam, with solo and multiworld support, 142 checks and permanent skill, passive, potion-type and difficulty unlocks. See the [English installation guide](docs/installation-en.md) for setup, connecting, updates and troubleshooting.
+
 ## Downloads
+
+[Testrelease 0.3.5 / Test release 0.3.5](https://github.com/Venelicious/wedding.witch/releases/tag/v0.3.5)
+
+- [Windows-Paket / Windows package](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.5/WeddingWitch-AP-0.3.5-Windows.zip)
+- [APWorld](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.5/wedding_witch.apworld)
+- [Beispiel-YAML / Example YAML](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.5/WeddingWitch.yaml)
 
 Das Release stellt WeddingWitch-AP-0.3.5-Windows.zip, wedding_witch.apworld und WeddingWitch.yaml bereit. Das Windows-Paket enthält den Mod, seine Client-Abhängigkeiten, Install.cmd und WeddingWitchLauncher.exe. Spiel-DLLs, Spielstände, Zugangsdaten und Test-Seeds gehören nicht zum Download.
 
