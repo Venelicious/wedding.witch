@@ -1,6 +1,6 @@
 {
   "game": "Wedding Witch",
-  "world_version": "0.3.5",
+  "world_version": "0.3.6",
   "minimum_ap_version": "0.6.7",
   "authors": [
     "Bastian Hamm",
@@ -8,5 +8,7 @@
   ],
   "repo_url": "https://github.com/Venelicious/wedding.witch",
   "ai_disclosure": "Custom rules and integration developed with Codex; original framework by chickentuna.",
-  "flags": []
+  "flags": [],
+  "compatible_version": 7,
+  "version": 7
 }

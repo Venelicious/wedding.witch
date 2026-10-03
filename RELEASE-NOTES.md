@@ -1,6 +1,8 @@
-# Wedding Witch Archipelago 0.3.6
+# Wedding Witch Archipelago 0.3.7
 
 ## Deutsch
+
+APWorld 0.3.6 ergänzt die erforderlichen Container-Felder compatible_version und version. Die tatsächliche ZIP-World wird damit von Archipelago 0.6.7 ohne Manifestfehler und mit korrekter World-Version geladen. Spielregeln, Item-/Check-IDs und Mod 0.3.5 bleiben gleich.
 
 Launcher-Korrektur: Im AP-Modus wird DOORSTOP_DISABLE entfernt. Der Wert 0 deaktivierte den installierten Loader ebenfalls. Original- und AP-Start wurden am 03.10.2026 im echten Spiel geprüft; AP verbindet sich mit dem bestehenden Slot. Mod und APWorld bleiben auf 0.3.5; Regeln und Seed-Kompatibilität ändern sich nicht.
 
@@ -11,6 +13,8 @@ Windows-Paket mit Installer und WeddingWitchLauncher.exe: Original oder Archipel
 Testrelease: Build, Profile und Generator geprüft; vollständige Spielabnahme aller Endings und nativer Multiworld-Durchlauf stehen noch aus. Vorhandener Fortschritt bleibt erhalten. Kein Spiel, keine Spiel-DLLs und keine Zugangsdaten enthalten.
 
 ## English
+
+APWorld 0.3.6 adds the required compatible_version and version container fields. Archipelago 0.6.7 now loads the actual ZIP world without manifest errors and with its correct version. Rules, item/location IDs and mod 0.3.5 remain unchanged.
 
 Launcher fix: AP mode now removes DOORSTOP_DISABLE. Setting it to 0 still disabled the installed loader. Both launch modes were checked in the real game on 2026-10-03; AP reconnects to the existing slot. Mod and APWorld remain at 0.3.5, retaining rules and seed compatibility.
 

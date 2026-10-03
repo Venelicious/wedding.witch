@@ -21,6 +21,8 @@ for name, spec in manifest['artifacts'].items():
                 data = json.loads(archive.read('wedding_witch/archipelago.json'))
                 assert data['world_version'] == manifest.get('world_version', manifest['version'])
                 assert data['minimum_ap_version'] == '0.6.7'
+                assert data['compatible_version'] == 7
+                assert data['version'] == 7
             else:
                 for required in ['WeddingWitchLauncher.exe', 'docs/installation-de.md', 'docs/installation-en.md', 'plugins/WeddingWitchArchipelago.dll']:
                     assert required in names, required

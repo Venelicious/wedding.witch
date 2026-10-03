@@ -1,12 +1,12 @@
 # Install Wedding Witch Archipelago
 
-Windows package 0.3.6 includes mod and APWorld 0.3.5 and the launcher fix tested in the actual game.
+Windows package 0.3.7 includes mod 0.3.5 and APWorld 0.3.6 and the launcher fix tested in the actual game.
 
 ## Requirements
 
 - The Windows Steam version of Wedding Witch (app ID 2529820), launched normally at least once.
 - Windows 10/11 x64 with Steam installed and signed in.
-- Download and extract the complete WeddingWitch-AP-0.3.6-Windows.zip.
+- Download and extract the complete WeddingWitch-AP-0.3.7-Windows.zip.
 - An internet connection for first-time installation. If needed, the installer downloads the official BepInEx 5.4.23.5 x64 release and verifies its SHA-256 digest.
 
 ## Installation
