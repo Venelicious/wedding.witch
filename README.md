@@ -1,6 +1,6 @@
 # Wedding Witch Archipelago
 
-Entwicklungsstand / Development build: **0.5.0** · Mod: **0.5.0** · APWorld: **0.5.0**
+Entwicklungsstand / Development build: **0.5.1** · Mod: **0.5.1** · APWorld: **0.5.1**
 
 Archipelago-Integration für Wedding Witch (Windows/Steam). Solo und Multiworld mit 80 Checks einschließlich 38 Errungenschaften, dauerhaften passiven Stufen, Tranktyp- und Schwierigkeitsfreigaben. Standard-Skills sind normale Level-up-Auswahlen für den aktuellen Run.
 
@@ -8,15 +8,15 @@ English: Wedding Witch Archipelago for Windows/Steam, with solo and multiworld s
 
 ## Downloads
 
-Aktuelles Testrelease / Current test release: [0.5.0](https://github.com/Venelicious/wedding.witch/releases/tag/v0.5.0).
+Aktuelles Testrelease / Current test release: [0.5.1](https://github.com/Venelicious/wedding.witch/releases/tag/v0.5.1).
 
-- [Windows-Paket / Windows package](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.0/WeddingWitch-AP-0.5.0-Windows.zip)
-- [APWorld](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.0/wedding_witch.apworld)
-- [Beispiel-YAML / Example YAML](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.0/WeddingWitch.yaml)
+- [Windows-Paket / Windows package](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.1/WeddingWitch-AP-0.5.1-Windows.zip)
+- [APWorld](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.1/wedding_witch.apworld)
+- [Beispiel-YAML / Example YAML](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.1/WeddingWitch.yaml)
 
-Das Release stellt WeddingWitch-AP-0.5.0-Windows.zip, wedding_witch.apworld und WeddingWitch.yaml bereit. Das Windows-Paket enthält den Mod, seine Client-Abhängigkeiten, Install.cmd und WeddingWitchLauncher.exe. Spiel-DLLs, Spielstände, Zugangsdaten und Test-Seeds gehören nicht zum Download.
+Das Release stellt WeddingWitch-AP-0.5.1-Windows.zip, wedding_witch.apworld und WeddingWitch.yaml bereit. Das Windows-Paket enthält den Mod, seine Client-Abhängigkeiten, Install.cmd und WeddingWitchLauncher.exe. Spiel-DLLs, Spielstände, Zugangsdaten und Test-Seeds gehören nicht zum Download.
 
-Build 0.5.0: `release/WeddingWitch-AP-0.5.0-Windows.zip` enthält den neuen Client, Steam-Launcher und die Schema-4-APWorld 0.5.0. Für den 80er-Pool und Standard-Skills bei Level-ups einen neuen Seed mit dieser APWorld erzeugen. Bestehende Schema-2-/Schema-3-Seeds behalten ihre 142 Checks und AP-Skill-Stufen und bleiben mit dem Client spielbar.
+Build 0.5.1: `release/WeddingWitch-AP-0.5.1-Windows.zip` enthält den neuen Client, Steam-Launcher und die Schema-4-APWorld 0.5.1. Für den 80er-Pool und Standard-Skills bei Level-ups einen neuen Seed mit dieser APWorld erzeugen. Bestehende Schema-2-/Schema-3-Seeds behalten ihre 142 Checks und AP-Skill-Stufen und bleiben mit dem Client spielbar.
 
 **Installation / Setup:** [Deutsch](docs/installation-de.md) · [English](docs/installation-en.md). Launcher-Auswahl: Original oder Archipelago; Verbindung im Spiel mit F8.
 
@@ -27,6 +27,8 @@ Im Transformationsmenü zeigen gesperrte AP-Tranktypen den sechsfarbigen Anhäng
 AP-Levelaufstiege verwenden wieder den normalen Pool: 13 Standard-Skills und die vom Spiel aktivierten Startzauber. Die 62 bisherigen Skill-Unlock-Items entfallen vollständig im neuen Seed. Trankbedingungen, maximale Skill-Stufen und Zauber-Slotgrenzen gelten weiterhin. Alte Seeds behalten den erweiterten Startzauber-Pool für ihre AP-Skill-Regeln.
 
 ## Optionen und Regeln
+
+Die kommentierte YAML erklärt jede Einstellung und unterstützt gewichtete Auswahlmöglichkeiten. Progression Balancing steht auf normal (50); disabled entspricht 0, extreme 99. Allgemeine AP-Optionen umfassen lokale/externe Items, Startinventar, Hinweise und priorisierte/ausgeschlossene Checks. `start_inventory_from_pool` entnimmt Start-Items aus dem Pool und ersetzt sie durch Witch’s Orb, bei weiterhin 80 Checks.
 
 - transformEnd: 1–7 verschiedene erfolgreiche Endings, normale Form eingeschlossen.
 - difficulty: normal, hard oder nightmare für das Goal.

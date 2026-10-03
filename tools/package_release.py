@@ -5,7 +5,7 @@ import json
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.5.0"
+VERSION = "0.5.1"
 
 def archive(path, files):
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as out:
@@ -23,9 +23,11 @@ def main():
              if p.is_file() and p.suffix in {".py", ".md", ".json"} and "__pycache__" not in p.parts]
     archive(output / "wedding_witch.apworld", world)
     files = []
+    # Keep the template byte-identical on Windows and Linux Git checkouts.
+    yaml_bytes = (ROOT / "WeddingWitch.yaml").read_text(encoding="utf-8").encode("utf-8")
     for name in ["Install.cmd", "Install.ps1", "README.md", "WeddingWitch.yaml",
                  "docs/installation-de.md", "docs/installation-en.md", "THIRD-PARTY-NOTICES.md"]:
-        data = (ROOT / name).read_bytes()
+        data = yaml_bytes if name == "WeddingWitch.yaml" else (ROOT / name).read_bytes()
         # Windows PowerShell 5.1 needs BOM to read German UTF-8 source correctly.
         if name.endswith(".ps1") and not data.startswith(b"\xef\xbb\xbf"):
             data = b"\xef\xbb\xbf" + data
@@ -35,7 +37,7 @@ def main():
     for name in ["WeddingWitchArchipelago.dll", "Archipelago.MultiClient.Net.dll", "Newtonsoft.Json.dll"]:
         files.append(("plugins/" + name, (ROOT / "src/bin/Release" / name).read_bytes()))
     archive(output / f"WeddingWitch-AP-{VERSION}-Windows.zip", files)
-    (output / "WeddingWitch.yaml").write_bytes((ROOT / "WeddingWitch.yaml").read_bytes())
+    (output / "WeddingWitch.yaml").write_bytes(yaml_bytes)
     manifest = {name: {"size": (output / name).stat().st_size,
                       "sha256": hashlib.sha256((output / name).read_bytes()).hexdigest()}
                 for name in [f"WeddingWitch-AP-{VERSION}-Windows.zip", "wedding_witch.apworld", "WeddingWitch.yaml"]}

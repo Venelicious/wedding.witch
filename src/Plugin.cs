@@ -14,7 +14,7 @@ public class Plugin : BaseUnityPlugin
 {
     public const string GUID = "org.dsatool.weddingwitch.unlock";
     public const string NAME = "Wedding Witch Archipelago";
-    public const string VERSION = "0.5.0";
+    public const string VERSION = "0.5.1";
 
     public static Plugin Instance { get; private set; }
 

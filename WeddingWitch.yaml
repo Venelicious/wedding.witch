@@ -1,13 +1,179 @@
+# Wedding Witch Archipelago 0.5.1
+#
+# Diese Datei beschreibt deinen Slot bei der Seed-Erzeugung.
+# Verwende APWorld 0.5.1 und Archipelago Core 0.6.7 oder neuer.
+# Die Spieleinstellungen gelten für einen neu erzeugten Seed.
+#
+# Wie funktionieren die Zahlen?
+# Die Zahlen hinter den Auswahlmöglichkeiten sind GEWICHTE.
+# normal: 50 und hard: 0 bedeutet: immer Normal.
+# normal: 50 und hard: 50 bedeutet: beide sind gleich wahrscheinlich.
+# Eine 0 deaktiviert die Auswahl. Mindestens ein Gewicht muss größer als 0 sein.
+# Alternativ ist ein fester Wert erlaubt, z.B. difficulty: normal.
+#
+# YAML verwendet Leerzeichen zur Einrückung, keine Tabulatoren.
+# Texte hinter # sind Erklärungen und ändern keine Einstellungen.
+#
+# Regeln dieser Mod:
+# - 80 AP-Items und 80 Checks, einschließlich 38 Errungenschaften.
+# - 13 Standard-Skills werden normal beim Level-up gewählt, für diesen Run.
+# - Permanente passive Upgrades, Tranktypen und Schwierigkeiten kommen über AP.
+# - Errungenschaften geben AP-Checks und keine Münzen.
+#
+# Name im Spiel, höchstens 16 Zeichen nach dem Ersetzen der Platzhalter.
+# {player}: Slotnummer; {PLAYER}: Slotnummer erst ab Slot 2.
+# {number}: laufende Nummer gleicher Namen; {NUMBER}: erst ab dem zweiten Namen.
 name: Spieler{player}
+
+# Frei wählbare Beschreibung, z.B. um mehrere Vorlagen zu unterscheiden.
+description: Wedding Witch 0.5.1 - 80 Checks und normale Level-up-Skills
+
 game: Wedding Witch
 requires:
   version: 0.6.7
+
 Wedding Witch:
-  progression_balancing: 50
-  accessibility: full
-  transformEnd: 3
-  difficulty: normal
-  starting_exp_type: auto
-  flower_checks_normal: -1
-  flower_checks_hard: -1
-  flower_checks_nightmare: -1
+  #########################
+  # Allgemeine AP-Optionen #
+  #########################
+
+  progression_balancing:
+    # Der Generator kann Fortschritts-Items früher platzieren, damit Spieler
+    # in einer Multiworld weniger lange auf benötigte Freigaben warten.
+    # Hier betrifft das Tranktyp- und Schwierigkeitsfreigaben.
+    # Der Balancer war auch in unserer kurzen Vorlage bereits mit 50 aktiv.
+    # Werte: 0 bis 99. Die Gewichte unten wählen die Einstellung aus:
+    disabled: 0           # Einstellung 0: kein Progression Balancing.
+    normal: 50            # Einstellung 50: normaler Balancer, voreingestellt.
+    extreme: 0            # Einstellung 99: stärkster Balancer.
+    random: 0
+    random-low: 0
+    random-high: 0
+    random-range-0-99: 0
+
+  accessibility:
+    # full: Alle Items und Checks müssen gemäß AP-Logik erreichbar sein.
+    # minimal: Nur die zum Erreichen des Goals benötigten Items sind garantiert.
+    # Die Logik prüft Freigaben; sie bewertet nicht dein Können im Kampf.
+    full: 50
+    minimal: 0
+
+  ######################
+  # Wedding-Witch-Ziel #
+  ######################
+
+  transformEnd:
+    # Anzahl VERSCHIEDENER erfolgreicher Endings auf der Zielschwierigkeit.
+    # Erlaubt: 1 bis 7. Die normale, untransformierte Form zählt ebenfalls.
+    # Jede der sechs Transformationsformen zählt einmal.
+    # Wiederholte Siege mit demselben Ending erhöhen das Goal nicht.
+    # Eine Transformation ohne abschließenden Boss-Sieg zählt nur als Form-Check.
+    1: 0
+    2: 0
+    3: 50
+    4: 0
+    5: 0
+    6: 0
+    7: 0
+    random: 0
+    random-low: 0
+    random-high: 0
+    random-range-1-7: 0
+
+  difficulty:
+    # Schwierigkeit für die zum Goal zählenden Endings.
+    # Normal, Schwer und Albtraum haben weiterhin eigene Karten-/Blumenchecks.
+    # Schwer und Albtraum werden durch AP-Items freigeschaltet.
+    normal: 50
+    hard: 0
+    nightmare: 0
+
+  starting_exp_type:
+    # Ein Tranktyp ist von Anfang an frei; die anderen fünf kommen über AP.
+    # auto wählt den Starttyp zufällig. Oder einen der sechs Typen gewichten.
+    auto: 50
+    bigbreast: 0
+    smallbreast: 0
+    corruption: 0
+    beast: 0
+    muscle: 0
+    hip: 0
+
+  ################
+  # Blumenchecks #
+  ################
+  #
+  # Kumulative natürliche Blumenfunde pro Schwierigkeit über mehrere Runs.
+  # -1 verteilt das verbleibende Check-Budget automatisch (empfohlen).
+  # Die drei Zahlen müssen zusammen 18 minus transformEnd ergeben.
+  # Bei drei Endings: 15 Blumenchecks, automatisch Normal 4 / Schwer 5 / Albtraum 6.
+  # Feste Werte von 0 bis 500 sind erlaubt, solange das Gesamtbudget stimmt.
+  # Eine oder mehrere -1-Optionen dürfen den Rest automatisch auffüllen.
+  # Beispiel mit drei Endings: normal 4, hard 5, nightmare 6.
+  # Weitere natürliche Blumen geben weiterhin ihre normalen Spielboni und
+  # zählen z.B. für die Errungenschaft mit 100 Blumen, auch ohne weitere AP-Checks.
+
+  flower_checks_normal:
+    -1: 50
+
+  flower_checks_hard:
+    -1: 50
+
+  flower_checks_nightmare:
+    -1: 50
+
+  ############################
+  # Items und Check-Verteilung #
+  ############################
+
+  local_items:
+    # Diese Items müssen in deinem eigenen Spiel liegen.
+    # Beispiel: ["Hard Wedding"] oder die Itemgruppe ["Passives"].
+    []
+
+  non_local_items:
+    # Diese Items müssen in anderen Spielen liegen (nur für Multiworlds).
+    # Beispiel: ["Nightmare Wedding"]. Nicht zugleich als local_items setzen.
+    []
+
+  start_inventory:
+    # Zusätzliche Start-Items; ihre regulären Kopien bleiben im AP-Pool.
+    # Beispiel: {"Witch's Hat": 1}. Native Upgrade-Maxima gelten weiterhin.
+    {}
+
+  start_inventory_from_pool:
+    # Start-Items aus dem regulären Pool entnehmen.
+    # Der Generator ersetzt die entnommenen Items durch Füll-Items,
+    # sodass weiterhin 80 Checks belegt sind. Hier ist das Füll-Item Witch's Orb.
+    # Beispiel: {"Hard Wedding": 1}.
+    {}
+
+  start_hints:
+    # Hinweise auf die Fundorte dieser Items sind von Anfang an bekannt.
+    # Beispiel: ["Nightmare Wedding"].
+    []
+
+  start_location_hints:
+    # Der Inhalt dieser Checks ist von Anfang an als Hinweis bekannt.
+    # Beispiel: ["Normal Map 1"].
+    []
+
+  exclude_locations:
+    # Diese Checks dürfen keine wichtigen Items enthalten.
+    # Beispiel: ["Achievement: Collect 100 Flowers"].
+    []
+
+  priority_locations:
+    # Wichtige Items werden bevorzugt an diesen Checks platziert.
+    # Beispiel: ["Normal Map 1"]. Nicht zugleich als exclude_locations setzen.
+    []
+
+  item_links:
+    # Gemeinsame Item-Pools mit anderen Spielern.
+    # Benötigt passende Item-Link-Einstellungen bei den beteiligten Spielern.
+    []
+
+  plando_items:
+    # Gezielte Item-Platzierungen für erfahrene Seed-Ersteller.
+    # Der Host muss Item-Plando bei der Generierung ausdrücklich erlauben.
+    []

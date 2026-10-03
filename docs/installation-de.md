@@ -1,12 +1,12 @@
 # Wedding Witch Archipelago installieren
 
-Windows-Paket 0.5.0 enthält Mod und APWorld 0.5.0, den Steam-Launcher, normale Standard-Skills bei Level-ups und 38 Errungenschaftschecks. Neue Seeds haben 80 Items und Checks.
+Windows-Paket 0.5.1 enthält Mod und APWorld 0.5.1, den Steam-Launcher, normale Standard-Skills bei Level-ups und 38 Errungenschaftschecks. Neue Seeds haben 80 Items und Checks.
 
 ## Voraussetzungen
 
 - Wedding Witch für Windows über Steam, App-ID 2529820, einmal normal gestartet.
 - Windows 10/11 x64, Steam installiert und angemeldet.
-- Das vollständige WeddingWitch-AP-0.5.0-Windows.zip entpacken.
+- Das vollständige WeddingWitch-AP-0.5.1-Windows.zip entpacken.
 - Für die Erstinstallation Internetzugriff auf GitHub. Der Installer lädt bei Bedarf BepInEx 5.4.23.5 x64 von dessen offiziellem Release und prüft SHA-256.
 
 ## Installation
@@ -30,13 +30,15 @@ Der Launcher startet beide Modi über Steam und verwendet `--doorstop-enabled tr
 
 ## YAML und Verbindung
 
+Die beiliegende YAML erklärt alle Optionen auf Deutsch. Ein Wert wie normal: 50 ist ein Auswahlgewicht; 0 deaktiviert die betreffende Auswahl. Ein fester Wert wie difficulty: normal ist weiterhin erlaubt. Progression Balancing ist mit normal (Einstellung 50) aktiv; disabled steht für 0 und extreme für 99. Startinventar aus dem Pool, Hinweise und Item-/Check-Verteilung stehen unter den allgemeinen AP-Optionen. Diese Konfiguration wirkt bei der nächsten Seed-Erzeugung.
+
 1. Auf ap.dsatool.org Wedding Witch auswählen und die YAML konfigurieren: Slotname, Anzahl verschiedener Enden (transformEnd 1–7), Zielschwierigkeit und Start-Tranktyp. Blumenchecks können automatisch verteilt oder passend zum Gesamtbudget eingestellt werden.
 2. YAML herunterladen oder einem eigenen Lobby-Slot zuordnen. Nach der Seed-Erzeugung den Raum starten.
 3. Im AP-Spiel F8 drücken. Host, Port, exakten Slotnamen und gegebenenfalls Raumpasswort aus dem Raum eintragen. Für lokale Tests die lokale Serveradresse benutzen.
 4. Verbinden und einen neuen Run starten. Das AP-Profil ist an Seed, Team und Slot gebunden. In neuen Schema-4-Seeds werden Standard-Skills normal beim Level-up gewählt und verbessert; ihre Stufen gelten für den aktuellen Run.
 5. Ein Raum zeigt erst dann echten Spielfortschritt, wenn der Client verbunden ist und Checks sendet.
 
-Seed-Erzeugung und Verbindung über ap.dsatool.org sind geprüft. Für den 80er-Pool und Standard-Skills bei Level-ups muss das Portal APWorld 0.5.0 verwenden und einen neuen Schema-4-Seed erzeugen. Bestehende Schema-2-/Schema-3-Seeds behalten ihre 142 Checks und AP-Skill-Stufen; der neue Client kann sie weiterhin spielen.
+Seed-Erzeugung und Verbindung über ap.dsatool.org sind geprüft. Für den 80er-Pool und Standard-Skills bei Level-ups muss das Portal APWorld 0.5.1 verwenden und einen neuen Schema-4-Seed erzeugen. Bestehende Schema-2-/Schema-3-Seeds behalten ihre 142 Checks und AP-Skill-Stufen; der neue Client kann sie weiterhin spielen.
 
 ## APWorld für lokale Hosts
 
@@ -58,9 +60,9 @@ Das Goal zählt verschiedene Endings auf der gewählten Schwierigkeit: die norma
 
 ## Fehlerbehebung
 
-- Kein F8-Fenster: im Launcher Archipelago starten; BepInEx/LogOutput.log prüfen. Dort muss Wedding Witch Archipelago 0.5.0 geladen sein.
+- Kein F8-Fenster: im Launcher Archipelago starten; BepInEx/LogOutput.log prüfen. Dort muss Wedding Witch Archipelago 0.5.1 geladen sein.
 - Original startet mit Mods: den aktuellen Launcher und „Original starten“ verwenden. Der normale Steam-Start lädt nach der Installation den Mod-Loader.
-- Weiterhin 142 Checks oder AP-Skill-Items: einen neuen Seed mit APWorld 0.5.0 erzeugen. Ein bestehender Seed lässt sich nicht nachträglich auf den 80er-Pool und normale Level-up-Skills umstellen.
+- Weiterhin 142 Checks oder AP-Skill-Items: einen neuen Seed mit APWorld 0.5.1 erzeugen. Ein bestehender Seed lässt sich nicht nachträglich auf den 80er-Pool und normale Level-up-Skills umstellen.
 - Verbindung scheitert: Host/Port/Slotname/Raumpasswort mit dem laufenden Raum abgleichen. Keine Cheats aktivieren.
 - Andere APWorld bereits vorhanden: alte Variante in custom_worlds auslagern, nicht parallel laden.
 - Fehlender Launcher oder DLL: das ganze Windows-ZIP entpacken, nicht nur einzelne Dateien herunterladen.

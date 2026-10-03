@@ -37,6 +37,20 @@ class RulesTests(unittest.TestCase):
         self.assertEqual(80,slot['pool_size'])
         self.assertNotIn('skill_caps',slot)
         self.assertNotIn('skill_classes',slot)
+    def test_documented_yaml_uses_supported_options(self):
+        import yaml
+        from Generate import roll_settings
+        template=yaml.safe_load((ROOT/'WeddingWitch.yaml').read_text(encoding='utf-8'))
+        self.assertFalse(set(template['Wedding Witch'])-set(WeddingWitchOptions.type_hints))
+        rolled=roll_settings(template)
+        self.assertEqual(50,rolled.progression_balancing.value)
+        self.assertEqual(3,rolled.transformEnd.value)
+        self.assertEqual(0,rolled.difficulty.value)
+        self.assertEqual([-1,-1,-1],[rolled.flower_checks_normal.value,rolled.flower_checks_hard.value,rolled.flower_checks_nightmare.value])
+        self.assertEqual({},rolled.start_inventory_from_pool.value)
+        for label,value in [('disabled',0),('extreme',99)]:
+            template['Wedding Witch']['progression_balancing']={label:50}
+            self.assertEqual(value,roll_settings(template).progression_balancing.value)
     def test_upgrade_contract(self):
         text=(ROOT/'src'/'UpgradeCatalog.cs').read_text()
         entries=[(key,name,int(cap)) for key,name,cap in re.findall(r'new Upgrade\("([^"]+)", "([^"]+)", (\d+)\)',text)]

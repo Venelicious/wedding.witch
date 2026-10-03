@@ -1,6 +1,8 @@
-# Wedding Witch Archipelago 0.5.0
+# Wedding Witch Archipelago 0.5.1
 
 ## Deutsch
+
+Neu in 0.5.1: ausführlich kommentierte deutsche YAML mit gewichteten Optionen, erklärtem Progression Balancing (normal/50 voreingestellt) und allgemeinen AP-Optionen. Startinventar aus dem Pool wird unterstützt und durch Füll-Items ersetzt; 80 Checks bleiben erhalten. Die Regeln und Schema-4-Kompatibilität aus 0.5.0 bleiben bestehen. Die Release-Prüfung kontrolliert künftig die Versionsüberschrift der Notizen und die Übereinstimmung der verpackten YAML.
 
 Die 62 Skill-Unlock-Items entfallen. Alle 13 Standard-Skills sind wieder normale Level-up-Auswahlen und werden im aktuellen Run verbessert. Ihre Stufen werden nicht in den nächsten Run übernommen. Native Maxima, Zauberbedingungen und die vierte Auswahl durch das passive Upgrade bleiben erhalten.
 
@@ -10,11 +12,13 @@ Errungenschaften senden automatisch einen AP-Check, sobald ihre native Bedingung
 
 Der Launcher startet Original und AP über Steam, damit Steam Input und die bestehende Controller-Konfiguration funktionieren. Spielstände und AP-Profile bleiben getrennt und erhalten.
 
-**Neuer Seed mit APWorld 0.5.0 erforderlich**, um den 80er-Pool und Standard-Skills bei Level-ups zu verwenden. Das gilt auch für ap.dsatool.org: Das Portal muss diese APWorld für die Generierung verwenden. Bestehende Schema-2-/Schema-3-Seeds bleiben mit ihren 142 Checks und AP-Skill-Stufen spielbar.
+**Neuer Seed mit APWorld 0.5.1 erforderlich**, um den 80er-Pool und Standard-Skills bei Level-ups zu verwenden. Das gilt auch für ap.dsatool.org: Das Portal muss diese APWorld für die Generierung verwenden. Bestehende Schema-2-/Schema-3-Seeds bleiben mit ihren 142 Checks und AP-Skill-Stufen spielbar.
 
-Geprüft: Release-Build ohne Warnungen/Fehler, 27 Auswahl-, 33 Fortschritts- und 35 Errungenschafts-/Slot-Prüfungen, 12 Tests mit echtem Archipelago Core 0.6.7, erfolgreiche Zwei-Spieler-Generierung mit je 80 Checks, Launcher-Selbsttest und Paket-/Hash-Prüfung. Controller und Anhänger wurden zuvor im echten Spiel geprüft; die Schema-4-Levelauswahl ist mit den echten Mod-Hooks gegen ein Modell der Spiel-API geprüft. Vollständige native Solo-/Multiworld-Abnahmen aller Endings stehen noch aus.
+Geprüft: Release-Build ohne Warnungen/Fehler, 27 Auswahl-, 33 Fortschritts- und 35 Errungenschafts-/Slot-Prüfungen, 13 Tests mit echtem Archipelago Core 0.6.7, erfolgreiche Zwei-Spieler-Generierung mit je 80 Checks, Launcher-Selbsttest und Paket-/Hash-Prüfung. Controller und Anhänger wurden zuvor im echten Spiel geprüft; die Schema-4-Levelauswahl ist mit den echten Mod-Hooks gegen ein Modell der Spiel-API geprüft. Vollständige native Solo-/Multiworld-Abnahmen aller Endings stehen noch aus.
 
 ## English
+
+New in 0.5.1: a documented German YAML with weighted options, explained progression balancing (normal/50 by default) and common AP options. Start inventory from the pool is supported with filler replacements, retaining 80 checks. Rules and schema 4 compatibility from 0.5.0 are retained. Release validation now checks the notes version header and packaged YAML consistency.
 
 The 62 Skill Unlock items are removed. All 13 standard skills return to native level-up selection and are upgraded within the current run, without carrying ranks into the next run. Native caps, spell conditions and the passive fourth-choice upgrade remain intact.
 
@@ -24,6 +28,6 @@ Achievements automatically send an AP check when their native condition is fulfi
 
 The launcher starts Original and AP through Steam for Steam Input and existing controller configurations. Original saves and seed profiles remain separate and are retained.
 
-**Generate a new seed with APWorld 0.5.0** to use the 80-item pool and native level-up skills. This also applies to ap.dsatool.org: the portal must use this APWorld for generation. Existing schema 2/3 seeds remain playable with their original 142 checks and AP skill ranks.
+**Generate a new seed with APWorld 0.5.1** to use the 80-item pool and native level-up skills. This also applies to ap.dsatool.org: the portal must use this APWorld for generation. Existing schema 2/3 seeds remain playable with their original 142 checks and AP skill ranks.
 
-Validated: a clean Release build, 27 selection, 33 progress and 35 achievement/slot assertions, 12 tests against real Archipelago Core 0.6.7, successful two-player generation with 80 checks per slot, launcher self-test and archive/hash verification. Controller and charm presentation were previously checked in the native game; schema 4 level-up behavior has headless coverage using the real mod hooks and a native API model. Complete native solo/multiworld acceptance across all endings remains pending.
+Validated: a clean Release build, 27 selection, 33 progress and 35 achievement/slot assertions, 13 tests against real Archipelago Core 0.6.7, successful two-player generation with 80 checks per slot, launcher self-test and archive/hash verification. Controller and charm presentation were previously checked in the native game; schema 4 level-up behavior has headless coverage using the real mod hooks and a native API model. Complete native solo/multiworld acceptance across all endings remains pending.

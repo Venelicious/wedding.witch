@@ -7,6 +7,8 @@ import zipfile
 root = Path(__file__).resolve().parents[1]
 release = root / 'release'
 manifest = json.loads((release / 'manifest.json').read_text())
+assert (root / 'RELEASE-NOTES.md').read_text(encoding='utf-8').splitlines()[0] == \
+    f"# Wedding Witch Archipelago {manifest['version']}", 'Release notes version differs from the package'
 for name, spec in manifest['artifacts'].items():
     path = release / name
     assert path.stat().st_size == spec['size'], name
@@ -24,6 +26,7 @@ for name, spec in manifest['artifacts'].items():
                 assert data['compatible_version'] == 7
                 assert data['version'] == 7
             else:
+                assert archive.read('WeddingWitch.yaml') == (root / 'WeddingWitch.yaml').read_text(encoding='utf-8').encode('utf-8'), 'Packaged YAML differs from the documented template'
                 for required in ['WeddingWitchLauncher.exe', 'docs/installation-de.md', 'docs/installation-en.md', 'plugins/WeddingWitchArchipelago.dll']:
                     assert required in names, required
 print('Release hashes, archives, manifest and required files verified.')
