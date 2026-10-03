@@ -1,4 +1,6 @@
-# Wedding Witch Archipelago 0.3.5
+# Wedding Witch Archipelago
+
+Windows-Paket / Windows package: **0.3.6** · Mod & APWorld: **0.3.5**
 
 Archipelago-Integration für Wedding Witch (Windows/Steam). Solo und Multiworld mit 142 Checks, dauerhaften passiven und Standard-Skill-Stufen, Tranktyp- und Schwierigkeitsfreigaben.
 
@@ -6,13 +8,13 @@ English: Wedding Witch Archipelago for Windows/Steam, with solo and multiworld s
 
 ## Downloads
 
-[Testrelease 0.3.5 / Test release 0.3.5](https://github.com/Venelicious/wedding.witch/releases/tag/v0.3.5)
+[Testrelease 0.3.6 / Test release 0.3.6](https://github.com/Venelicious/wedding.witch/releases/tag/v0.3.6)
 
-- [Windows-Paket / Windows package](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.5/WeddingWitch-AP-0.3.5-Windows.zip)
-- [APWorld](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.5/wedding_witch.apworld)
-- [Beispiel-YAML / Example YAML](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.5/WeddingWitch.yaml)
+- [Windows-Paket / Windows package](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.6/WeddingWitch-AP-0.3.6-Windows.zip)
+- [APWorld](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.6/wedding_witch.apworld)
+- [Beispiel-YAML / Example YAML](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.6/WeddingWitch.yaml)
 
-Das Release stellt WeddingWitch-AP-0.3.5-Windows.zip, wedding_witch.apworld und WeddingWitch.yaml bereit. Das Windows-Paket enthält den Mod, seine Client-Abhängigkeiten, Install.cmd und WeddingWitchLauncher.exe. Spiel-DLLs, Spielstände, Zugangsdaten und Test-Seeds gehören nicht zum Download.
+Das Release stellt WeddingWitch-AP-0.3.6-Windows.zip, wedding_witch.apworld und WeddingWitch.yaml bereit. Das Windows-Paket enthält den Mod, seine Client-Abhängigkeiten, Install.cmd und WeddingWitchLauncher.exe. Spiel-DLLs, Spielstände, Zugangsdaten und Test-Seeds gehören nicht zum Download.
 
 **Installation / Setup:** [Deutsch](docs/installation-de.md) · [English](docs/installation-en.md). Launcher-Auswahl: Original oder Archipelago; Verbindung im Spiel mit F8.
 

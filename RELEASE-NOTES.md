@@ -1,6 +1,8 @@
-# Wedding Witch Archipelago 0.3.5
+# Wedding Witch Archipelago 0.3.6
 
 ## Deutsch
+
+Launcher-Korrektur: Im AP-Modus wird DOORSTOP_DISABLE entfernt. Der Wert 0 deaktivierte den installierten Loader ebenfalls. Original- und AP-Start wurden am 03.10.2026 im echten Spiel geprüft; AP verbindet sich mit dem bestehenden Slot. Mod und APWorld bleiben auf 0.3.5; Regeln und Seed-Kompatibilität ändern sich nicht.
 
 142 Checks, permanente passive und Standard-Skill-Stufen, sechs Tranktypen, drei Schwierigkeiten und 1–7 verschiedene Endings als Goal. Standard-Skills werden automatisch aktiv; Meisterschaften bleiben vanilla.
 
@@ -9,6 +11,8 @@ Windows-Paket mit Installer und WeddingWitchLauncher.exe: Original oder Archipel
 Testrelease: Build, Profile und Generator geprüft; vollständige Spielabnahme aller Endings und nativer Multiworld-Durchlauf stehen noch aus. Vorhandener Fortschritt bleibt erhalten. Kein Spiel, keine Spiel-DLLs und keine Zugangsdaten enthalten.
 
 ## English
+
+Launcher fix: AP mode now removes DOORSTOP_DISABLE. Setting it to 0 still disabled the installed loader. Both launch modes were checked in the real game on 2026-10-03; AP reconnects to the existing slot. Mod and APWorld remain at 0.3.5, retaining rules and seed compatibility.
 
 142 checks, permanent passive and standard skill ranks, six potion types, three difficulties and 1–7 different endings as the goal. Standard skills become automatically active; masteries remain vanilla.
 

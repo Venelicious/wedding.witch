@@ -18,7 +18,12 @@ internal static class Launcher
             string dir = AppDomain.CurrentDomain.BaseDirectory;
             if (args.Contains("--self-test"))
             {
-                if (DisableValue(false) != "1" || DisableValue(true) != "0") return 1;
+                var test = new ProcessStartInfo { UseShellExecute = false };
+                test.EnvironmentVariables["DOORSTOP_DISABLE"] = "inherited";
+                SetMode(test, true);
+                if (test.EnvironmentVariables.ContainsKey("DOORSTOP_DISABLE")) return 1;
+                SetMode(test, false);
+                if (test.EnvironmentVariables["DOORSTOP_DISABLE"] != "1") return 1;
                 return 0;
             }
             if (!File.Exists(Path.Combine(dir, "Wedding Witch.exe")))
@@ -44,7 +49,11 @@ internal static class Launcher
         catch (Exception ex) { MessageBox.Show(ex.Message, "Wedding Witch Launcher", MessageBoxButtons.OK, MessageBoxIcon.Error); return 1; }
     }
 
-    private static string DisableValue(bool ap) { return ap ? "0" : "1"; }
+    private static void SetMode(ProcessStartInfo start, bool ap)
+    {
+        if (ap) start.EnvironmentVariables.Remove("DOORSTOP_DISABLE");
+        else start.EnvironmentVariables["DOORSTOP_DISABLE"] = "1";
+    }
     private static void TryStart(Form form, string dir, bool ap)
     {
         try { Start(dir, ap); form.Close(); }
@@ -75,7 +84,7 @@ internal static class Launcher
             throw new InvalidOperationException("Steam wird gestartet. Sobald Steam angemeldet ist, den gewünschten Startknopf erneut drücken.");
         }
         var start = new ProcessStartInfo(Path.Combine(dir, "Wedding Witch.exe")) { WorkingDirectory = dir, UseShellExecute = false };
-        start.EnvironmentVariables["DOORSTOP_DISABLE"] = DisableValue(ap);
+        SetMode(start, ap);
         start.EnvironmentVariables["SteamAppId"] = "2529820";
         start.EnvironmentVariables["SteamGameId"] = "2529820";
         Process.Start(start);

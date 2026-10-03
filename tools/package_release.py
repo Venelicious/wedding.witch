@@ -5,7 +5,7 @@ import json
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = "0.3.5"
+VERSION = "0.3.6"
 
 def archive(path, files):
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as out:
@@ -36,9 +36,11 @@ def main():
         files.append(("plugins/" + name, (ROOT / "src/bin/Release" / name).read_bytes()))
     archive(output / f"WeddingWitch-AP-{VERSION}-Windows.zip", files)
     (output / "WeddingWitch.yaml").write_bytes((ROOT / "WeddingWitch.yaml").read_bytes())
-    manifest = {p.name: {"size": p.stat().st_size, "sha256": hashlib.sha256(p.read_bytes()).hexdigest()}
-                for p in output.iterdir() if p.name != "manifest.json" and p.is_file()}
-    (output / "manifest.json").write_text(json.dumps({"version": VERSION, "artifacts": manifest}, indent=2)+"\n")
+    manifest = {name: {"size": (output / name).stat().st_size,
+                      "sha256": hashlib.sha256((output / name).read_bytes()).hexdigest()}
+                for name in [f"WeddingWitch-AP-{VERSION}-Windows.zip", "wedding_witch.apworld", "WeddingWitch.yaml"]}
+    world_version = json.loads((ROOT / "apworld/wedding_witch/archipelago.json").read_text())["world_version"]
+    (output / "manifest.json").write_text(json.dumps({"version": VERSION, "world_version": world_version, "artifacts": manifest}, indent=2)+"\n")
     print(json.dumps(manifest))
 
 if __name__ == "__main__":
