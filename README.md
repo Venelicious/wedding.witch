@@ -8,15 +8,13 @@ English: Wedding Witch Archipelago for Windows/Steam, with solo and multiworld s
 
 ## Downloads
 
-Aktueller Build im Repository: [Windows-Paket 0.5.0](release/WeddingWitch-AP-0.5.0-Windows.zip) · [APWorld 0.5.0](release/wedding_witch.apworld).
+Aktuelles Testrelease / Current test release: [0.5.0](https://github.com/Venelicious/wedding.witch/releases/tag/v0.5.0).
 
-Zuletzt als GitHub Release veröffentlicht / Last GitHub Release: [Testrelease 0.3.7](https://github.com/Venelicious/wedding.witch/releases/tag/v0.3.7). Dieses ältere Release enthält die Änderungen aus 0.5.0 noch nicht.
+- [Windows-Paket / Windows package](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.0/WeddingWitch-AP-0.5.0-Windows.zip)
+- [APWorld](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.0/wedding_witch.apworld)
+- [Beispiel-YAML / Example YAML](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.0/WeddingWitch.yaml)
 
-- [Windows-Paket / Windows package](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.7/WeddingWitch-AP-0.3.7-Windows.zip)
-- [APWorld](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.7/wedding_witch.apworld)
-- [Beispiel-YAML / Example YAML](https://github.com/Venelicious/wedding.witch/releases/download/v0.3.7/WeddingWitch.yaml)
-
-Das Release stellt WeddingWitch-AP-0.3.7-Windows.zip, wedding_witch.apworld und WeddingWitch.yaml bereit. Das Windows-Paket enthält den Mod, seine Client-Abhängigkeiten, Install.cmd und WeddingWitchLauncher.exe. Spiel-DLLs, Spielstände, Zugangsdaten und Test-Seeds gehören nicht zum Download.
+Das Release stellt WeddingWitch-AP-0.5.0-Windows.zip, wedding_witch.apworld und WeddingWitch.yaml bereit. Das Windows-Paket enthält den Mod, seine Client-Abhängigkeiten, Install.cmd und WeddingWitchLauncher.exe. Spiel-DLLs, Spielstände, Zugangsdaten und Test-Seeds gehören nicht zum Download.
 
 Build 0.5.0: `release/WeddingWitch-AP-0.5.0-Windows.zip` enthält den neuen Client, Steam-Launcher und die Schema-4-APWorld 0.5.0. Für den 80er-Pool und Standard-Skills bei Level-ups einen neuen Seed mit dieser APWorld erzeugen. Bestehende Schema-2-/Schema-3-Seeds behalten ihre 142 Checks und AP-Skill-Stufen und bleiben mit dem Client spielbar.
 

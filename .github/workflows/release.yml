@@ -2,7 +2,7 @@ name: Publish tested release
 on:
   push:
     branches: [main]
-    paths: ['release/**', '.github/workflows/release.yml']
+    paths: ['release/**', 'RELEASE-NOTES.md', '.github/workflows/release.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -23,7 +23,13 @@ jobs:
           VERSION=$(python3 -c "import json; print(json.load(open('release/manifest.json'))['version'])")
           TAG="v$VERSION"
           if gh release view "$TAG" >/dev/null 2>&1; then
-            echo "Release already exists; refusing to replace immutable assets."
-            exit 1
+            # Correct notes only when this version's immutable artifacts match.
+            gh release download "$TAG" --pattern manifest.json --dir "$RUNNER_TEMP/published-manifest"
+            if ! cmp --silent release/manifest.json "$RUNNER_TEMP/published-manifest/manifest.json"; then
+              echo "Release manifest differs; refusing to replace immutable assets."
+              exit 1
+            fi
+            gh release edit "$TAG" --notes-file RELEASE-NOTES.md
+            exit 0
           fi
           gh release create "$TAG" "release/WeddingWitch-AP-$VERSION-Windows.zip" release/wedding_witch.apworld release/WeddingWitch.yaml release/manifest.json --target "$GITHUB_SHA" --prerelease --title "Wedding Witch Archipelago $VERSION" --notes-file RELEASE-NOTES.md
