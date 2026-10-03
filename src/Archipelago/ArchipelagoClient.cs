@@ -67,27 +67,3 @@ public class ArchipelagoClient
         Plugin.Logger.LogWarning("AP disconnected; progress retained: " + reason);
     }
 }
-public class SlotSettings
-{
-    public string GoalDifficulty;
-    public int GoalForms;
-    public string StartingExp;
-    public int[] FlowerChecks;
-    public static SlotSettings Defaults() => new SlotSettings { GoalDifficulty="Normal",GoalForms=1,StartingExp="Beast",FlowerChecks=new[]{34,40,43} };
-    public static SlotSettings FromSlotData(Dictionary<string,object> data) {
-        if(data==null || !data.TryGetValue("schema_version",out var schema) || Convert.ToInt32(schema)!=2)
-            throw new InvalidOperationException("This client requires a custom-rules schema 2 seed. Keep prototype/upstream seeds with their original client.");
-        var s=Defaults();
-        s.GoalDifficulty=Convert.ToString(data["difficulty"]);
-        s.GoalForms=Convert.ToInt32(data["transformEnd"]);
-        s.StartingExp=Convert.ToString(data["starting_exp_type"]);
-        s.FlowerChecks=Newtonsoft.Json.Linq.JArray.FromObject(data["flower_checks"]).Values<int>().ToArray();
-        if(!Locations.TryParseDifficulty(s.GoalDifficulty,out _) || s.GoalForms<1 || s.GoalForms>7 || !ApItems.ExpTypes.Contains(s.StartingExp) || s.FlowerChecks.Length!=3 || s.FlowerChecks.Any(n=>n<0||n>500))
-            throw new InvalidOperationException("Invalid custom slot options");
-        if (Convert.ToInt32(data["pool_size"])!=142) throw new InvalidOperationException("Item pool differs from this client build");
-        var caps=Newtonsoft.Json.Linq.JObject.FromObject(data["skill_caps"]);
-        if(caps.Count!=SkillCatalog.All.Length || SkillCatalog.All.Any(skill => (int?)caps[skill.Class]!=skill.MaxLevel))
-            throw new InvalidOperationException("Skill rank limits differ from this client build");
-        return s;
-    }
-}

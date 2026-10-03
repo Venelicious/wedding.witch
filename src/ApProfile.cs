@@ -16,7 +16,8 @@ namespace WeddingWitchArchipelago;
 ///
 /// Nothing else is diverted. Config.es3 — language, resolution, volume, key
 /// bindings — stays shared, since none of it is progress, and AchivementState.es3
-/// is left alone so Steam achievements still work the way they always did.
+/// is left alone for original play and legacy seeds. AchievementPatch keeps the
+/// achievement states of schema 3 and newer seeds here without overwriting that file.
 public static class ApProfile
 {
     public const string GameDataFile = "GameData.es3";

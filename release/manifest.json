@@ -1,14 +1,14 @@
 {
-  "version": "0.3.7",
-  "world_version": "0.3.6",
+  "version": "0.5.0",
+  "world_version": "0.5.0",
   "artifacts": {
-    "WeddingWitch-AP-0.3.7-Windows.zip": {
-      "size": 538249,
-      "sha256": "6894ee501afe75d15a93732e95e55c8848f2ffd9aab6d8c63fb42da522ac1380"
+    "WeddingWitch-AP-0.5.0-Windows.zip": {
+      "size": 2054946,
+      "sha256": "a2257d9bfd8a6d04b708c9489c7c290354e1bbff6df4787168ccd2632145c92a"
     },
     "wedding_witch.apworld": {
-      "size": 6889,
-      "sha256": "fc5cb7084e3b8ea65d216210e4fa81f1e5239017866f5b192ab60d24b6f2cd15"
+      "size": 8065,
+      "sha256": "c62cda0e206f3198d785247ce397d8848b825bfe422f67ea3c735537e02d4c78"
     },
     "WeddingWitch.yaml": {
       "size": 281,

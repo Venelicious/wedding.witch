@@ -28,7 +28,7 @@ class ProgressTests {
   Assert(SkillCatalog.Cap("AbsorptionRadiusUp")==3,"absorption max 3");
   Assert(SkillCatalog.Cap("BouquetAttackPowerUp")==6,"bouquet power max 6");
   int total=0; foreach(var skill in SkillCatalog.All) { total+=skill.MaxLevel; Assert(!skill.Class.EndsWith("Mastery"),"no mastery item"); }
-  Assert(total==62,"62 progressive skill ranks");
+  Assert(total==62,"62 legacy AP skill ranks");
   var oldRoot = BepInEx.Paths.BepInExRootPath;
   ApProfile.Enter("seed-a:0:1","WitchTester");
   ApProfile.Set("mod","progress","flowers=7");

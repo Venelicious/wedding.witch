@@ -8,21 +8,39 @@ public static class SkillUnlockPatch
 {
     static bool scanned;
     static readonly HashSet<Enchant> Skills = new HashSet<Enchant>();
+    // Old seeds keep their generated AP skill ranks. Schema 4 uses vanilla level-ups.
+    static bool UsesApSkillRanks => ApState.Active && !ApState.Settings.SkillsFromLevelUps;
     [HarmonyPatch(typeof(EnchantManager), "Awake")]
     [HarmonyPrefix]
     public static void Forget() { Skills.Clear(); scanned = false; }
     [HarmonyPatch(typeof(EnchantManager), nameof(EnchantManager.AddpossibleEnchant))]
     [HarmonyPrefix]
     static bool CanAdd(Enchant item) {
-        if (!ApState.Active || item == null || !SkillCatalog.ByClass.ContainsKey(item.GetType().Name)) return true;
+        if (!UsesApSkillRanks || item == null || !SkillCatalog.ByClass.ContainsKey(item.GetType().Name)) return true;
         Skills.Add(item);
         return false;
+    }
+    [HarmonyPatch(typeof(EnchantManager), nameof(EnchantManager.SetFirstMagic))]
+    [HarmonyPostfix]
+    static void ExpandStartingMagicPool(EnchantManager __instance) {
+        if (!UsesApSkillRanks) return;
+        // Vanilla enables only two starter spells and fills the other choices
+        // with standard skills. AP grants those skills directly, so keep all
+        // native starter spells available for the normal random selection.
+        // Their Start/AddCheck still enforces native potion conditions.
+        int enabled = 0;
+        foreach (var item in __instance.startEnchantList) {
+            if (item == null || !(item is Enchant_Magic)) continue;
+            item.gameObject.SetActive(true);
+            enabled++;
+        }
+        Plugin.Logger.LogInfo("[ap] Enabled " + enabled + " native starter magic candidates");
     }
     public static void Refresh() {
         // Reconciliation happens after all native Start methods have initialized stats.
     }
     public static void Tick() {
-        if (!ApState.Active || SceneManager.GetActiveScene().name != "Adventure" ||
+        if (!UsesApSkillRanks || SceneManager.GetActiveScene().name != "Adventure" ||
             Time.timeSinceLevelLoad < 0.2f || EnchantManager.instance == null ||
             GlobalStat.instance == null || PlayableCharacter.instance == null || PlayerMagnet.instance == null) return;
         if (!scanned) {
@@ -48,7 +66,7 @@ public static class SkillUnlockPatch
     [HarmonyPatch(typeof(EnchantManager), nameof(EnchantManager.GetRandomEnchantList))]
     [HarmonyPrefix]
     static void BeforeChoices(EnchantManager __instance) {
-        if (!ApState.Active) return;
+        if (!UsesApSkillRanks) return;
         __instance.possibleEnchant.RemoveAll(item => item != null && SkillCatalog.ByClass.ContainsKey(item.GetType().Name));
         __instance.FillEnchantList();
     }

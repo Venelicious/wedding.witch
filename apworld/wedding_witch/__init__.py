@@ -3,6 +3,7 @@ from BaseClasses import Item, ItemClassification, Location, Region
 from Options import OptionError
 from worlds.AutoWorld import World
 from .constants import *
+from .achievements import ACHIEVEMENTS, achievement_location
 from .items import ITEM_NAME_TO_ID, ITEM_NAME_GROUPS, classification, item_pool_names
 from .locations import LOCATION_NAME_TO_ID, locations_by_region
 from .options import WeddingWitchOptions
@@ -12,7 +13,7 @@ class WeddingWitchLocation(Location):
     game = GAME_NAME
 
 def allocate_flowers(requested, endings):
-    budget = TOTAL_POOL_ITEMS - 18 - 6 - endings
+    budget = TOTAL_POOL_ITEMS - 18 - 6 - len(ACHIEVEMENTS) - endings
     result = [max(0, n) for n in requested]
     automatic = [i for i, n in enumerate(requested) if n == -1]
     remaining = budget - sum(result)
@@ -55,7 +56,7 @@ class WeddingWitchWorld(World):
             region = Region(name, self.player, self.multiworld)
             region.add_locations({n: LOCATION_NAME_TO_ID[n] for n in locations}, WeddingWitchLocation)
             self.multiworld.regions.append(region)
-            gate = None if name in ("Normal", "Transformations") else lambda state, n=name: state.has(n + " Wedding", self.player)
+            gate = (lambda state, n=name: state.has(n + " Wedding", self.player)) if name in ("Hard", "Nightmare") else None
             menu.connect(region, rule=gate)
         # An AP event models the gameplay victory for generation/spoilers.
         # The client sends StatusUpdate after the actual distinct ending count.
@@ -66,6 +67,9 @@ class WeddingWitchWorld(World):
     def ending_rule(self, count):
         return lambda state: sum(state.has(f"EXP Unlock: {name}", self.player) for name in EXP_TYPES) >= (1 if count == 1 else max(2, count - 1))
     def set_rules(self):
+        for _, label, difficulty_item, exp in ACHIEVEMENTS:
+            required = tuple(item for item in (difficulty_item, f"EXP Unlock: {exp}" if exp else None) if item)
+            self.multiworld.get_location(achievement_location(label), self.player).access_rule = lambda state, items=required: all(state.has(item, self.player) for item in items)
         for (name, _), exp in zip(FORMS, EXP_TYPES):
             self.multiworld.get_location(f"Full Transformation {name}", self.player).access_rule = lambda state, e=exp: state.has(f"EXP Unlock: {e}", self.player)
         for n in range(1, self.options.transformEnd.value + 1):
@@ -73,4 +77,4 @@ class WeddingWitchWorld(World):
         self.multiworld.get_location("Goal Complete", self.player).access_rule = self.ending_rule(self.options.transformEnd.value)
         self.multiworld.completion_condition[self.player] = lambda state: state.has("Victory", self.player)
     def fill_slot_data(self):
-        return {"schema_version": SCHEMA_VERSION, "integration_mode": "unlock_custom", "transformEnd": self.options.transformEnd.value, "difficulty": self.goal_difficulty.lower(), "starting_exp_type": self.starting_exp, "flower_checks": self.flowers, "map_counts": [5, 6, 7], "skill_classes": [key for key, _, _ in SKILLS], "skill_caps": {key: cap for key, _, cap in SKILLS}, "pool_size": TOTAL_POOL_ITEMS}
+        return {"schema_version": SCHEMA_VERSION, "integration_mode": "unlock_custom", "transformEnd": self.options.transformEnd.value, "difficulty": self.goal_difficulty.lower(), "starting_exp_type": self.starting_exp, "flower_checks": self.flowers, "achievement_checks": [key for key, _, _, _ in ACHIEVEMENTS], "map_counts": [5, 6, 7], "skill_mode": "level_up", "pool_size": TOTAL_POOL_ITEMS}

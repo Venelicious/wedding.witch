@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework></PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <Compile Include="../../src/Patches/AchievementPatch.cs" Link="AchievementPatch.cs" />
+    <Compile Include="../../src/AchievementCatalog.cs" Link="AchievementCatalog.cs" />
+    <Compile Include="../../src/Archipelago/SlotSettings.cs" Link="SlotSettings.cs" />
+    <Compile Include="../../src/ApProfile.cs" Link="ApProfile.cs" />
+    <Compile Include="../../src/ApItems.cs" Link="ApItems.cs" />
+    <Compile Include="../../src/SkillCatalog.cs" Link="SkillCatalog.cs" />
+    <Compile Include="../../src/UpgradeCatalog.cs" Link="UpgradeCatalog.cs" />
+    <Compile Include="../../src/Locations.cs" Link="Locations.cs" />
+  </ItemGroup>
+</Project>

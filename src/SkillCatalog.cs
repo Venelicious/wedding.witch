@@ -2,7 +2,7 @@ using System.Collections.Generic;
 namespace WeddingWitchArchipelago;
 public static class SkillCatalog
 {
-    // Standard level-up skills, separate from the permanent UpgradeCatalog.
+    // Legacy schema 2/3 AP ranks; schema 4 leaves these native level-up skills alone.
     // Magic weapons keep their normal potion/condition requirements.
     public static readonly (string Class, string Display, int MaxLevel)[] All = {
         ("AbsorptionRadiusUp", "Absorption Radius", 3), ("AttackRadiusUp", "Attack Radius", 5), ("AttackSpeedUp", "Attack Speed", 5),

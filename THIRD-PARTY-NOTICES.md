@@ -4,6 +4,8 @@ The original mod framework is chickentuna/WeddingWitchMod at commit e25c120f5bad
 
 The separately authored custom APWorld is licensed as stated in apworld/wedding_witch/LICENSE.md. Wedding Witch and its assets belong to their respective owners and are not distributed here.
 
+The six-colour achievement charm in `src/res/achievement-check.png` was supplied by the project owner as `Sechsfarbiger Archipel-Zauberanhänger.png` on 2026-10-04 for use in this mod. It is embedded unchanged in the mod DLL and is not extracted game art.
+
 ## Newtonsoft.Json 13.0.3
 
 MIT License. Copyright (c) 2007 James Newton-King.

@@ -16,7 +16,7 @@ for name, spec in manifest['artifacts'].items():
             assert archive.testzip() is None
             names = archive.namelist()
             assert all(not n.startswith('/') and '..' not in Path(n).parts for n in names)
-            assert all(not any(part in n.lower() for part in ['gamedata.es3', '.apsave', 'src/lib/', 'assembly-csharp', 'connection.cfg']) for n in names)
+            assert all(not any(part in n.lower() for part in ['gamedata.es3', '.apsave', 'src/lib/', 'assembly-csharp', 'facepunch.steamworks.win64.dll', 'connection.cfg']) for n in names)
             if path.suffix == '.apworld':
                 data = json.loads(archive.read('wedding_witch/archipelago.json'))
                 assert data['world_version'] == manifest.get('world_version', manifest['version'])

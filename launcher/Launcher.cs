@@ -22,8 +22,11 @@ internal static class Launcher
                 test.EnvironmentVariables["DOORSTOP_DISABLE"] = "inherited";
                 SetMode(test, true);
                 if (test.EnvironmentVariables.ContainsKey("DOORSTOP_DISABLE")) return 1;
+                if (test.Arguments != "-applaunch 2529820 --doorstop-enabled true") return 1;
+                test.EnvironmentVariables["DOORSTOP_DISABLE"] = "inherited";
                 SetMode(test, false);
-                if (test.EnvironmentVariables["DOORSTOP_DISABLE"] != "1") return 1;
+                if (test.EnvironmentVariables.ContainsKey("DOORSTOP_DISABLE")) return 1;
+                if (test.Arguments != "-applaunch 2529820 --doorstop-enabled false") return 1;
                 return 0;
             }
             if (!File.Exists(Path.Combine(dir, "Wedding Witch.exe")))
@@ -51,8 +54,10 @@ internal static class Launcher
 
     private static void SetMode(ProcessStartInfo start, bool ap)
     {
-        if (ap) start.EnvironmentVariables.Remove("DOORSTOP_DISABLE");
-        else start.EnvironmentVariables["DOORSTOP_DISABLE"] = "1";
+        // Steam forwards launch arguments to the game, but an already running
+        // Steam process does not inherit the launcher's environment changes.
+        start.Arguments = "-applaunch 2529820 --doorstop-enabled " + (ap ? "true" : "false");
+        start.EnvironmentVariables.Remove("DOORSTOP_DISABLE");
     }
     private static void TryStart(Form form, string dir, bool ap)
     {
@@ -68,25 +73,23 @@ internal static class Launcher
         if (File.Exists(config))
         {
             string text = File.ReadAllText(config);
-            if (Regex.IsMatch(text, @"(?im)^\s*ignore_disable_switch\s*=\s*true\s*$"))
-                throw new InvalidOperationException("doorstop_config.ini: ignore_disable_switch muss false sein, damit Original ohne Mods starten kann.");
             if (ap && !Regex.IsMatch(text, @"(?im)^\s*enabled\s*=\s*true\s*$"))
                 throw new InvalidOperationException("Der Mod-Loader ist deaktiviert. Install.cmd erneut ausführen.");
         }
         else if (ap) throw new InvalidOperationException("Der Mod-Loader fehlt. Zuerst Install.cmd ausführen.");
         if (ap && !File.Exists(Path.Combine(dir, "BepInEx", "plugins", "WeddingWitchCustom", "WeddingWitchArchipelago.dll")))
             throw new InvalidOperationException("Der AP-Mod fehlt. Zuerst Install.cmd ausführen.");
+        string steam = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\Valve\Steam", "SteamExe", null);
+        if (String.IsNullOrEmpty(steam) || !File.Exists(steam))
+            throw new InvalidOperationException("Steam wurde nicht gefunden. Steam zuerst starten und anmelden.");
         if (Process.GetProcessesByName("steam").Length == 0)
         {
-            string steam = (string)Registry.GetValue(@"HKEY_CURRENT_USER\Software\Valve\Steam", "SteamExe", null);
-            if (String.IsNullOrEmpty(steam)) throw new InvalidOperationException("Steam zuerst starten und anmelden.");
             Process.Start(new ProcessStartInfo(steam) { UseShellExecute = true });
             throw new InvalidOperationException("Steam wird gestartet. Sobald Steam angemeldet ist, den gewünschten Startknopf erneut drücken.");
         }
-        var start = new ProcessStartInfo(Path.Combine(dir, "Wedding Witch.exe")) { WorkingDirectory = dir, UseShellExecute = false };
+        // Launch through Steam so its overlay and Steam Input are initialized.
+        var start = new ProcessStartInfo(steam) { WorkingDirectory = Path.GetDirectoryName(steam), UseShellExecute = false };
         SetMode(start, ap);
-        start.EnvironmentVariables["SteamAppId"] = "2529820";
-        start.EnvironmentVariables["SteamGameId"] = "2529820";
         Process.Start(start);
     }
 }

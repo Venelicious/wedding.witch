@@ -37,6 +37,8 @@ public static class SaveDataPatch
     public static void ReloadGameData()
     {
         GameDataManager.ReloadAll();
+        AchievementPatch.AfterReload();
+        AchievementDisplayPatch.RefreshOpenRows();
         ShopPatch.RefreshOpenShop();
         DifficultyPatch.Apply();
 

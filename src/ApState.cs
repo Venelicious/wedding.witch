@@ -59,7 +59,7 @@ public static class ApState
     public static int Count(string name) => Counts.TryGetValue(name,out var n) ? n : 0;
     public static bool Has(string name) => Count(name) > 0;
     public static bool ExpUnlocked(string name) => name == Settings.StartingExp || Has("EXP Unlock: " + name);
-    public static int SkillLevel(string className) => SkillCatalog.ByClass.TryGetValue(className,out var name) ? Math.Min(SkillCatalog.Cap(className),Count(name)) : 0;
+    public static int SkillLevel(string className) => !Settings.SkillsFromLevelUps && SkillCatalog.ByClass.TryGetValue(className,out var name) ? Math.Min(SkillCatalog.Cap(className),Count(name)) : 0;
     public static int LevelOf(string key) {
         if (Progress.RunActive && RunLevels.TryGetValue(key,out var frozen)) return frozen;
         foreach (var upgrade in UpgradeCatalog.All)

@@ -4,7 +4,7 @@
         <TargetFramework>net472</TargetFramework>
         <AssemblyName>WeddingWitchArchipelago</AssemblyName>
         <Description>Archipelago multiworld randomizer for Wedding Witch</Description>
-        <Version>0.3.5</Version>
+        <Version>0.5.0</Version>
         <LangVersion>latest</LangVersion>
 
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
@@ -24,6 +24,7 @@
         <EmbeddedResource Include="res\ap-icon.png" />
         <EmbeddedResource Include="res\ap-icon-white.png" />
         <EmbeddedResource Include="res\inventory.png" />
+        <EmbeddedResource Include="res\achievement-check.png" />
     </ItemGroup>
 
     <!-- Referenced straight from the game and a BepInEx install rather than NuGet.
@@ -37,6 +38,7 @@
         <Reference Include="0Harmony"><HintPath>lib\0Harmony.dll</HintPath><Private>false</Private></Reference>
         <Reference Include="Assembly-CSharp"><HintPath>lib\Assembly-CSharp.dll</HintPath><Private>false</Private></Reference>
         <Reference Include="Assembly-CSharp-firstpass"><HintPath>lib\Assembly-CSharp-firstpass.dll</HintPath><Private>false</Private></Reference>
+        <Reference Include="Facepunch.Steamworks.Win64"><HintPath>lib\Facepunch.Steamworks.Win64.dll</HintPath><Private>false</Private></Reference>
         <Reference Include="netstandard"><HintPath>lib/netstandard.dll</HintPath><Private>false</Private></Reference>
         <Reference Include="UnityEngine"><HintPath>lib\UnityEngine.dll</HintPath><Private>false</Private></Reference>
         <Reference Include="UnityEngine.CoreModule"><HintPath>lib\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>

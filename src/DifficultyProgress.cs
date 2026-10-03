@@ -47,10 +47,14 @@ public static class DifficultyProgress
         var s=ApState.Settings;
         Locations.TryParseDifficulty(s.GoalDifficulty,out var goal);
         string difficulty = goal == Difficulty.Normal ? "Normal" : goal == Difficulty.Hard ? "Schwer" : "Albtraum";
-        label.text = $"<b>Archipelago · {p.Checks.Count}/142 Checks</b>\n" +
+        int achievements = 0;
+        foreach (var id in s.AchievementChecks)
+            if (ApState.IsChecked(AchievementCatalog.Location(id))) achievements++;
+        label.text = $"<b>Archipelago · {p.Checks.Count}/{ApState.Settings.PoolSize} Checks</b>\n" +
             $"Normal: {p.Flowers[0]}/{s.FlowerChecks[0]} Blumen | Siege: {p.Wins[0]}\n" +
             $"Schwer: {p.Flowers[1]}/{s.FlowerChecks[1]} Blumen | Siege: {p.Wins[1]}\n" +
             $"Albtraum: {p.Flowers[2]}/{s.FlowerChecks[2]} Blumen | Siege: {p.Wins[2]}\n" +
+            (s.AchievementChecks.Count > 0 ? $"Errungenschaften: {achievements}/{s.AchievementChecks.Count}\n" : "") +
             $"Ziel: {p.Endings[(int)goal].Count}/{s.GoalForms} verschiedene Enden\n" +
             $"Schwierigkeit: {difficulty}";
     }
