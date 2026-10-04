@@ -4,7 +4,7 @@
         <TargetFramework>net472</TargetFramework>
         <AssemblyName>WeddingWitchArchipelago</AssemblyName>
         <Description>Archipelago multiworld randomizer for Wedding Witch</Description>
-        <Version>0.5.1</Version>
+        <Version>0.5.2</Version>
         <LangVersion>latest</LangVersion>
 
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>

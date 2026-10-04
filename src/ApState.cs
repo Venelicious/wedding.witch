@@ -72,6 +72,7 @@ public static class ApState
         Progress.RunActive = false;
         foreach (var upgrade in UpgradeCatalog.All) RunLevels[upgrade.LoadKey] = LevelOf(upgrade.LoadKey);
         Progress.StartRun((int)d);
+        client?.BeginDeathLinkRun(Progress.Run);
         Persist();
     }
     public static void Flower() {
@@ -85,6 +86,7 @@ public static class ApState
     public static void Win(BodyState body) {
         if (!Active) return;
         Progress.Win(body.ToString());
+        client?.EndDeathLinkRun();
         Persist();
     }
     public static void EndingShown() {

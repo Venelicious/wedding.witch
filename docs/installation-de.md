@@ -1,12 +1,12 @@
 # Wedding Witch Archipelago installieren
 
-Windows-Paket 0.5.1 enthält Mod und APWorld 0.5.1, den Steam-Launcher, normale Standard-Skills bei Level-ups und 38 Errungenschaftschecks. Neue Seeds haben 80 Items und Checks.
+Windows-Paket 0.5.2 enthält Mod und APWorld 0.5.2, den Steam-Launcher, normale Standard-Skills bei Level-ups und 38 Errungenschaftschecks. Neue Seeds haben 80 Items und Checks.
 
 ## Voraussetzungen
 
 - Wedding Witch für Windows über Steam, App-ID 2529820, einmal normal gestartet.
 - Windows 10/11 x64, Steam installiert und angemeldet.
-- Das vollständige WeddingWitch-AP-0.5.1-Windows.zip entpacken.
+- Das vollständige WeddingWitch-AP-0.5.2-Windows.zip entpacken.
 - Für die Erstinstallation Internetzugriff auf GitHub. Der Installer lädt bei Bedarf BepInEx 5.4.23.5 x64 von dessen offiziellem Release und prüft SHA-256.
 
 ## Installation
@@ -38,7 +38,15 @@ Die beiliegende YAML erklärt alle Optionen auf Deutsch. Ein Wert wie normal: 50
 4. Verbinden und einen neuen Run starten. Das AP-Profil ist an Seed, Team und Slot gebunden. In neuen Schema-4-Seeds werden Standard-Skills normal beim Level-up gewählt und verbessert; ihre Stufen gelten für den aktuellen Run.
 5. Ein Raum zeigt erst dann echten Spielfortschritt, wenn der Client verbunden ist und Checks sendet.
 
-Seed-Erzeugung und Verbindung über ap.dsatool.org sind geprüft. Für den 80er-Pool und Standard-Skills bei Level-ups muss das Portal APWorld 0.5.1 verwenden und einen neuen Schema-4-Seed erzeugen. Bestehende Schema-2-/Schema-3-Seeds behalten ihre 142 Checks und AP-Skill-Stufen; der neue Client kann sie weiterhin spielen.
+Seed-Erzeugung und Verbindung über ap.dsatool.org sind geprüft. Für den 80er-Pool und Standard-Skills bei Level-ups muss das Portal APWorld 0.5.2 verwenden und einen neuen Schema-4-Seed erzeugen. Bestehende Schema-2-/Schema-3-Seeds behalten ihre 142 Checks und AP-Skill-Stufen; der neue Client kann sie weiterhin spielen.
+
+## DeathLink
+
+DeathLink ist standardmäßig ausgeschaltet. Für neue Seeds `death_link: true` unter `Wedding Witch:` in der YAML setzen. Auch das Portal muss APWorld 0.5.2 verwenden, damit diese Option im Seed gespeichert wird.
+
+Nach dem Verbinden zeigt das F8-Fenster **DeathLink: AN/AUS**. Der Knopf schaltet die Teilnahme für die aktuelle Verbindung um, auch bei bestehenden Seeds ohne DeathLink-Option. Beim Wiederverbinden gilt erneut der YAML-Wert des Seeds; bei älteren Seeds ist das AUS.
+
+Ein eigener endgültiger Tod beendet den Run und sendet DeathLink an die anderen teilnehmenden Slots. Natürliche Wiederbelebungen werden vorher wie gewohnt verwendet. Ein empfangener DeathLink beendet einen aktiven Run sofort, auch während Pause oder Levelauswahl, und umgeht Wiederbelebungen und Unverwundbarkeit. Er wird nicht zurückgesendet. Meldungen ohne aktiven Run werden verworfen und nicht in den nächsten Run übernommen. DeathLink verändert weder Checks noch das Ending-Ziel.
 
 ## APWorld für lokale Hosts
 
@@ -60,9 +68,9 @@ Das Goal zählt verschiedene Endings auf der gewählten Schwierigkeit: die norma
 
 ## Fehlerbehebung
 
-- Kein F8-Fenster: im Launcher Archipelago starten; BepInEx/LogOutput.log prüfen. Dort muss Wedding Witch Archipelago 0.5.1 geladen sein.
+- Kein F8-Fenster: im Launcher Archipelago starten; BepInEx/LogOutput.log prüfen. Dort muss Wedding Witch Archipelago 0.5.2 geladen sein.
 - Original startet mit Mods: den aktuellen Launcher und „Original starten“ verwenden. Der normale Steam-Start lädt nach der Installation den Mod-Loader.
-- Weiterhin 142 Checks oder AP-Skill-Items: einen neuen Seed mit APWorld 0.5.1 erzeugen. Ein bestehender Seed lässt sich nicht nachträglich auf den 80er-Pool und normale Level-up-Skills umstellen.
+- Weiterhin 142 Checks oder AP-Skill-Items: einen neuen Seed mit APWorld 0.5.2 erzeugen. Ein bestehender Seed lässt sich nicht nachträglich auf den 80er-Pool und normale Level-up-Skills umstellen.
 - Verbindung scheitert: Host/Port/Slotname/Raumpasswort mit dem laufenden Raum abgleichen. Keine Cheats aktivieren.
 - Andere APWorld bereits vorhanden: alte Variante in custom_worlds auslagern, nicht parallel laden.
 - Fehlender Launcher oder DLL: das ganze Windows-ZIP entpacken, nicht nur einzelne Dateien herunterladen.

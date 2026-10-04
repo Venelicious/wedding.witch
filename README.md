@@ -1,6 +1,6 @@
 # Wedding Witch Archipelago
 
-Entwicklungsstand / Development build: **0.5.1** · Mod: **0.5.1** · APWorld: **0.5.1**
+Entwicklungsstand / Development build: **0.5.2** · Mod: **0.5.2** · APWorld: **0.5.2**
 
 Archipelago-Integration für Wedding Witch (Windows/Steam). Solo und Multiworld mit 80 Checks einschließlich 38 Errungenschaften, dauerhaften passiven Stufen, Tranktyp- und Schwierigkeitsfreigaben. Standard-Skills sind normale Level-up-Auswahlen für den aktuellen Run.
 
@@ -8,15 +8,15 @@ English: Wedding Witch Archipelago for Windows/Steam, with solo and multiworld s
 
 ## Downloads
 
-Aktuelles Testrelease / Current test release: [0.5.1](https://github.com/Venelicious/wedding.witch/releases/tag/v0.5.1).
+Aktuelles Testrelease / Current test release: [0.5.2](https://github.com/Venelicious/wedding.witch/releases/tag/v0.5.2).
 
-- [Windows-Paket / Windows package](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.1/WeddingWitch-AP-0.5.1-Windows.zip)
-- [APWorld](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.1/wedding_witch.apworld)
-- [Beispiel-YAML / Example YAML](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.1/WeddingWitch.yaml)
+- [Windows-Paket / Windows package](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.2/WeddingWitch-AP-0.5.2-Windows.zip)
+- [APWorld](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.2/wedding_witch.apworld)
+- [Beispiel-YAML / Example YAML](https://github.com/Venelicious/wedding.witch/releases/download/v0.5.2/WeddingWitch.yaml)
 
-Das Release stellt WeddingWitch-AP-0.5.1-Windows.zip, wedding_witch.apworld und WeddingWitch.yaml bereit. Das Windows-Paket enthält den Mod, seine Client-Abhängigkeiten, Install.cmd und WeddingWitchLauncher.exe. Spiel-DLLs, Spielstände, Zugangsdaten und Test-Seeds gehören nicht zum Download.
+Das Release stellt WeddingWitch-AP-0.5.2-Windows.zip, wedding_witch.apworld und WeddingWitch.yaml bereit. Das Windows-Paket enthält den Mod, seine Client-Abhängigkeiten, Install.cmd und WeddingWitchLauncher.exe. Spiel-DLLs, Spielstände, Zugangsdaten und Test-Seeds gehören nicht zum Download.
 
-Build 0.5.1: `release/WeddingWitch-AP-0.5.1-Windows.zip` enthält den neuen Client, Steam-Launcher und die Schema-4-APWorld 0.5.1. Für den 80er-Pool und Standard-Skills bei Level-ups einen neuen Seed mit dieser APWorld erzeugen. Bestehende Schema-2-/Schema-3-Seeds behalten ihre 142 Checks und AP-Skill-Stufen und bleiben mit dem Client spielbar.
+Build 0.5.2: `release/WeddingWitch-AP-0.5.2-Windows.zip` enthält den neuen Client, Steam-Launcher und die Schema-4-APWorld 0.5.2. Für den 80er-Pool und Standard-Skills bei Level-ups einen neuen Seed mit dieser APWorld erzeugen. Bestehende Schema-2-/Schema-3-Seeds behalten ihre 142 Checks und AP-Skill-Stufen und bleiben mit dem Client spielbar.
 
 **Installation / Setup:** [Deutsch](docs/installation-de.md) · [English](docs/installation-en.md). Launcher-Auswahl: Original oder Archipelago; Verbindung im Spiel mit F8.
 
@@ -42,6 +42,7 @@ Die kommentierte YAML erklärt jede Einstellung und unterstützt gewichtete Ausw
 - 73 passive Stufen ersetzen den Shopkauf; zwei Items öffnen Schwer/Albtraum. Ein Tranktyp startet frei, die anderen fünf kommen über Checks.
 - Die 13 Standard-Skills werden bei Level-ups gewählt und verbessert. Ihre Stufen gelten nur für den aktuellen Run. Meisterschaften bleiben vanilla.
 - Tränke und natürliche Blumenboni behalten ihre native Stärke; gesperrte Tranktypen werden bei gleicher Trankstärke ersetzt.
+- DeathLink ist optional und standardmäßig aus. Mit `death_link: true` in der YAML nehmen neue Seeds teil. Im F8-Fenster lässt sich DeathLink auch für bestehende Seeds für die aktuelle Verbindung umschalten; nach dem Wiederverbinden gilt wieder die Seed-Einstellung. Ein endgültiger eigener Tod wird gesendet; ein empfangener Tod beendet den aktiven Run ohne Wiederbelebung und ohne Rücksendung. Meldungen ohne aktiven Run werden verworfen.
 
 AP-Profile werden getrennt vom Original-Save nach Seed, Team und Slot gespeichert. Ab Schema 3 werden auch Errungenschaftszustände dort gespeichert; Steam-Erfolge werden weiterhin ausgelöst, der normale Errungenschaftsspielstand bleibt erhalten. Updates erhalten den Fortschritt. Prototype-0.2.x- und upstream-Seeds benötigen ihren jeweiligen Client; IDs/Regeln sind nicht austauschbar.
 
@@ -56,6 +57,8 @@ APWorld: Python-Code unter apworld/wedding_witch; Archipelago Core 0.6.7. Tests:
 Auswahltests: `dotnet run --project tests/SkillChoiceTests/SkillChoiceTests.csproj` prüft die Harmony-Hooks mit einem kleinen Modell der nativen API; Darstellung und Szeneninitialisierung müssen zusätzlich im Spiel geprüft werden.
 
 Errungenschaften und Slot-Daten: `dotnet run --project tests/AchievementTests/AchievementTests.csproj` prüft die echten Hooks, den Profil-Speicher und die Schema-2-/Schema-3-/Schema-4-Verträge mit nachgebildeten nativen Zählern und Steam-Aufrufen.
+
+DeathLink: `dotnet run --project tests/DeathLinkTests/DeathLinkTests.csproj` prüft Duplikate, Verbindungswechsel und Run-Grenzen. Mit zusätzlichen Argumenten `-- HOST PORT` verbindet der Test die Slots `YamlTest1` und `YamlTest2` eines eigenen Zwei-Spieler-Testservers und prüft das echte AP-Protokoll sowie die Mod-Hooks gegen ein Modell der Spiel-API. Für einen Seed mit aktiviertem DeathLink im zweiten Slot `-- HOST PORT on` verwenden. Vollständige native Spieltests werden dadurch nicht ersetzt.
 
 ## Herkunft
 

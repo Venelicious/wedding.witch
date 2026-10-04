@@ -12,6 +12,7 @@ public class SlotSettings
     public int[] FlowerChecks;
     public int PoolSize;
     public bool SkillsFromLevelUps;
+    public bool DeathLink;
     public HashSet<string> AchievementChecks = new HashSet<string>();
     public static SlotSettings Defaults() => new SlotSettings { GoalDifficulty="Normal",GoalForms=1,StartingExp="Beast",FlowerChecks=new[]{5,6,6},PoolSize=80,SkillsFromLevelUps=true };
     public static SlotSettings FromSlotData(Dictionary<string,object> data) {
@@ -21,6 +22,13 @@ public class SlotSettings
         if (version < 2 || version > 4)
             throw new InvalidOperationException("This client requires a custom-rules schema 2, 3 or 4 seed. Keep prototype/upstream seeds with their original client.");
         var s=Defaults();
+        // Optional field preserves existing schema-2/3/4 seeds with DeathLink off.
+        if (data.TryGetValue("death_link", out var deathLink)) {
+            string value = Convert.ToString(deathLink, System.Globalization.CultureInfo.InvariantCulture);
+            if (value == "1" || string.Equals(value, "true", StringComparison.OrdinalIgnoreCase)) s.DeathLink = true;
+            else if (value != "0" && !string.Equals(value, "false", StringComparison.OrdinalIgnoreCase))
+                throw new InvalidOperationException("Invalid DeathLink option");
+        }
         s.SkillsFromLevelUps = version == 4;
         s.PoolSize = s.SkillsFromLevelUps ? 80 : 142;
         s.GoalDifficulty=Convert.ToString(data["difficulty"]);

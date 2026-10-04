@@ -67,7 +67,7 @@ if ($InstallWorld -or $ArchipelagoDir) {
  if (Test-Path "$worldDir\wedding_witch.apworld") { Copy-Item "$worldDir\wedding_witch.apworld" "$backup\previous-wedding_witch.apworld" }
  Copy-Item "$PSScriptRoot\wedding_witch.apworld" $worldDir -Force
 }
-Write-Host 'Wedding Witch Archipelago 0.3.5 installiert.'
+Write-Host 'Wedding Witch Archipelago 0.5.2 installiert.'
 Write-Host "Launcher: $GameDir\WeddingWitchLauncher.exe"
 Write-Host "Backup: $backup"
 Write-Host 'Original oder Archipelago im Launcher auswählen. AP-Verbindung im Spiel mit F8.'

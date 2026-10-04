@@ -26,6 +26,8 @@ public class ConnectionPanel : MonoBehaviour
     private TMP_InputField host, port, slot, password;
     private TextMeshProUGUI status;
     private Button connect;
+    private Button deathLink;
+    private TextMeshProUGUI deathLinkLabel;
     private bool autoShown;
     private bool savedCursorVisible;
     private CursorLockMode savedCursorLock;
@@ -34,6 +36,7 @@ public class ConnectionPanel : MonoBehaviour
 
     private void Update()
     {
+        if (Visible) RefreshDeathLink();
         if (Input.GetKeyDown(Plugin.ConnectionUIKey.Value)) Toggle();
 
         // Only on the menu, never over the intro. The intro activates its skip button two
@@ -66,6 +69,7 @@ public class ConnectionPanel : MonoBehaviour
             ? $"Connected — beat {ApState.Settings.GoalDifficulty} in "
               + $"{ApState.Settings.GoalForms} different ending(s)"
             : "", isError: false);
+        RefreshDeathLink();
 
         if (!Visible) { savedCursorVisible = Cursor.visible; savedCursorLock = Cursor.lockState; }
         root.SetActive(true);
@@ -138,7 +142,7 @@ public class ConnectionPanel : MonoBehaviour
         var window = Rect("Window", root.transform);
         window.anchorMin = window.anchorMax = new Vector2(0.5f, 0.5f);
         window.pivot = new Vector2(0.5f, 0.5f);
-        window.sizeDelta = new Vector2(Width, RowHeight * 9f);
+        window.sizeDelta = new Vector2(Width, RowHeight * 10f);
         var frame = window.gameObject.AddComponent<Image>();
         frame.color = new Color(0.09f, 0.05f, 0.10f, 0.98f);
 
@@ -154,7 +158,10 @@ public class ConnectionPanel : MonoBehaviour
 
         y -= 6f;
         connect = Action(window, font, "Connect", new Vector2(-Width * 0.22f, y), Connect);
-        Action(window, font, "Close", new Vector2(Width * 0.22f, y), Hide);
+        var close = Action(window, font, "Close", new Vector2(Width * 0.22f, y), Hide);
+        y -= RowHeight;
+        deathLink = Action(window, font, "DeathLink: AUS", new Vector2(0f, y), ToggleDeathLink);
+        deathLinkLabel = deathLink.GetComponentInChildren<TextMeshProUGUI>();
         y -= RowHeight;
 
         status = Label(window, font, "", y, 22f, TextAlignmentOptions.Center);
@@ -165,7 +172,7 @@ public class ConnectionPanel : MonoBehaviour
         hint.color = new Color(1f, 1f, 1f, 0.5f);
 
         // Chained so the keyboard walks the fields in reading order and reaches the button.
-        Chain(host, port, slot, password);
+        Chain(host, port, slot, password, connect, deathLink, close);
         root.SetActive(false);
     }
 
@@ -260,7 +267,7 @@ public class ConnectionPanel : MonoBehaviour
         return text;
     }
 
-    private static void Chain(params TMP_InputField[] fields)
+    private static void Chain(params Selectable[] fields)
     {
         for (var i = 0; i < fields.Length; i++)
         {
@@ -289,6 +296,20 @@ public class ConnectionPanel : MonoBehaviour
     }
 
     // ---- connecting -----------------------------------------------------
+
+    private void RefreshDeathLink()
+    {
+        if (deathLink == null) return;
+        deathLink.interactable = ApState.Connected;
+        deathLinkLabel.text = Plugin.Client?.DeathLinkEnabled == true ? "DeathLink: AN" : "DeathLink: AUS";
+    }
+
+    private void ToggleDeathLink()
+    {
+        var error = Plugin.Client.SetDeathLinkEnabled(!Plugin.Client.DeathLinkEnabled);
+        SetStatus(error ?? (Plugin.Client.DeathLinkEnabled ? "DeathLink enabled." : "DeathLink disabled."), error != null);
+        RefreshDeathLink();
+    }
 
     private void Connect()
     {

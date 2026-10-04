@@ -1,7 +1,7 @@
-# Wedding Witch Archipelago 0.5.1
+# Wedding Witch Archipelago 0.5.2
 #
 # Diese Datei beschreibt deinen Slot bei der Seed-Erzeugung.
-# Verwende APWorld 0.5.1 und Archipelago Core 0.6.7 oder neuer.
+# Verwende APWorld 0.5.2 und Archipelago Core 0.6.7 oder neuer.
 # Die Spieleinstellungen gelten für einen neu erzeugten Seed.
 #
 # Wie funktionieren die Zahlen?
@@ -26,7 +26,7 @@
 name: Spieler{player}
 
 # Frei wählbare Beschreibung, z.B. um mehrere Vorlagen zu unterscheiden.
-description: Wedding Witch 0.5.1 - 80 Checks und normale Level-up-Skills
+description: Wedding Witch 0.5.2 - 80 Checks und optionaler DeathLink
 
 game: Wedding Witch
 requires:
@@ -57,6 +57,18 @@ Wedding Witch:
     # Die Logik prüft Freigaben; sie bewertet nicht dein Können im Kampf.
     full: 50
     minimal: 0
+
+  death_link:
+    # Wenn dein Run durch einen Tod endet, sterben die anderen Teilnehmer
+    # mit aktivem DeathLink ebenfalls. Empfangene DeathLinks beenden deinen Run.
+    # Normale Wiederbelebungen lösen keinen DeathLink aus; empfangene DeathLinks
+    # umgehen Wiederbelebung und Unverwundbarkeit. Menü-Tode werden verworfen.
+    # Standard: aus. Für immer an: "false" auf 0, "true" auf 50 setzen.
+    # Alternativ als fester Wert: death_link: true.
+    # Im F8-Fenster lässt sich DeathLink für diese Verbindung umschalten,
+    # auch bei älteren Seeds. Beim Verbinden gilt wieder die Seed-Einstellung.
+    "false": 50
+    "true": 0
 
   ######################
   # Wedding-Witch-Ziel #

@@ -56,6 +56,17 @@ internal static class AchievementTests
         Assert(!legacy.SkillsFromLevelUps && !current.SkillsFromLevelUps && legacy.PoolSize == 142 && current.PoolSize == 142,
             "old seeds retain their AP skill ranks and 142-item pool");
         var native = SlotSettings.FromSlotData(Slot(4));
+        Assert(!native.DeathLink && !legacy.DeathLink && !current.DeathLink, "existing schemas default DeathLink off");
+        foreach (var value in new object[] {true, 1, "true"}) {
+            var enabled = Slot(4); enabled["death_link"] = value;
+            Assert(SlotSettings.FromSlotData(enabled).DeathLink, "DeathLink accepts AP boolean and integer slot values");
+        }
+        foreach (var value in new object[] {false, 0, "false"}) {
+            var disabled = Slot(4); disabled["death_link"] = value;
+            Assert(!SlotSettings.FromSlotData(disabled).DeathLink, "DeathLink accepts explicit off values");
+        }
+        var invalidDeathLink = Slot(4); invalidDeathLink["death_link"] = 2;
+        Reject(() => SlotSettings.FromSlotData(invalidDeathLink), "invalid DeathLink value rejected");
         Assert(native.SkillsFromLevelUps && native.PoolSize == 80 && native.FlowerChecks.Sum() == 15 && native.AchievementChecks.Count == 38,
             "schema 4 removes 62 items and flower checks, retaining all achievements");
         var bad = Slot(4); bad["pool_size"] = 142;

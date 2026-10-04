@@ -48,9 +48,17 @@ class RulesTests(unittest.TestCase):
         self.assertEqual(0,rolled.difficulty.value)
         self.assertEqual([-1,-1,-1],[rolled.flower_checks_normal.value,rolled.flower_checks_hard.value,rolled.flower_checks_nightmare.value])
         self.assertEqual({},rolled.start_inventory_from_pool.value)
+        self.assertEqual(0,rolled.death_link.value)
         for label,value in [('disabled',0),('extreme',99)]:
             template['Wedding Witch']['progression_balancing']={label:50}
             self.assertEqual(value,roll_settings(template).progression_balancing.value)
+    def test_death_link_slot_option(self):
+        from worlds.wedding_witch.options import DeathLink
+        for enabled in (False, True):
+            m,w=self.make_world(7,2,72)
+            w.options.death_link=DeathLink.from_any(enabled)
+            self.assertIs(w.fill_slot_data()['death_link'],enabled)
+            self.assertEqual(80,len([loc for loc in m.get_locations(1) if loc.address]))
     def test_upgrade_contract(self):
         text=(ROOT/'src'/'UpgradeCatalog.cs').read_text()
         entries=[(key,name,int(cap)) for key,name,cap in re.findall(r'new Upgrade\("([^"]+)", "([^"]+)", (\d+)\)',text)]

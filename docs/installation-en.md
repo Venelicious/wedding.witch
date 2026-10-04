@@ -1,12 +1,12 @@
 # Install Wedding Witch Archipelago
 
-Windows package 0.5.1 includes mod and APWorld 0.5.1, the Steam launcher, native standard skills at level-up and 38 achievement checks. New seeds have 80 items and checks.
+Windows package 0.5.2 includes mod and APWorld 0.5.2, the Steam launcher, native standard skills at level-up and 38 achievement checks. New seeds have 80 items and checks.
 
 ## Requirements
 
 - The Windows Steam version of Wedding Witch (app ID 2529820), launched normally at least once.
 - Windows 10/11 x64 with Steam installed and signed in.
-- Extract the complete WeddingWitch-AP-0.5.1-Windows.zip.
+- Extract the complete WeddingWitch-AP-0.5.2-Windows.zip.
 - An internet connection for first-time installation. If needed, the installer downloads the official BepInEx 5.4.23.5 x64 release and verifies its SHA-256 digest.
 
 ## Installation
@@ -38,7 +38,15 @@ The included German YAML explains every option and supports weighted selections.
 4. Connect and start a new run. Your AP profile is bound to seed, team and slot. In new schema 4 seeds, standard skills are selected and upgraded at level-up; their ranks last for the current run.
 5. Real progress appears only while the game client is connected and sends checks.
 
-Seed generation and connections through ap.dsatool.org have been verified. For the 80-item pool and standard skills at level-up, the portal must use APWorld 0.5.1 and generate a new schema 4 seed. Existing schema 2 and 3 seeds retain their 142 checks and AP skill ranks and remain playable with the new client.
+Seed generation and connections through ap.dsatool.org have been verified. For the 80-item pool and standard skills at level-up, the portal must use APWorld 0.5.2 and generate a new schema 4 seed. Existing schema 2 and 3 seeds retain their 142 checks and AP skill ranks and remain playable with the new client.
+
+## DeathLink
+
+DeathLink is off by default. Set `death_link: true` under `Wedding Witch:` in your YAML for new seeds. The portal must also use APWorld 0.5.2 to store this setting in the seed.
+
+After connecting, the F8 panel shows **DeathLink: AN/AUS** (ON/OFF). Its button toggles participation for the current connection, including existing seeds without the option. Reconnecting restores the seed's YAML setting; older seeds default to OFF.
+
+A final local death ends the run and sends DeathLink to other participating slots. Normal native revives are used before that final death. A received DeathLink immediately ends an active run, including during pause or level-up, and bypasses revives and invulnerability. Received deaths are not sent back. Deaths received without an active run are discarded and never carried into the next run. DeathLink does not change checks or the ending goal.
 
 ## APWorld for local hosts
 
@@ -60,9 +68,9 @@ The goal counts different endings on the selected difficulty: the normal form pl
 
 ## Troubleshooting
 
-- No F8 panel: choose Archipelago in the launcher and check BepInEx/LogOutput.log for Wedding Witch Archipelago 0.5.1.
+- No F8 panel: choose Archipelago in the launcher and check BepInEx/LogOutput.log for Wedding Witch Archipelago 0.5.2.
 - Original mode still loads mods: use the current launcher and its Original button. Steam's normal Play button loads the mod loader after installation.
-- Still seeing 142 checks or AP skill items: generate a new seed with APWorld 0.5.1. Existing seeds cannot be converted to the 80-item pool and native level-up skills.
+- Still seeing 142 checks or AP skill items: generate a new seed with APWorld 0.5.2. Existing seeds cannot be converted to the 80-item pool and native level-up skills.
 - Connection failure: verify host, port, slot name and password against the running room. Keep cheats disabled.
 - Duplicate world: move the old Wedding Witch variant out of custom_worlds.
 - Missing launcher or DLL: extract the entire Windows ZIP, not individual files.

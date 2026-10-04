@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from Options import Choice, Range, PerGameCommonOptions, StartInventoryPool
+from Options import Choice, Range, PerGameCommonOptions, StartInventoryPool, DeathLink
 class TransformEnd(Range):
     """Number of DIFFERENT endings to win on the selected difficulty. Normal (untransformed) is one of seven. Each new ending up to this target sends one milestone check."""
     display_name = "Different Transform Endings"
@@ -30,6 +30,7 @@ class FlowerChecks(Range):
 @dataclass
 class WeddingWitchOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
+    death_link: DeathLink
     transformEnd: TransformEnd
     difficulty: GoalDifficulty
     starting_exp_type: StartingExpType

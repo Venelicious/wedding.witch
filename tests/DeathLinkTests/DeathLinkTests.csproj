@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework></PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Archipelago.MultiClient.Net" Version="6.6.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <Compile Include="../../src/Archipelago/ArchipelagoClient.cs" Link="ArchipelagoClient.cs" />
+    <Compile Include="../../src/Archipelago/DeathLinkState.cs" Link="DeathLinkState.cs" />
+    <Compile Include="../../src/Archipelago/SlotSettings.cs" Link="SlotSettings.cs" />
+    <Compile Include="../../src/Patches/DeathLinkPatch.cs" Link="DeathLinkPatch.cs" />
+    <Compile Include="../../src/ProgressLedger.cs" Link="ProgressLedger.cs" />
+    <Compile Include="../../src/AchievementCatalog.cs" Link="AchievementCatalog.cs" />
+    <Compile Include="../../src/ApItems.cs" Link="ApItems.cs" />
+    <Compile Include="../../src/SkillCatalog.cs" Link="SkillCatalog.cs" />
+    <Compile Include="../../src/UpgradeCatalog.cs" Link="UpgradeCatalog.cs" />
+    <Compile Include="../../src/Locations.cs" Link="Locations.cs" />
+  </ItemGroup>
+</Project>

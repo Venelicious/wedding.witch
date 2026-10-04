@@ -77,4 +77,4 @@ class WeddingWitchWorld(World):
         self.multiworld.get_location("Goal Complete", self.player).access_rule = self.ending_rule(self.options.transformEnd.value)
         self.multiworld.completion_condition[self.player] = lambda state: state.has("Victory", self.player)
     def fill_slot_data(self):
-        return {"schema_version": SCHEMA_VERSION, "integration_mode": "unlock_custom", "transformEnd": self.options.transformEnd.value, "difficulty": self.goal_difficulty.lower(), "starting_exp_type": self.starting_exp, "flower_checks": self.flowers, "achievement_checks": [key for key, _, _, _ in ACHIEVEMENTS], "map_counts": [5, 6, 7], "skill_mode": "level_up", "pool_size": TOTAL_POOL_ITEMS}
+        return {"schema_version": SCHEMA_VERSION, "integration_mode": "unlock_custom", "death_link": bool(self.options.death_link.value), "transformEnd": self.options.transformEnd.value, "difficulty": self.goal_difficulty.lower(), "starting_exp_type": self.starting_exp, "flower_checks": self.flowers, "achievement_checks": [key for key, _, _, _ in ACHIEVEMENTS], "map_counts": [5, 6, 7], "skill_mode": "level_up", "pool_size": TOTAL_POOL_ITEMS}

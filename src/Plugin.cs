@@ -14,7 +14,7 @@ public class Plugin : BaseUnityPlugin
 {
     public const string GUID = "org.dsatool.weddingwitch.unlock";
     public const string NAME = "Wedding Witch Archipelago";
-    public const string VERSION = "0.5.1";
+    public const string VERSION = "0.5.2";
 
     public static Plugin Instance { get; private set; }
 
@@ -75,7 +75,7 @@ public class Plugin : BaseUnityPlugin
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Main") ApState.RequestReload();
+        if (scene.name == "Main") { Client?.EndDeathLinkRun(); DeathLinkPatch.Reset(); ApState.RequestReload(); }
     }
 
     public static void Connect()
@@ -95,6 +95,7 @@ public class Plugin : BaseUnityPlugin
     private void Update()
     {
         ApState.DrainItems();
+        DeathLinkPatch.Tick();
         ApProfile.Flush(false);
         if (ApState.TakeReloadRequest()) { SaveDataPatch.ReloadGameData(); ExpUnlockDisplayPatch.RefreshOpenMenu(); }
     }

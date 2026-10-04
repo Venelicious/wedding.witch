@@ -45,5 +45,5 @@ public static class MissionPatch
     static void Ending() => ApState.EndingShown();
     [HarmonyPatch(typeof(BattleUIManager), nameof(BattleUIManager.GameOver))]
     [HarmonyPostfix]
-    static void Loss() { if (!ApState.Active) return; ApState.Progress.RunActive=false; ApState.Progress.PendingEndingRun=""; ApState.Persist(); }
+    static void Loss() { if (!ApState.Active) return; Plugin.Client?.EndDeathLinkRun(); ApState.Progress.RunActive=false; ApState.Progress.PendingEndingRun=""; ApState.Persist(); }
 }
