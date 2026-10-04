@@ -100,7 +100,9 @@ class TrackerTests(unittest.TestCase):
             self.assertIsNotNone(self.item(location["code"]), ident)
         version = json.loads((PACK / "manifest.json").read_text())["package_version"]
         with zipfile.ZipFile(ROOT / "tracker-release" / f"WeddingWitch-PopTracker-{version}.zip") as archive:
-            expected = {p.relative_to(PACK).as_posix(): p.read_bytes() for p in PACK.rglob("*") if p.is_file()}
+            expected = {p.relative_to(PACK).as_posix(): (p.read_text(encoding="utf-8").encode("utf-8")
+                        if p.suffix in (".json", ".lua", ".md") else p.read_bytes())
+                        for p in PACK.rglob("*") if p.is_file()}
             self.assertEqual(set(archive.namelist()), set(expected))
             for path, data in expected.items():
                 self.assertEqual(archive.read(path), data, path)

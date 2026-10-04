@@ -37,6 +37,6 @@ Native Teilzähler, etwa 347/1000 besiegte Gegner, aktuelle HP oder Run-Skill-St
 
 Pack-Format und APIs: [PopTracker](https://github.com/black-sliver/PopTracker), [Pack-Dokumentation](https://github.com/black-sliver/PopTracker/blob/master/doc/PACKS.md), [Archipelago-Autotracking](https://github.com/black-sliver/PopTracker/blob/master/doc/AUTOTRACKING.md#archipelago-interface).
 
-`python tools/build_tracker.py` erzeugt JSON/Lua-Verträge, eigene Übersichtsbilder und die reproduzierbare ZIP aus `apworld/wedding_witch/constants.py` und `achievements.py`. Benötigt Pillow 11.3.0. `python -m unittest discover -s tests -p test_tracker.py -v` prüft die Lua-Callbacks mit lupa 2.6 / Lua 5.4.
+`python tools/build_tracker.py` erzeugt JSON/Lua-Verträge und die reproduzierbare ZIP aus `apworld/wedding_witch/constants.py`, `achievements.py` und den eingecheckten PNGs. Benötigt Python 3.13+ und Pillow 11.3.0. Die optionalen eigenen Übersichtsbilder und Kürzelsymbole werden mit `--render-artwork` neu erzeugt; die Schriftrasterung kann zwischen Betriebssystemen variieren. `python -m unittest discover -s tests -p test_tracker.py -v` prüft die Lua-Callbacks mit lupa 2.6 / Lua 5.4.
 
 Die Diagramme und Kürzelsymbole wurden für dieses Pack erstellt. `images/charm.png` ist der unverändert kopierte, vom Projektinhaber bereitgestellte Anhänger aus `src/res/achievement-check.png`. Es werden keine extrahierten Spielgrafiken oder PopTracker-Programmdateien verteilt. Rechte an den bereitgestellten Assets verbleiben bei ihren jeweiligen Inhabern.
