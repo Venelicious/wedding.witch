@@ -1,0 +1,222 @@
+{
+  "tracker_default": {
+    "type": "array",
+    "orientation": "horizontal",
+    "background": "#101626",
+    "content": [
+      {
+        "type": "array",
+        "orientation": "vertical",
+        "content": [
+          {
+            "type": "group",
+            "header": "AP / Checks / Goal",
+            "content": {
+              "type": "itemgrid",
+              "rows": [
+                [
+                  "ww_status",
+                  "ww_progress",
+                  "ww_goal"
+                ]
+              ],
+              "item_size": "72,72",
+              "item_margin": "4,4",
+              "h_alignment": "left"
+            }
+          },
+          {
+            "type": "group",
+            "header": "Schwierigkeiten",
+            "content": {
+              "type": "itemgrid",
+              "rows": [
+                [
+                  "hard",
+                  "nightmare"
+                ]
+              ],
+              "item_size": "48,48",
+              "item_margin": "4,4",
+              "h_alignment": "left"
+            }
+          },
+          {
+            "type": "group",
+            "header": "Tranktypen",
+            "content": {
+              "type": "itemgrid",
+              "rows": [
+                [
+                  "exp_bigbreast",
+                  "exp_smallbreast",
+                  "exp_corruption"
+                ],
+                [
+                  "exp_beast",
+                  "exp_muscle",
+                  "exp_hip"
+                ]
+              ],
+              "item_size": "48,48",
+              "item_margin": "4,4",
+              "h_alignment": "left"
+            }
+          },
+          {
+            "type": "group",
+            "header": "AP-Upgrades",
+            "content": {
+              "type": "itemgrid",
+              "rows": [
+                [
+                  "upgrade_witchhat",
+                  "upgrade_orb",
+                  "upgrade_glove",
+                  "upgrade_ring"
+                ],
+                [
+                  "upgrade_watch",
+                  "upgrade_mirror",
+                  "upgrade_shoes",
+                  "upgrade_necklace"
+                ],
+                [
+                  "upgrade_earring",
+                  "upgrade_monocle",
+                  "upgrade_cape",
+                  "upgrade_bracelet"
+                ],
+                [
+                  "upgrade_hitomibook",
+                  "upgrade_maneki",
+                  "upgrade_bag",
+                  "upgrade_eyeofbeholder"
+                ],
+                [
+                  "upgrade_witchdoll"
+                ]
+              ],
+              "item_size": "48,48",
+              "item_margin": "4,4",
+              "h_alignment": "left"
+            }
+          },
+          {
+            "type": "text",
+            "text": "Details: Maus über Symbol\nSkills: normaler Level-up-Pool"
+          }
+        ]
+      },
+      {
+        "type": "canvas",
+        "width": 760,
+        "height": 740,
+        "margin": 0,
+        "content": [
+          {
+            "type": "tabbed",
+            "tabs": [
+              {
+                "title": "Runs",
+                "content": {
+                  "type": "map",
+                  "maps": [
+                    "runs"
+                  ]
+                }
+              },
+              {
+                "title": "Formen",
+                "content": {
+                  "type": "map",
+                  "maps": [
+                    "forms"
+                  ]
+                }
+              },
+              {
+                "title": "Erfolge",
+                "content": {
+                  "type": "map",
+                  "maps": [
+                    "achievements"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "tracker_broadcast": {
+    "type": "array",
+    "orientation": "vertical",
+    "background": "#101626",
+    "content": [
+      {
+        "type": "itemgrid",
+        "rows": [
+          [
+            "ww_status",
+            "ww_progress",
+            "ww_goal",
+            "hard",
+            "nightmare"
+          ]
+        ],
+        "item_size": "48,48",
+        "item_margin": "4,4",
+        "h_alignment": "left"
+      },
+      {
+        "type": "itemgrid",
+        "rows": [
+          [
+            "exp_bigbreast",
+            "exp_smallbreast",
+            "exp_corruption",
+            "exp_beast",
+            "exp_muscle",
+            "exp_hip"
+          ]
+        ],
+        "item_size": "48,48",
+        "item_margin": "4,4",
+        "h_alignment": "left"
+      },
+      {
+        "type": "itemgrid",
+        "rows": [
+          [
+            "upgrade_witchhat",
+            "upgrade_orb",
+            "upgrade_glove",
+            "upgrade_ring",
+            "upgrade_watch",
+            "upgrade_mirror"
+          ],
+          [
+            "upgrade_shoes",
+            "upgrade_necklace",
+            "upgrade_earring",
+            "upgrade_monocle",
+            "upgrade_cape",
+            "upgrade_bracelet"
+          ],
+          [
+            "upgrade_hitomibook",
+            "upgrade_maneki",
+            "upgrade_bag",
+            "upgrade_eyeofbeholder",
+            "upgrade_witchdoll"
+          ]
+        ],
+        "item_size": "48,48",
+        "item_margin": "4,4",
+        "h_alignment": "left"
+      }
+    ]
+  }
+}

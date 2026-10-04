@@ -1,0 +1,221 @@
+[
+  {
+    "name": "Witch's Hat (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_witchhat",
+    "img": "images/upgrade_witchhat.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Witch's Orb (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_orb",
+    "img": "images/upgrade_orb.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Witch's Gloves (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_glove",
+    "img": "images/upgrade_glove.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Witch's Ring (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_ring",
+    "img": "images/upgrade_ring.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Witch's Watch (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_watch",
+    "img": "images/upgrade_watch.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Phantasm Mirror (AP ranks, max 1)",
+    "type": "consumable",
+    "codes": "upgrade_mirror",
+    "img": "images/upgrade_mirror.png",
+    "max_quantity": 1,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Witch's Shoes (AP ranks, max 3)",
+    "type": "consumable",
+    "codes": "upgrade_shoes",
+    "img": "images/upgrade_shoes.png",
+    "max_quantity": 3,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Witch's Necklace (AP ranks, max 3)",
+    "type": "consumable",
+    "codes": "upgrade_necklace",
+    "img": "images/upgrade_necklace.png",
+    "max_quantity": 3,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Witch's Earrings (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_earring",
+    "img": "images/upgrade_earring.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Magical Optics (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_monocle",
+    "img": "images/upgrade_monocle.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Cape of Protection (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_cape",
+    "img": "images/upgrade_cape.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Witch's Bracelet (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_bracelet",
+    "img": "images/upgrade_bracelet.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Book of Hitomi (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_hitomibook",
+    "img": "images/upgrade_hitomibook.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Maneki Neko (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_maneki",
+    "img": "images/upgrade_maneki.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Witch's Bag (AP ranks, max 1)",
+    "type": "consumable",
+    "codes": "upgrade_bag",
+    "img": "images/upgrade_bag.png",
+    "max_quantity": 1,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Eye Of The Beholder (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_eyeofbeholder",
+    "img": "images/upgrade_eyeofbeholder.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Witch's Doll (AP ranks, max 5)",
+    "type": "consumable",
+    "codes": "upgrade_witchdoll",
+    "img": "images/upgrade_witchdoll.png",
+    "max_quantity": 5,
+    "overlay_font_size": 18,
+    "overlay_background": "#dd101626"
+  },
+  {
+    "name": "Hard Wedding",
+    "type": "toggle",
+    "codes": "hard",
+    "img": "images/hard.png"
+  },
+  {
+    "name": "Nightmare Wedding",
+    "type": "toggle",
+    "codes": "nightmare",
+    "img": "images/nightmare.png"
+  },
+  {
+    "name": "EXP Unlock: BigBreast",
+    "type": "toggle",
+    "codes": "exp_bigbreast",
+    "img": "images/exp_bigbreast.png",
+    "disabled_img": "images/charm.png",
+    "disabled_img_mods": "none",
+    "initial_active_state": false
+  },
+  {
+    "name": "EXP Unlock: SmallBreast",
+    "type": "toggle",
+    "codes": "exp_smallbreast",
+    "img": "images/exp_smallbreast.png",
+    "disabled_img": "images/charm.png",
+    "disabled_img_mods": "none",
+    "initial_active_state": false
+  },
+  {
+    "name": "EXP Unlock: Corruption",
+    "type": "toggle",
+    "codes": "exp_corruption",
+    "img": "images/exp_corruption.png",
+    "disabled_img": "images/charm.png",
+    "disabled_img_mods": "none",
+    "initial_active_state": false
+  },
+  {
+    "name": "EXP Unlock: Beast",
+    "type": "toggle",
+    "codes": "exp_beast",
+    "img": "images/exp_beast.png",
+    "disabled_img": "images/charm.png",
+    "disabled_img_mods": "none",
+    "initial_active_state": true
+  },
+  {
+    "name": "EXP Unlock: Muscle",
+    "type": "toggle",
+    "codes": "exp_muscle",
+    "img": "images/exp_muscle.png",
+    "disabled_img": "images/charm.png",
+    "disabled_img_mods": "none",
+    "initial_active_state": false
+  },
+  {
+    "name": "EXP Unlock: Hip",
+    "type": "toggle",
+    "codes": "exp_hip",
+    "img": "images/exp_hip.png",
+    "disabled_img": "images/charm.png",
+    "disabled_img_mods": "none",
+    "initial_active_state": false
+  }
+]

@@ -1,0 +1,2083 @@
+[
+  {
+    "name": "Normal",
+    "access_rules": [
+      "$ww_difficulty|normal"
+    ],
+    "visibility_rules": [
+      "$ww_supported"
+    ],
+    "children": [
+      {
+        "name": "Map 1",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Normal Map 1",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 58,
+            "y": 184
+          }
+        ]
+      },
+      {
+        "name": "Map 2",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Normal Map 2",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 115,
+            "y": 184
+          }
+        ]
+      },
+      {
+        "name": "Map 3",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Normal Map 3",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 172,
+            "y": 184
+          }
+        ]
+      },
+      {
+        "name": "Map 4",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Normal Map 4",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 58,
+            "y": 231
+          }
+        ]
+      },
+      {
+        "name": "Map 5",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Normal Map 5",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 115,
+            "y": 231
+          }
+        ]
+      },
+      {
+        "name": "Flowers",
+        "access_rules": [],
+        "visibility_rules": [
+          "$ww_flower|1|1"
+        ],
+        "sections": [
+          {
+            "name": "Normal Flower 1",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|1"
+            ]
+          },
+          {
+            "name": "Normal Flower 2",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|2"
+            ]
+          },
+          {
+            "name": "Normal Flower 3",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|3"
+            ]
+          },
+          {
+            "name": "Normal Flower 4",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|4"
+            ]
+          },
+          {
+            "name": "Normal Flower 5",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|5"
+            ]
+          },
+          {
+            "name": "Normal Flower 6",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|6"
+            ]
+          },
+          {
+            "name": "Normal Flower 7",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|7"
+            ]
+          },
+          {
+            "name": "Normal Flower 8",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|8"
+            ]
+          },
+          {
+            "name": "Normal Flower 9",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|9"
+            ]
+          },
+          {
+            "name": "Normal Flower 10",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|10"
+            ]
+          },
+          {
+            "name": "Normal Flower 11",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|11"
+            ]
+          },
+          {
+            "name": "Normal Flower 12",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|12"
+            ]
+          },
+          {
+            "name": "Normal Flower 13",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|13"
+            ]
+          },
+          {
+            "name": "Normal Flower 14",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|14"
+            ]
+          },
+          {
+            "name": "Normal Flower 15",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|15"
+            ]
+          },
+          {
+            "name": "Normal Flower 16",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|16"
+            ]
+          },
+          {
+            "name": "Normal Flower 17",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|1|17"
+            ]
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 182,
+            "y": 326
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hard",
+    "access_rules": [
+      "$ww_difficulty|hard"
+    ],
+    "visibility_rules": [
+      "$ww_supported"
+    ],
+    "children": [
+      {
+        "name": "Map 1",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Hard Map 1",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 272,
+            "y": 184
+          }
+        ]
+      },
+      {
+        "name": "Map 2",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Hard Map 2",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 329,
+            "y": 184
+          }
+        ]
+      },
+      {
+        "name": "Map 3",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Hard Map 3",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 386,
+            "y": 184
+          }
+        ]
+      },
+      {
+        "name": "Map 4",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Hard Map 4",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 272,
+            "y": 231
+          }
+        ]
+      },
+      {
+        "name": "Map 5",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Hard Map 5",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 329,
+            "y": 231
+          }
+        ]
+      },
+      {
+        "name": "Map 6",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Hard Map 6",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 386,
+            "y": 231
+          }
+        ]
+      },
+      {
+        "name": "Flowers",
+        "access_rules": [],
+        "visibility_rules": [
+          "$ww_flower|2|1"
+        ],
+        "sections": [
+          {
+            "name": "Hard Flower 1",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|1"
+            ]
+          },
+          {
+            "name": "Hard Flower 2",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|2"
+            ]
+          },
+          {
+            "name": "Hard Flower 3",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|3"
+            ]
+          },
+          {
+            "name": "Hard Flower 4",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|4"
+            ]
+          },
+          {
+            "name": "Hard Flower 5",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|5"
+            ]
+          },
+          {
+            "name": "Hard Flower 6",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|6"
+            ]
+          },
+          {
+            "name": "Hard Flower 7",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|7"
+            ]
+          },
+          {
+            "name": "Hard Flower 8",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|8"
+            ]
+          },
+          {
+            "name": "Hard Flower 9",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|9"
+            ]
+          },
+          {
+            "name": "Hard Flower 10",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|10"
+            ]
+          },
+          {
+            "name": "Hard Flower 11",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|11"
+            ]
+          },
+          {
+            "name": "Hard Flower 12",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|12"
+            ]
+          },
+          {
+            "name": "Hard Flower 13",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|13"
+            ]
+          },
+          {
+            "name": "Hard Flower 14",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|14"
+            ]
+          },
+          {
+            "name": "Hard Flower 15",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|15"
+            ]
+          },
+          {
+            "name": "Hard Flower 16",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|16"
+            ]
+          },
+          {
+            "name": "Hard Flower 17",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|2|17"
+            ]
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 396,
+            "y": 326
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Nightmare",
+    "access_rules": [
+      "$ww_difficulty|nightmare"
+    ],
+    "visibility_rules": [
+      "$ww_supported"
+    ],
+    "children": [
+      {
+        "name": "Map 1",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Nightmare Map 1",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 486,
+            "y": 184
+          }
+        ]
+      },
+      {
+        "name": "Map 2",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Nightmare Map 2",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 543,
+            "y": 184
+          }
+        ]
+      },
+      {
+        "name": "Map 3",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Nightmare Map 3",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 600,
+            "y": 184
+          }
+        ]
+      },
+      {
+        "name": "Map 4",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Nightmare Map 4",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 486,
+            "y": 231
+          }
+        ]
+      },
+      {
+        "name": "Map 5",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Nightmare Map 5",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 543,
+            "y": 231
+          }
+        ]
+      },
+      {
+        "name": "Map 6",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Nightmare Map 6",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 600,
+            "y": 231
+          }
+        ]
+      },
+      {
+        "name": "Map 7",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Nightmare Map 7",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 486,
+            "y": 278
+          }
+        ]
+      },
+      {
+        "name": "Flowers",
+        "access_rules": [],
+        "visibility_rules": [
+          "$ww_flower|3|1"
+        ],
+        "sections": [
+          {
+            "name": "Nightmare Flower 1",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|1"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 2",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|2"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 3",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|3"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 4",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|4"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 5",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|5"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 6",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|6"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 7",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|7"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 8",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|8"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 9",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|9"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 10",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|10"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 11",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|11"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 12",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|12"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 13",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|13"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 14",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|14"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 15",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|15"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 16",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|16"
+            ]
+          },
+          {
+            "name": "Nightmare Flower 17",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": [
+              "$ww_flower|3|17"
+            ]
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 610,
+            "y": 326
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Endings",
+    "children": [
+      {
+        "name": "Ending 1",
+        "access_rules": [
+          "$ww_ending|1"
+        ],
+        "visibility_rules": [
+          "$ww_ending_visible|1"
+        ],
+        "sections": [
+          {
+            "name": "Transform Ending 1",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 61,
+            "y": 436
+          }
+        ]
+      },
+      {
+        "name": "Ending 2",
+        "access_rules": [
+          "$ww_ending|2"
+        ],
+        "visibility_rules": [
+          "$ww_ending_visible|2"
+        ],
+        "sections": [
+          {
+            "name": "Transform Ending 2",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 147,
+            "y": 436
+          }
+        ]
+      },
+      {
+        "name": "Ending 3",
+        "access_rules": [
+          "$ww_ending|3"
+        ],
+        "visibility_rules": [
+          "$ww_ending_visible|3"
+        ],
+        "sections": [
+          {
+            "name": "Transform Ending 3",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 233,
+            "y": 436
+          }
+        ]
+      },
+      {
+        "name": "Ending 4",
+        "access_rules": [
+          "$ww_ending|4"
+        ],
+        "visibility_rules": [
+          "$ww_ending_visible|4"
+        ],
+        "sections": [
+          {
+            "name": "Transform Ending 4",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 319,
+            "y": 436
+          }
+        ]
+      },
+      {
+        "name": "Ending 5",
+        "access_rules": [
+          "$ww_ending|5"
+        ],
+        "visibility_rules": [
+          "$ww_ending_visible|5"
+        ],
+        "sections": [
+          {
+            "name": "Transform Ending 5",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 405,
+            "y": 436
+          }
+        ]
+      },
+      {
+        "name": "Ending 6",
+        "access_rules": [
+          "$ww_ending|6"
+        ],
+        "visibility_rules": [
+          "$ww_ending_visible|6"
+        ],
+        "sections": [
+          {
+            "name": "Transform Ending 6",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 491,
+            "y": 436
+          }
+        ]
+      },
+      {
+        "name": "Ending 7",
+        "access_rules": [
+          "$ww_ending|7"
+        ],
+        "visibility_rules": [
+          "$ww_ending_visible|7"
+        ],
+        "sections": [
+          {
+            "name": "Transform Ending 7",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "runs",
+            "x": 577,
+            "y": 436
+          }
+        ]
+      }
+    ],
+    "visibility_rules": [
+      "$ww_supported"
+    ]
+  },
+  {
+    "name": "Transformations",
+    "children": [
+      {
+        "name": "Big Breasts",
+        "access_rules": [
+          "exp_bigbreast"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Full Transformation Big Breasts",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "forms",
+            "x": 116,
+            "y": 203
+          }
+        ]
+      },
+      {
+        "name": "Small Breasts",
+        "access_rules": [
+          "exp_smallbreast"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Full Transformation Small Breasts",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "forms",
+            "x": 330,
+            "y": 203
+          }
+        ]
+      },
+      {
+        "name": "Corruption",
+        "access_rules": [
+          "exp_corruption"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Full Transformation Corruption",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "forms",
+            "x": 544,
+            "y": 203
+          }
+        ]
+      },
+      {
+        "name": "Beast",
+        "access_rules": [
+          "exp_beast"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Full Transformation Beast",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "forms",
+            "x": 116,
+            "y": 369
+          }
+        ]
+      },
+      {
+        "name": "Muscle",
+        "access_rules": [
+          "exp_muscle"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Full Transformation Muscle",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "forms",
+            "x": 330,
+            "y": 369
+          }
+        ]
+      },
+      {
+        "name": "Hips",
+        "access_rules": [
+          "exp_hip"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Full Transformation Hips",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "forms",
+            "x": 544,
+            "y": 369
+          }
+        ]
+      }
+    ],
+    "visibility_rules": [
+      "$ww_supported"
+    ]
+  },
+  {
+    "name": "Achievements",
+    "children": [
+      {
+        "name": "Win 1 Run",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Win 1 Run",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 97
+          }
+        ]
+      },
+      {
+        "name": "Win 10 Runs",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Win 10 Runs",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 128
+          }
+        ]
+      },
+      {
+        "name": "Clear Normal",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Clear Normal",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 159
+          }
+        ]
+      },
+      {
+        "name": "Clear Hard",
+        "access_rules": [
+          "hard"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Clear Hard",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 190
+          }
+        ]
+      },
+      {
+        "name": "Clear Nightmare",
+        "access_rules": [
+          "nightmare"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Clear Nightmare",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 221
+          }
+        ]
+      },
+      {
+        "name": "Lose 1 Run",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Lose 1 Run",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 252
+          }
+        ]
+      },
+      {
+        "name": "Lose 10 Runs",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Lose 10 Runs",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 283
+          }
+        ]
+      },
+      {
+        "name": "Hit by Guardians 10 Times",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Hit by Guardians 10 Times",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 314
+          }
+        ]
+      },
+      {
+        "name": "Travel 1000 Units",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Travel 1000 Units",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 345
+          }
+        ]
+      },
+      {
+        "name": "Collect 100 Flowers",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Collect 100 Flowers",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 376
+          }
+        ]
+      },
+      {
+        "name": "Break 100 Pumpkins",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Break 100 Pumpkins",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 407
+          }
+        ]
+      },
+      {
+        "name": "Use Skills 100 Times",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Use Skills 100 Times",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 438
+          }
+        ]
+      },
+      {
+        "name": "Land 1000 Critical Hits",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Land 1000 Critical Hits",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 469
+          }
+        ]
+      },
+      {
+        "name": "Dodge 100 Times",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Dodge 100 Times",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 500
+          }
+        ]
+      },
+      {
+        "name": "Regenerate HP 100 Times",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Regenerate HP 100 Times",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 531
+          }
+        ]
+      },
+      {
+        "name": "Take 100 Hits",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Take 100 Hits",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 562
+          }
+        ]
+      },
+      {
+        "name": "Clear with at Most 10 Hits",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Clear with at Most 10 Hits",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 593
+          }
+        ]
+      },
+      {
+        "name": "Defeat 1000 Enemies",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Defeat 1000 Enemies",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 624
+          }
+        ]
+      },
+      {
+        "name": "Defeat 10000 Enemies",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Defeat 10000 Enemies",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 28,
+            "y": 655
+          }
+        ]
+      },
+      {
+        "name": "Defeat 20000 Enemies",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Defeat 20000 Enemies",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 97
+          }
+        ]
+      },
+      {
+        "name": "Master 10 Explosion Spells",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Master 10 Explosion Spells",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 128
+          }
+        ]
+      },
+      {
+        "name": "Master 10 Missile Spells",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Master 10 Missile Spells",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 159
+          }
+        ]
+      },
+      {
+        "name": "Master 10 Melee Spells",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Master 10 Melee Spells",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 190
+          }
+        ]
+      },
+      {
+        "name": "Master 10 Area Spells",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Master 10 Area Spells",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 221
+          }
+        ]
+      },
+      {
+        "name": "Master 10 Familiar Spells",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Master 10 Familiar Spells",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 252
+          }
+        ]
+      },
+      {
+        "name": "Master 10 Curse Spells",
+        "access_rules": [],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Master 10 Curse Spells",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 283
+          }
+        ]
+      },
+      {
+        "name": "Drink 10 Corruption Potions",
+        "access_rules": [
+          "exp_corruption"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Drink 10 Corruption Potions",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 314
+          }
+        ]
+      },
+      {
+        "name": "Drink 10 Beast Potions",
+        "access_rules": [
+          "exp_beast"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Drink 10 Beast Potions",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 345
+          }
+        ]
+      },
+      {
+        "name": "Drink 10 Big Breast Potions",
+        "access_rules": [
+          "exp_bigbreast"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Drink 10 Big Breast Potions",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 376
+          }
+        ]
+      },
+      {
+        "name": "Drink 10 Muscle Potions",
+        "access_rules": [
+          "exp_muscle"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Drink 10 Muscle Potions",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 407
+          }
+        ]
+      },
+      {
+        "name": "Drink 10 Hip Potions",
+        "access_rules": [
+          "exp_hip"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Drink 10 Hip Potions",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 438
+          }
+        ]
+      },
+      {
+        "name": "Drink 10 Small Breast Potions",
+        "access_rules": [
+          "exp_smallbreast"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Drink 10 Small Breast Potions",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 469
+          }
+        ]
+      },
+      {
+        "name": "Fully Transform into Corruption",
+        "access_rules": [
+          "exp_corruption"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Fully Transform into Corruption",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 500
+          }
+        ]
+      },
+      {
+        "name": "Fully Transform into Beast",
+        "access_rules": [
+          "exp_beast"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Fully Transform into Beast",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 531
+          }
+        ]
+      },
+      {
+        "name": "Fully Transform into Big Breasts",
+        "access_rules": [
+          "exp_bigbreast"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Fully Transform into Big Breasts",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 562
+          }
+        ]
+      },
+      {
+        "name": "Fully Transform into Muscle",
+        "access_rules": [
+          "exp_muscle"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Fully Transform into Muscle",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 593
+          }
+        ]
+      },
+      {
+        "name": "Fully Transform into Hips",
+        "access_rules": [
+          "exp_hip"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Fully Transform into Hips",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 624
+          }
+        ]
+      },
+      {
+        "name": "Fully Transform into Small Breasts",
+        "access_rules": [
+          "exp_smallbreast"
+        ],
+        "visibility_rules": [],
+        "sections": [
+          {
+            "name": "Achievement: Fully Transform into Small Breasts",
+            "item_count": 1,
+            "clear_as_group": false,
+            "access_rules": [],
+            "visibility_rules": []
+          }
+        ],
+        "map_locations": [
+          {
+            "map": "achievements",
+            "x": 402,
+            "y": 655
+          }
+        ]
+      }
+    ],
+    "visibility_rules": [
+      "$ww_supported"
+    ]
+  }
+]

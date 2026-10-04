@@ -1,0 +1,23 @@
+[
+  {
+    "name": "runs",
+    "img": "images/runs.png",
+    "location_size": 22,
+    "location_border_thickness": 2,
+    "location_shape": "diamond"
+  },
+  {
+    "name": "forms",
+    "img": "images/forms.png",
+    "location_size": 22,
+    "location_border_thickness": 2,
+    "location_shape": "diamond"
+  },
+  {
+    "name": "achievements",
+    "img": "images/achievements.png",
+    "location_size": 22,
+    "location_border_thickness": 2,
+    "location_shape": "diamond"
+  }
+]

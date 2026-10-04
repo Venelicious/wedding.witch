@@ -6,6 +6,8 @@ The separately authored custom APWorld is licensed as stated in apworld/wedding_
 
 The six-colour achievement charm in `src/res/achievement-check.png` was supplied by the project owner as `Sechsfarbiger Archipel-Zauberanhänger.png` on 2026-10-04 for use in this mod. It is embedded unchanged in the mod DLL and is not extracted game art.
 
+The PopTracker pack copies this charm unchanged as `poptracker/images/charm.png`. Its other tiles and overview diagrams were created for this project by `tools/build_tracker.py`; no game sprites are included. The pack uses PopTracker's documented APIs and does not distribute PopTracker itself.
+
 ## Newtonsoft.Json 13.0.3
 
 MIT License. Copyright (c) 2007 James Newton-King.

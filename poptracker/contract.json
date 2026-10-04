@@ -1,0 +1,768 @@
+{
+  "items": {
+    "252984000": {
+      "code": "upgrade_witchhat",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984001": {
+      "code": "upgrade_orb",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984002": {
+      "code": "upgrade_glove",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984003": {
+      "code": "upgrade_ring",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984004": {
+      "code": "upgrade_watch",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984005": {
+      "code": "upgrade_mirror",
+      "kind": "consumable",
+      "cap": 1
+    },
+    "252984006": {
+      "code": "upgrade_shoes",
+      "kind": "consumable",
+      "cap": 3
+    },
+    "252984007": {
+      "code": "upgrade_necklace",
+      "kind": "consumable",
+      "cap": 3
+    },
+    "252984008": {
+      "code": "upgrade_earring",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984009": {
+      "code": "upgrade_monocle",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984010": {
+      "code": "upgrade_cape",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984011": {
+      "code": "upgrade_bracelet",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984012": {
+      "code": "upgrade_hitomibook",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984013": {
+      "code": "upgrade_maneki",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984014": {
+      "code": "upgrade_bag",
+      "kind": "consumable",
+      "cap": 1
+    },
+    "252984015": {
+      "code": "upgrade_eyeofbeholder",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984016": {
+      "code": "upgrade_witchdoll",
+      "kind": "consumable",
+      "cap": 5
+    },
+    "252984050": {
+      "code": "hard",
+      "kind": "toggle"
+    },
+    "252984051": {
+      "code": "nightmare",
+      "kind": "toggle"
+    },
+    "252984100": {
+      "code": "exp_bigbreast",
+      "kind": "toggle"
+    },
+    "252984101": {
+      "code": "exp_smallbreast",
+      "kind": "toggle"
+    },
+    "252984102": {
+      "code": "exp_corruption",
+      "kind": "toggle"
+    },
+    "252984103": {
+      "code": "exp_beast",
+      "kind": "toggle"
+    },
+    "252984104": {
+      "code": "exp_muscle",
+      "kind": "toggle"
+    },
+    "252984105": {
+      "code": "exp_hip",
+      "kind": "toggle"
+    }
+  },
+  "locations": {
+    "252982001": {
+      "code": "@Normal/Map 1/Normal Map 1",
+      "kind": "map"
+    },
+    "252982002": {
+      "code": "@Normal/Map 2/Normal Map 2",
+      "kind": "map"
+    },
+    "252982003": {
+      "code": "@Normal/Map 3/Normal Map 3",
+      "kind": "map"
+    },
+    "252982004": {
+      "code": "@Normal/Map 4/Normal Map 4",
+      "kind": "map"
+    },
+    "252982005": {
+      "code": "@Normal/Map 5/Normal Map 5",
+      "kind": "map"
+    },
+    "252987001": {
+      "code": "@Normal/Flowers/Normal Flower 1",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 1
+    },
+    "252987002": {
+      "code": "@Normal/Flowers/Normal Flower 2",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 2
+    },
+    "252987003": {
+      "code": "@Normal/Flowers/Normal Flower 3",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 3
+    },
+    "252987004": {
+      "code": "@Normal/Flowers/Normal Flower 4",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 4
+    },
+    "252987005": {
+      "code": "@Normal/Flowers/Normal Flower 5",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 5
+    },
+    "252987006": {
+      "code": "@Normal/Flowers/Normal Flower 6",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 6
+    },
+    "252987007": {
+      "code": "@Normal/Flowers/Normal Flower 7",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 7
+    },
+    "252987008": {
+      "code": "@Normal/Flowers/Normal Flower 8",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 8
+    },
+    "252987009": {
+      "code": "@Normal/Flowers/Normal Flower 9",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 9
+    },
+    "252987010": {
+      "code": "@Normal/Flowers/Normal Flower 10",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 10
+    },
+    "252987011": {
+      "code": "@Normal/Flowers/Normal Flower 11",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 11
+    },
+    "252987012": {
+      "code": "@Normal/Flowers/Normal Flower 12",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 12
+    },
+    "252987013": {
+      "code": "@Normal/Flowers/Normal Flower 13",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 13
+    },
+    "252987014": {
+      "code": "@Normal/Flowers/Normal Flower 14",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 14
+    },
+    "252987015": {
+      "code": "@Normal/Flowers/Normal Flower 15",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 15
+    },
+    "252987016": {
+      "code": "@Normal/Flowers/Normal Flower 16",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 16
+    },
+    "252987017": {
+      "code": "@Normal/Flowers/Normal Flower 17",
+      "kind": "flower",
+      "difficulty": 1,
+      "number": 17
+    },
+    "252982101": {
+      "code": "@Hard/Map 1/Hard Map 1",
+      "kind": "map"
+    },
+    "252982102": {
+      "code": "@Hard/Map 2/Hard Map 2",
+      "kind": "map"
+    },
+    "252982103": {
+      "code": "@Hard/Map 3/Hard Map 3",
+      "kind": "map"
+    },
+    "252982104": {
+      "code": "@Hard/Map 4/Hard Map 4",
+      "kind": "map"
+    },
+    "252982105": {
+      "code": "@Hard/Map 5/Hard Map 5",
+      "kind": "map"
+    },
+    "252982106": {
+      "code": "@Hard/Map 6/Hard Map 6",
+      "kind": "map"
+    },
+    "252988001": {
+      "code": "@Hard/Flowers/Hard Flower 1",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 1
+    },
+    "252988002": {
+      "code": "@Hard/Flowers/Hard Flower 2",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 2
+    },
+    "252988003": {
+      "code": "@Hard/Flowers/Hard Flower 3",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 3
+    },
+    "252988004": {
+      "code": "@Hard/Flowers/Hard Flower 4",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 4
+    },
+    "252988005": {
+      "code": "@Hard/Flowers/Hard Flower 5",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 5
+    },
+    "252988006": {
+      "code": "@Hard/Flowers/Hard Flower 6",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 6
+    },
+    "252988007": {
+      "code": "@Hard/Flowers/Hard Flower 7",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 7
+    },
+    "252988008": {
+      "code": "@Hard/Flowers/Hard Flower 8",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 8
+    },
+    "252988009": {
+      "code": "@Hard/Flowers/Hard Flower 9",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 9
+    },
+    "252988010": {
+      "code": "@Hard/Flowers/Hard Flower 10",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 10
+    },
+    "252988011": {
+      "code": "@Hard/Flowers/Hard Flower 11",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 11
+    },
+    "252988012": {
+      "code": "@Hard/Flowers/Hard Flower 12",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 12
+    },
+    "252988013": {
+      "code": "@Hard/Flowers/Hard Flower 13",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 13
+    },
+    "252988014": {
+      "code": "@Hard/Flowers/Hard Flower 14",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 14
+    },
+    "252988015": {
+      "code": "@Hard/Flowers/Hard Flower 15",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 15
+    },
+    "252988016": {
+      "code": "@Hard/Flowers/Hard Flower 16",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 16
+    },
+    "252988017": {
+      "code": "@Hard/Flowers/Hard Flower 17",
+      "kind": "flower",
+      "difficulty": 2,
+      "number": 17
+    },
+    "252982201": {
+      "code": "@Nightmare/Map 1/Nightmare Map 1",
+      "kind": "map"
+    },
+    "252982202": {
+      "code": "@Nightmare/Map 2/Nightmare Map 2",
+      "kind": "map"
+    },
+    "252982203": {
+      "code": "@Nightmare/Map 3/Nightmare Map 3",
+      "kind": "map"
+    },
+    "252982204": {
+      "code": "@Nightmare/Map 4/Nightmare Map 4",
+      "kind": "map"
+    },
+    "252982205": {
+      "code": "@Nightmare/Map 5/Nightmare Map 5",
+      "kind": "map"
+    },
+    "252982206": {
+      "code": "@Nightmare/Map 6/Nightmare Map 6",
+      "kind": "map"
+    },
+    "252982207": {
+      "code": "@Nightmare/Map 7/Nightmare Map 7",
+      "kind": "map"
+    },
+    "252989001": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 1",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 1
+    },
+    "252989002": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 2",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 2
+    },
+    "252989003": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 3",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 3
+    },
+    "252989004": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 4",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 4
+    },
+    "252989005": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 5",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 5
+    },
+    "252989006": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 6",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 6
+    },
+    "252989007": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 7",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 7
+    },
+    "252989008": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 8",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 8
+    },
+    "252989009": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 9",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 9
+    },
+    "252989010": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 10",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 10
+    },
+    "252989011": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 11",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 11
+    },
+    "252989012": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 12",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 12
+    },
+    "252989013": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 13",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 13
+    },
+    "252989014": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 14",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 14
+    },
+    "252989015": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 15",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 15
+    },
+    "252989016": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 16",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 16
+    },
+    "252989017": {
+      "code": "@Nightmare/Flowers/Nightmare Flower 17",
+      "kind": "flower",
+      "difficulty": 3,
+      "number": 17
+    },
+    "252990001": {
+      "code": "@Endings/Ending 1/Transform Ending 1",
+      "kind": "ending",
+      "number": 1
+    },
+    "252990002": {
+      "code": "@Endings/Ending 2/Transform Ending 2",
+      "kind": "ending",
+      "number": 2
+    },
+    "252990003": {
+      "code": "@Endings/Ending 3/Transform Ending 3",
+      "kind": "ending",
+      "number": 3
+    },
+    "252990004": {
+      "code": "@Endings/Ending 4/Transform Ending 4",
+      "kind": "ending",
+      "number": 4
+    },
+    "252990005": {
+      "code": "@Endings/Ending 5/Transform Ending 5",
+      "kind": "ending",
+      "number": 5
+    },
+    "252990006": {
+      "code": "@Endings/Ending 6/Transform Ending 6",
+      "kind": "ending",
+      "number": 6
+    },
+    "252990007": {
+      "code": "@Endings/Ending 7/Transform Ending 7",
+      "kind": "ending",
+      "number": 7
+    },
+    "252982401": {
+      "code": "@Transformations/Big Breasts/Full Transformation Big Breasts",
+      "kind": "form"
+    },
+    "252982402": {
+      "code": "@Transformations/Small Breasts/Full Transformation Small Breasts",
+      "kind": "form"
+    },
+    "252982403": {
+      "code": "@Transformations/Corruption/Full Transformation Corruption",
+      "kind": "form"
+    },
+    "252982404": {
+      "code": "@Transformations/Beast/Full Transformation Beast",
+      "kind": "form"
+    },
+    "252982405": {
+      "code": "@Transformations/Muscle/Full Transformation Muscle",
+      "kind": "form"
+    },
+    "252982406": {
+      "code": "@Transformations/Hips/Full Transformation Hips",
+      "kind": "form"
+    },
+    "252991001": {
+      "code": "@Achievements/Win 1 Run/Achievement: Win 1 Run",
+      "kind": "achievement"
+    },
+    "252991002": {
+      "code": "@Achievements/Win 10 Runs/Achievement: Win 10 Runs",
+      "kind": "achievement"
+    },
+    "252991003": {
+      "code": "@Achievements/Clear Normal/Achievement: Clear Normal",
+      "kind": "achievement"
+    },
+    "252991004": {
+      "code": "@Achievements/Clear Hard/Achievement: Clear Hard",
+      "kind": "achievement"
+    },
+    "252991005": {
+      "code": "@Achievements/Clear Nightmare/Achievement: Clear Nightmare",
+      "kind": "achievement"
+    },
+    "252991006": {
+      "code": "@Achievements/Lose 1 Run/Achievement: Lose 1 Run",
+      "kind": "achievement"
+    },
+    "252991007": {
+      "code": "@Achievements/Lose 10 Runs/Achievement: Lose 10 Runs",
+      "kind": "achievement"
+    },
+    "252991008": {
+      "code": "@Achievements/Hit by Guardians 10 Times/Achievement: Hit by Guardians 10 Times",
+      "kind": "achievement"
+    },
+    "252991009": {
+      "code": "@Achievements/Travel 1000 Units/Achievement: Travel 1000 Units",
+      "kind": "achievement"
+    },
+    "252991010": {
+      "code": "@Achievements/Collect 100 Flowers/Achievement: Collect 100 Flowers",
+      "kind": "achievement"
+    },
+    "252991011": {
+      "code": "@Achievements/Break 100 Pumpkins/Achievement: Break 100 Pumpkins",
+      "kind": "achievement"
+    },
+    "252991012": {
+      "code": "@Achievements/Use Skills 100 Times/Achievement: Use Skills 100 Times",
+      "kind": "achievement"
+    },
+    "252991013": {
+      "code": "@Achievements/Land 1000 Critical Hits/Achievement: Land 1000 Critical Hits",
+      "kind": "achievement"
+    },
+    "252991014": {
+      "code": "@Achievements/Dodge 100 Times/Achievement: Dodge 100 Times",
+      "kind": "achievement"
+    },
+    "252991015": {
+      "code": "@Achievements/Regenerate HP 100 Times/Achievement: Regenerate HP 100 Times",
+      "kind": "achievement"
+    },
+    "252991016": {
+      "code": "@Achievements/Take 100 Hits/Achievement: Take 100 Hits",
+      "kind": "achievement"
+    },
+    "252991017": {
+      "code": "@Achievements/Clear with at Most 10 Hits/Achievement: Clear with at Most 10 Hits",
+      "kind": "achievement"
+    },
+    "252991018": {
+      "code": "@Achievements/Defeat 1000 Enemies/Achievement: Defeat 1000 Enemies",
+      "kind": "achievement"
+    },
+    "252991019": {
+      "code": "@Achievements/Defeat 10000 Enemies/Achievement: Defeat 10000 Enemies",
+      "kind": "achievement"
+    },
+    "252991020": {
+      "code": "@Achievements/Defeat 20000 Enemies/Achievement: Defeat 20000 Enemies",
+      "kind": "achievement"
+    },
+    "252991021": {
+      "code": "@Achievements/Master 10 Explosion Spells/Achievement: Master 10 Explosion Spells",
+      "kind": "achievement"
+    },
+    "252991022": {
+      "code": "@Achievements/Master 10 Missile Spells/Achievement: Master 10 Missile Spells",
+      "kind": "achievement"
+    },
+    "252991023": {
+      "code": "@Achievements/Master 10 Melee Spells/Achievement: Master 10 Melee Spells",
+      "kind": "achievement"
+    },
+    "252991024": {
+      "code": "@Achievements/Master 10 Area Spells/Achievement: Master 10 Area Spells",
+      "kind": "achievement"
+    },
+    "252991025": {
+      "code": "@Achievements/Master 10 Familiar Spells/Achievement: Master 10 Familiar Spells",
+      "kind": "achievement"
+    },
+    "252991026": {
+      "code": "@Achievements/Master 10 Curse Spells/Achievement: Master 10 Curse Spells",
+      "kind": "achievement"
+    },
+    "252991027": {
+      "code": "@Achievements/Drink 10 Corruption Potions/Achievement: Drink 10 Corruption Potions",
+      "kind": "achievement"
+    },
+    "252991028": {
+      "code": "@Achievements/Drink 10 Beast Potions/Achievement: Drink 10 Beast Potions",
+      "kind": "achievement"
+    },
+    "252991029": {
+      "code": "@Achievements/Drink 10 Big Breast Potions/Achievement: Drink 10 Big Breast Potions",
+      "kind": "achievement"
+    },
+    "252991030": {
+      "code": "@Achievements/Drink 10 Muscle Potions/Achievement: Drink 10 Muscle Potions",
+      "kind": "achievement"
+    },
+    "252991031": {
+      "code": "@Achievements/Drink 10 Hip Potions/Achievement: Drink 10 Hip Potions",
+      "kind": "achievement"
+    },
+    "252991032": {
+      "code": "@Achievements/Drink 10 Small Breast Potions/Achievement: Drink 10 Small Breast Potions",
+      "kind": "achievement"
+    },
+    "252991033": {
+      "code": "@Achievements/Fully Transform into Corruption/Achievement: Fully Transform into Corruption",
+      "kind": "achievement"
+    },
+    "252991034": {
+      "code": "@Achievements/Fully Transform into Beast/Achievement: Fully Transform into Beast",
+      "kind": "achievement"
+    },
+    "252991035": {
+      "code": "@Achievements/Fully Transform into Big Breasts/Achievement: Fully Transform into Big Breasts",
+      "kind": "achievement"
+    },
+    "252991036": {
+      "code": "@Achievements/Fully Transform into Muscle/Achievement: Fully Transform into Muscle",
+      "kind": "achievement"
+    },
+    "252991037": {
+      "code": "@Achievements/Fully Transform into Hips/Achievement: Fully Transform into Hips",
+      "kind": "achievement"
+    },
+    "252991038": {
+      "code": "@Achievements/Fully Transform into Small Breasts/Achievement: Fully Transform into Small Breasts",
+      "kind": "achievement"
+    }
+  },
+  "exp_codes": [
+    "exp_bigbreast",
+    "exp_smallbreast",
+    "exp_corruption",
+    "exp_beast",
+    "exp_muscle",
+    "exp_hip"
+  ],
+  "exp_by_name": {
+    "BigBreast": "exp_bigbreast",
+    "SmallBreast": "exp_smallbreast",
+    "Corruption": "exp_corruption",
+    "Beast": "exp_beast",
+    "Muscle": "exp_muscle",
+    "Hip": "exp_hip"
+  },
+  "achievement_keys": [
+    "WIN1",
+    "WIN10",
+    "ClearNormal",
+    "ClearHard",
+    "ClearNightmare",
+    "LOSE1",
+    "LOSE10",
+    "HitByGuardian",
+    "Traveler",
+    "Florist",
+    "TreasureHunter",
+    "SkillMaster",
+    "Critical1000",
+    "Dodge100",
+    "HPRegen100",
+    "Hit100",
+    "NoHitClear",
+    "KILL1000",
+    "KILL10000",
+    "KILL20000",
+    "BlastMaster",
+    "MissileMaster",
+    "MeleeMaster",
+    "AreaMaster",
+    "FamiliarMaster",
+    "DarkMagicMaster",
+    "Corruption10",
+    "BeastPotion10",
+    "BigBreastPotion10",
+    "MusclePotion10",
+    "HipPotion10",
+    "SmallBreastPotion10",
+    "CorruptionPotionForm",
+    "BeastPotionForm",
+    "BigBreastPotionForm",
+    "MusclePotionForm",
+    "HipPotionForm",
+    "SmallBreastPotionForm"
+  ]
+}
