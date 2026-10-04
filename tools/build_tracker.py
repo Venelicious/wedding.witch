@@ -208,7 +208,7 @@ def build():
     output = ROOT / "tracker-release" / f"WeddingWitch-PopTracker-{version}.zip"
     output.parent.mkdir(exist_ok=True)
     with zipfile.ZipFile(output, "w", zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
-        for path in sorted(PACK.rglob("*")):
+        for path in sorted(PACK.rglob("*"), key=lambda p: p.relative_to(PACK).as_posix()):
             if path.is_file():
                 info = zipfile.ZipInfo(path.relative_to(PACK).as_posix(), (2026, 1, 1, 0, 0, 0))
                 info.create_system = 3

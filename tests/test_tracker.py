@@ -104,6 +104,7 @@ class TrackerTests(unittest.TestCase):
                         if p.suffix in (".json", ".lua", ".md") else p.read_bytes())
                         for p in PACK.rglob("*") if p.is_file()}
             self.assertEqual(set(archive.namelist()), set(expected))
+            self.assertEqual(archive.namelist(), sorted(expected))
             for path, data in expected.items():
                 self.assertEqual(archive.read(path), data, path)
             self.assertEqual(archive.read("images/charm.png"), (ROOT / "src/res/achievement-check.png").read_bytes())
