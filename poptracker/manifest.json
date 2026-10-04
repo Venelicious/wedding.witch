@@ -2,12 +2,15 @@
   "name": "Wedding Witch AP",
   "game_name": "Wedding Witch",
   "package_uid": "venelicious_wedding_witch",
-  "package_version": "0.1.0",
+  "package_version": "0.2.0",
   "platform": "pc",
   "author": "Venelicious",
   "min_poptracker_version": "0.35.4",
   "target_poptracker_version": "0.35.4",
   "variants": {
-    "standard": {"display_name": "Archipelago · 80 Checks", "flags": ["ap"]}
+    "compact_horizontal": {"display_name": "Kompakt · Horizontal", "flags": ["ap"]},
+    "compact_vertical": {"display_name": "Kompakt · Vertikal", "flags": ["ap"]},
+    "items_only": {"display_name": "Nur Items", "flags": ["ap"]},
+    "standard": {"display_name": "Vollständig · 80 Checks", "flags": ["ap"]}
   }
 }

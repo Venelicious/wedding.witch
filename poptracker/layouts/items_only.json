@@ -1,0 +1,71 @@
+{
+  "tracker_default": {
+    "type": "array",
+    "orientation": "vertical",
+    "background": "#101626",
+    "content": [
+      {
+        "type": "itemgrid",
+        "rows": [
+          [
+            "ww_status",
+            "ww_progress",
+            "ww_goal",
+            "hard",
+            "nightmare"
+          ]
+        ],
+        "item_size": "48,48",
+        "item_margin": "4,4",
+        "h_alignment": "left"
+      },
+      {
+        "type": "itemgrid",
+        "rows": [
+          [
+            "exp_bigbreast",
+            "exp_smallbreast",
+            "exp_corruption",
+            "exp_beast",
+            "exp_muscle",
+            "exp_hip"
+          ]
+        ],
+        "item_size": "48,48",
+        "item_margin": "4,4",
+        "h_alignment": "left"
+      },
+      {
+        "type": "itemgrid",
+        "rows": [
+          [
+            "upgrade_witchhat",
+            "upgrade_orb",
+            "upgrade_glove",
+            "upgrade_ring",
+            "upgrade_watch",
+            "upgrade_mirror"
+          ],
+          [
+            "upgrade_shoes",
+            "upgrade_necklace",
+            "upgrade_earring",
+            "upgrade_monocle",
+            "upgrade_cape",
+            "upgrade_bracelet"
+          ],
+          [
+            "upgrade_hitomibook",
+            "upgrade_maneki",
+            "upgrade_bag",
+            "upgrade_eyeofbeholder",
+            "upgrade_witchdoll"
+          ]
+        ],
+        "item_size": "48,48",
+        "item_margin": "4,4",
+        "h_alignment": "left"
+      }
+    ]
+  }
+}

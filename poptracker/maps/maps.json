@@ -19,5 +19,19 @@
     "location_size": 22,
     "location_border_thickness": 2,
     "location_shape": "diamond"
+  },
+  {
+    "name": "achievements_1",
+    "img": "images/achievements_1.png",
+    "location_size": 16,
+    "location_border_thickness": 2,
+    "location_shape": "diamond"
+  },
+  {
+    "name": "achievements_2",
+    "img": "images/achievements_2.png",
+    "location_size": 16,
+    "location_border_thickness": 2,
+    "location_shape": "diamond"
   }
 ]

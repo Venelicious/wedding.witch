@@ -19,7 +19,7 @@ class TrackerTests(unittest.TestCase):
         self.lua.globals().read_json = lambda filename: self.lua.table_from(
             json.loads((PACK / filename).read_text(encoding="utf-8")), recursive=True)
         self.lua.execute("""
-            Tracker = {objects = {}, BulkUpdate = false}
+            Tracker = {objects = {}, BulkUpdate = false, ActiveVariantUID = 'standard', layouts = {}}
             function Tracker:AddItems(filename)
                 for _, entry in ipairs(read_json(filename)) do
                     self.objects[entry.codes] = {Active = entry.initial_active_state or false,
@@ -40,7 +40,10 @@ class TrackerTests(unittest.TestCase):
                 return true
             end
             function Tracker:AddMaps(_) return true end
-            function Tracker:AddLayouts(_) return true end
+            function Tracker:AddLayouts(filename)
+                for name, layout in pairs(read_json(filename)) do self.layouts[name] = layout end
+                return true
+            end
             function Tracker:FindObjectForCode(code) return self.objects[code] end
             function Tracker:ProviderCountForCode(code)
                 local item = self.objects[code]
@@ -56,6 +59,7 @@ class TrackerTests(unittest.TestCase):
                     Get = function(self, k) return self.state[k] or '' end,
                     SetOverlay = function(self, text) self.overlay = text end,
                     SetOverlayFontSize = function() end,
+                    SetOverlayColor = function(self, color) self.color = color end,
                     SetOverlayAlign = function() end,
                     SetOverlayBackground = function() end
                 }
@@ -64,11 +68,18 @@ class TrackerTests(unittest.TestCase):
             function ScriptHost:AddOnLocationSectionChangedHandler(name, fn) self.changed[name] = fn end
             ImageReference = {FromPackRelativePath = function(_, path) return path end}
             AutoTracker = {GetConnectionState = function() return 3 end}
-            Archipelago = {handlers = {}, PlayerNumber = 1, game = 'Wedding Witch'}
-            function Archipelago:GetPlayerGame(_) return self.game end
+            Archipelago = {handlers = {}, PlayerNumber = 1, TeamNumber = 0, game = 'Wedding Witch', queries = {}}
+            function Archipelago:GetPlayerGame(slot) return slot == self.PlayerNumber and self.game or 'Other Game' end
+            function Archipelago:GetPlayerAlias(slot) return 'Player ' .. slot end
+            function Archipelago:GetItemName(id, game) return game .. ' item ' .. id end
+            function Archipelago:GetLocationName(id, game) return game .. ' location ' .. id end
+            function Archipelago:SetNotify(keys) self.queries.notify = keys end
+            function Archipelago:Get(keys) self.queries.get = keys end
             function Archipelago:AddClearHandler(_, fn) self.handlers.clear = fn end
             function Archipelago:AddItemHandler(_, fn) self.handlers.item = fn end
             function Archipelago:AddLocationHandler(_, fn) self.handlers.location = fn end
+            function Archipelago:AddRetrievedHandler(_, fn) self.handlers.retrieved = fn end
+            function Archipelago:AddSetReplyHandler(_, fn) self.handlers.set_reply = fn end
         """)
         script_dir = str(PACK / "scripts").replace("\\", "/")
         self.lua.globals().script_dir = script_dir
@@ -108,8 +119,119 @@ class TrackerTests(unittest.TestCase):
             for path, data in expected.items():
                 self.assertEqual(archive.read(path), data, path)
             self.assertEqual(archive.read("images/charm.png"), (ROOT / "src/res/achievement-check.png").read_bytes())
-        flags = json.loads((PACK / "manifest.json").read_text())["variants"]["standard"]["flags"]
-        self.assertEqual(flags, ["ap"])  # No apmanual: never send checks from the tracker.
+        variants = json.loads((PACK / "manifest.json").read_text())["variants"]
+        self.assertEqual(set(variants), {"standard", "compact_horizontal", "compact_vertical", "items_only"})
+        for variant in variants.values():
+            self.assertEqual(variant["flags"], ["ap"])  # Never send checks/scouts from the tracker.
+
+    def test_all_layout_references_and_achievement_maps(self):
+        codes = {entry["code"] for entry in CONTRACT["items"].values()}
+        codes |= {"ww_status", "ww_progress", "ww_goal", "ww_hint_summary", "ww_hint_previous", "ww_hint_next"}
+        codes |= {f"ww_setting_{n}" for n in range(1, 9)} | {f"ww_hint_{n}" for n in range(1, 19)}
+        common = json.loads((PACK / "layouts/tracker.json").read_text(encoding="utf-8"))
+        maps = {m["name"] for m in json.loads((PACK / "maps/maps.json").read_text())}
+
+        def walk(node, layouts):
+            if isinstance(node, list):
+                for child in node:
+                    walk(child, layouts)
+            elif isinstance(node, dict):
+                if node.get("type") == "layout":
+                    self.assertIn(node["key"], layouts)
+                if node.get("type") == "itemgrid":
+                    for row in node["rows"]:
+                        for code in row:
+                            self.assertIn(code, codes)
+                if node.get("type") == "map":
+                    self.assertTrue(set(node["maps"]) <= maps)
+                for child in node.values():
+                    if isinstance(child, (dict, list)):
+                        walk(child, layouts)
+
+        for variant in ("standard", "compact_horizontal", "compact_vertical", "items_only"):
+            layouts = dict(common)
+            if variant != "standard":
+                filename = f"layouts/{variant}.json"
+                layouts.update(json.loads((PACK / filename).read_text(encoding="utf-8")))
+                self.lua.globals().Tracker.AddLayouts(self.lua.globals().Tracker, filename)
+            walk(layouts, layouts)
+            self.assertIn("settings_popup", layouts)
+            self.assertIn("tracker_broadcast", layouts)
+        locations = json.loads((PACK / "locations/locations.json").read_text(encoding="utf-8"))
+        achievements = next(root for root in locations if root["name"] == "Achievements")
+        self.assertEqual(len(achievements["children"]), 38)
+        for i, child in enumerate(achievements["children"]):
+            self.assertEqual([m["map"] for m in child["map_locations"]], ["achievements", f"achievements_{i // 19 + 1}"])
+
+    def test_read_only_settings_follow_seed_and_saved_layout(self):
+        self.handlers.clear(self.slot(transformEnd=7, difficulty="nightmare", starting_exp_type="Hip", flower_checks=[0, 11, 0]))
+        self.assertEqual(self.ww.settings[2].overlay, "Ziel: 7 verschiedene Endings")
+        self.assertIn("nightmare", self.ww.settings[3].overlay)
+        self.assertIn("Hip", self.ww.settings[4].overlay)
+        self.assertIn("Normal 0 / Hard 11 / Nightmare 0", self.ww.settings[5].overlay)
+        for _, setting in self.ww.settings.items():
+            self.assertIsNone(setting.OnLeftClickFunc)
+            self.assertIsNone(setting.OnRightClickFunc)
+        saved = self.ww.status.SaveFunc()
+        self.handlers.clear(self.slot())
+        self.ww.status.LoadFunc(self.ww.status, saved)
+        self.assertIn("7", self.ww.settings[2].overlay)
+        self.handlers.clear(self.slot(schema_version=3))
+        self.assertIn("nicht unterstützt", self.ww.settings[1].overlay)
+
+    def hint(self, **changes):
+        entry = dict(finding_player=1, receiving_player=2, location=BASE + 9001,
+                     item=111, found=False, status=30, entrance="")
+        entry.update(changes)
+        return entry
+
+    def test_hint_subscription_cross_game_dedup_and_found_updates(self):
+        self.handlers.clear(self.slot())
+        ap = self.lua.globals().Archipelago
+        key = "_read_hints_0_1"
+        self.assertEqual(ap.queries.notify[1], key)
+        self.assertEqual(ap.queries.get[1], key)
+        hints = [self.hint(), self.hint(), self.hint(finding_player=2, receiving_player=1, location=222, item=BASE + 2000),
+                 self.hint(finding_player=2, receiving_player=3), {"item": "invalid"}]
+        self.handlers.retrieved("_read_hints_0_2", self.lua.table_from(hints, recursive=True))
+        self.assertEqual(len(self.ww.hints.records), 0)
+        self.handlers.retrieved(key, self.lua.table_from(hints, recursive=True))
+        self.assertEqual(len(self.ww.hints.records), 2)
+        self.assertIn("Other Game item 111 → Player 2", self.ww.hint_rows[1].overlay)
+        self.assertIn(f"Wedding Witch location {BASE + 9001} · bei Player 1", self.ww.hint_rows[2].overlay)
+        self.handlers.location(BASE + 9001)
+        self.ww.refresh()
+        self.assertIn("Gefunden", self.ww.hint_rows[6].overlay)  # Found goes after open.
+        hints[2]["found"] = True
+        self.handlers.set_reply(key, self.lua.table_from(hints, recursive=True), None)
+        self.assertEqual(self.ww.hint_rows[3].overlay, "Gefunden")
+        self.handlers.set_reply(key, self.lua.table_from([]), None)
+        self.assertEqual(len(self.ww.hints.records), 0)
+        self.assertIn("Noch keine", self.ww.hint_summary.overlay)
+
+    def test_hint_paging_unicode_reset_and_stale_packets(self):
+        self.handlers.clear(self.slot())
+        hints = [self.hint(location=BASE + 9000 + n, entrance="ü" * 100 + "\nHidden") for n in range(1, 15)]
+        self.handlers.retrieved("_read_hints_0_1", self.lua.table_from(hints, recursive=True))
+        self.assertIn("1/3", self.ww.hint_summary.overlay)
+        self.assertTrue(self.ww.hint_rows[3].overlay.endswith("…"))
+        self.assertNotIn("\n", self.ww.hint_rows[3].overlay)
+        self.ww.hint_next.OnLeftClickFunc()
+        self.ww.hint_next.OnLeftClickFunc()
+        self.ww.hint_next.OnLeftClickFunc()
+        self.assertIn("3/3", self.ww.hint_summary.overlay)
+        self.assertEqual(self.ww.hint_rows[7].overlay, "")
+        self.ww.hint_previous.OnLeftClickFunc()
+        self.assertIn("2/3", self.ww.hint_summary.overlay)
+        self.lua.globals().Archipelago.PlayerNumber = 2
+        self.lua.globals().Archipelago.TeamNumber = 1
+        self.handlers.clear(self.slot())
+        self.assertEqual(self.ww.hints.key, "_read_hints_1_2")
+        self.assertEqual(len(self.ww.hints.records), 0)
+        self.handlers.set_reply("_read_hints_0_1", self.lua.table_from(hints, recursive=True), None)
+        self.assertEqual(len(self.ww.hints.records), 0)
+        self.handlers.clear(self.slot(schema_version=3))
+        self.assertIsNone(self.ww.hints.key)
 
     def test_all_goal_difficulty_and_extreme_flower_layouts(self):
         for goal in range(1, 8):

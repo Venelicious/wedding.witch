@@ -1,16 +1,31 @@
-# Wedding Witch AP · PopTracker 0.1.0
+# Wedding Witch AP · PopTracker 0.2.0
 
 Für Venelicious/wedding.witch, APWorld **0.5.0/0.5.1, Schema 4**, mit 80 Checks.
 Benötigt **PopTracker 0.35.4 oder neuer**. Alte 142-Check-Seeds und andere Wedding-Witch-APWorlds werden mit einer Fehlermeldung abgewiesen.
 
 ## Installation und Verbindung
 
-1. `WeddingWitch-PopTracker-0.1.0.zip` unverändert in PopTrackers `packs`-Ordner kopieren. Nicht entpacken.
-2. PopTracker starten und **Wedding Witch AP → Archipelago · 80 Checks** laden.
+1. `WeddingWitch-PopTracker-0.2.0.zip` unverändert in PopTrackers `packs`-Ordner kopieren. Nicht entpacken. Die alte Pack-ZIP aus diesem Ordner entfernen.
+2. PopTracker starten und **Wedding Witch AP** mit einer der unten beschriebenen Ansichten laden.
 3. Oben die **AP**-Verbindung aktivieren. Dieselbe Serveradresse, denselben Slotnamen und gegebenenfalls dasselbe Raumpasswort wie im Mod eintragen. Die Verbindung funktioniert parallel zum Spiel.
 4. Sobald die Verbindung steht, übernimmt das Pack Ziel, Schwierigkeit, Start-Tranktyp und Blumenverteilung aus den Slotdaten. Empfangene Items und abgeschlossene Checks werden synchronisiert.
 
 Das Pack hat eine eigene Versionsnummer; der Mod bleibt unverändert. Updates des Packs ersetzen nur die Tracker-ZIP.
+
+## Ansichten und Seed-Einstellungen
+
+- **Kompakt · Horizontal:** Items links, Checks rechts; kleinere Errungenschaftsseiten mit jeweils 19 Checks.
+- **Kompakt · Vertikal:** Checks oben, Items darunter; dieselben Checkseiten wie horizontal.
+- **Nur Items:** kompakte Anzeige der Freigaben, Upgrade-Stufen und Fortschrittswerte.
+- **Vollständig · 80 Checks:** ursprüngliche Ansicht mit allen 38 Errungenschaften auf einer Seite.
+
+Über PopTrackers **Pack-Einstellungen** öffnet sich ein eigenes Fenster. Der Tab **Seed-Einstellungen** zeigt Ending-Ziel, Zielschwierigkeit, Start-Tranktyp, Blumenverteilung und Schema. Die Werte werden automatisch aus AP übernommen und können dort nicht verändert werden. Der Tab **AP-Hinweise** ist auch in der reinen Itemansicht verfügbar.
+
+## AP-Hinweise
+
+Der Tab **Hinweise** liest die bekannten AP-Hinweise für deinen Slot: sowohl Items für dich in anderen Welten als auch Items für andere Spieler in deiner Welt. Jede Anzeige nennt Item, Empfänger, Fundort, Finder, Priorität/Fundstatus und gegebenenfalls Eingang. Offene Hinweise stehen vor gefundenen, priorisierte zuerst. Mit **Weiter / Zurück** wechselst du zwischen Seiten mit je sechs Hinweisen. Lange Zeilen werden gekürzt; der Tooltip zeigt den vollständigen Text.
+
+Neue Hinweise und Statusänderungen werden automatisch vom Server übernommen. Beim Verbinden werden alte Hinweise gelöscht und für den verbundenen Slot neu geladen. Ohne Verbindung bleiben bereits geladene Hinweise während dieser Sitzung als letzter Stand sichtbar. Sie werden nicht in lokalen Tracker-Saves gespeichert. Das Pack erstellt keine neuen Hinweise und verändert keine Prioritäten auf dem Server.
 
 ## Anzeigen
 
@@ -21,7 +36,7 @@ Das Pack hat eine eigene Versionsnummer; der Mod bleibt unverändert. Updates de
 - **Runs:** 18 Kartenchecks, die Blumenchecks der drei Schwierigkeiten und die Ending-Meilensteine. Den Blumenmarker öffnen, um die einzelnen kumulativen Blumenchecks zu sehen. Die Anzahl passt sich dem Seed an, auch bei null Blumen auf einer Schwierigkeit.
 - **Formen:** sechs volle Transformationen als separate Checks. Ein freier Tranktyp bedeutet noch keinen abgeschlossenen Transformationscheck.
 - **Erfolge:** alle 38 nativen Errungenschaftschecks. Die Farben folgen den AP-Zugangsregeln; ein grüner Check bedeutet, dass seine Freigaben vorliegen. Die Bedingung muss weiterhin im Spiel erfüllt werden.
-- **Broadcast:** zusätzliche kompakte Itemansicht für PopTrackers Broadcast-Fenster.
+- **Broadcast:** zusätzliche kompakte Itemansicht für PopTrackers Broadcast-Fenster, in jeder Variante verfügbar.
 
 Die Gesamtzahl ist immer **80**: 18 Karten, 6 volle Transformationen, 38 Errungenschaften, `transformEnd` Endings und `18 − transformEnd` Blumenchecks. Karten und Blumen zählen getrennt je Schwierigkeit; Endings zählen auf der Zielschwierigkeit. Wiederholte identische Endings erhöhen das Ziel nicht.
 

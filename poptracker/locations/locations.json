@@ -1267,6 +1267,11 @@
             "map": "achievements",
             "x": 28,
             "y": 97
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 84
           }
         ]
       },
@@ -1288,6 +1293,11 @@
             "map": "achievements",
             "x": 28,
             "y": 128
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 104
           }
         ]
       },
@@ -1309,6 +1319,11 @@
             "map": "achievements",
             "x": 28,
             "y": 159
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 124
           }
         ]
       },
@@ -1332,6 +1347,11 @@
             "map": "achievements",
             "x": 28,
             "y": 190
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 144
           }
         ]
       },
@@ -1355,6 +1375,11 @@
             "map": "achievements",
             "x": 28,
             "y": 221
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 164
           }
         ]
       },
@@ -1376,6 +1401,11 @@
             "map": "achievements",
             "x": 28,
             "y": 252
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 184
           }
         ]
       },
@@ -1397,6 +1427,11 @@
             "map": "achievements",
             "x": 28,
             "y": 283
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 204
           }
         ]
       },
@@ -1418,6 +1453,11 @@
             "map": "achievements",
             "x": 28,
             "y": 314
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 224
           }
         ]
       },
@@ -1439,6 +1479,11 @@
             "map": "achievements",
             "x": 28,
             "y": 345
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 244
           }
         ]
       },
@@ -1460,6 +1505,11 @@
             "map": "achievements",
             "x": 28,
             "y": 376
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 264
           }
         ]
       },
@@ -1481,6 +1531,11 @@
             "map": "achievements",
             "x": 28,
             "y": 407
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 284
           }
         ]
       },
@@ -1502,6 +1557,11 @@
             "map": "achievements",
             "x": 28,
             "y": 438
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 304
           }
         ]
       },
@@ -1523,6 +1583,11 @@
             "map": "achievements",
             "x": 28,
             "y": 469
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 324
           }
         ]
       },
@@ -1544,6 +1609,11 @@
             "map": "achievements",
             "x": 28,
             "y": 500
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 344
           }
         ]
       },
@@ -1565,6 +1635,11 @@
             "map": "achievements",
             "x": 28,
             "y": 531
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 364
           }
         ]
       },
@@ -1586,6 +1661,11 @@
             "map": "achievements",
             "x": 28,
             "y": 562
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 384
           }
         ]
       },
@@ -1607,6 +1687,11 @@
             "map": "achievements",
             "x": 28,
             "y": 593
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 404
           }
         ]
       },
@@ -1628,6 +1713,11 @@
             "map": "achievements",
             "x": 28,
             "y": 624
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 424
           }
         ]
       },
@@ -1649,6 +1739,11 @@
             "map": "achievements",
             "x": 28,
             "y": 655
+          },
+          {
+            "map": "achievements_1",
+            "x": 30,
+            "y": 444
           }
         ]
       },
@@ -1670,6 +1765,11 @@
             "map": "achievements",
             "x": 402,
             "y": 97
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 84
           }
         ]
       },
@@ -1691,6 +1791,11 @@
             "map": "achievements",
             "x": 402,
             "y": 128
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 104
           }
         ]
       },
@@ -1712,6 +1817,11 @@
             "map": "achievements",
             "x": 402,
             "y": 159
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 124
           }
         ]
       },
@@ -1733,6 +1843,11 @@
             "map": "achievements",
             "x": 402,
             "y": 190
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 144
           }
         ]
       },
@@ -1754,6 +1869,11 @@
             "map": "achievements",
             "x": 402,
             "y": 221
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 164
           }
         ]
       },
@@ -1775,6 +1895,11 @@
             "map": "achievements",
             "x": 402,
             "y": 252
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 184
           }
         ]
       },
@@ -1796,6 +1921,11 @@
             "map": "achievements",
             "x": 402,
             "y": 283
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 204
           }
         ]
       },
@@ -1819,6 +1949,11 @@
             "map": "achievements",
             "x": 402,
             "y": 314
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 224
           }
         ]
       },
@@ -1842,6 +1977,11 @@
             "map": "achievements",
             "x": 402,
             "y": 345
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 244
           }
         ]
       },
@@ -1865,6 +2005,11 @@
             "map": "achievements",
             "x": 402,
             "y": 376
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 264
           }
         ]
       },
@@ -1888,6 +2033,11 @@
             "map": "achievements",
             "x": 402,
             "y": 407
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 284
           }
         ]
       },
@@ -1911,6 +2061,11 @@
             "map": "achievements",
             "x": 402,
             "y": 438
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 304
           }
         ]
       },
@@ -1934,6 +2089,11 @@
             "map": "achievements",
             "x": 402,
             "y": 469
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 324
           }
         ]
       },
@@ -1957,6 +2117,11 @@
             "map": "achievements",
             "x": 402,
             "y": 500
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 344
           }
         ]
       },
@@ -1980,6 +2145,11 @@
             "map": "achievements",
             "x": 402,
             "y": 531
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 364
           }
         ]
       },
@@ -2003,6 +2173,11 @@
             "map": "achievements",
             "x": 402,
             "y": 562
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 384
           }
         ]
       },
@@ -2026,6 +2201,11 @@
             "map": "achievements",
             "x": 402,
             "y": 593
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 404
           }
         ]
       },
@@ -2049,6 +2229,11 @@
             "map": "achievements",
             "x": 402,
             "y": 624
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 424
           }
         ]
       },
@@ -2072,6 +2257,11 @@
             "map": "achievements",
             "x": 402,
             "y": 655
+          },
+          {
+            "map": "achievements_2",
+            "x": 30,
+            "y": 444
           }
         ]
       }

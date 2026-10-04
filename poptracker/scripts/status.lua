@@ -10,6 +10,7 @@ local function display(code, name, icon)
     item:SetOverlayBackground("#dd101626")
     return item
 end
+WW.display = display
 
 WW.status = display("ww_status", "Offline: default reference layout (3 Normal endings; flowers 4/5/6). Connect AP for your seed.", "images/status.png")
 WW.progress = display("ww_progress", "Checked AP locations", "images/progress.png")
@@ -22,6 +23,7 @@ WW.status.SaveFunc = function()
 end
 WW.status.LoadFunc = function(_, data)
     if type(data) ~= "table" then return end
+    WW.clear_hints()
     local c = data.config
     if type(c) == "table" then
         local slot = {schema_version = c.schema_version, pool_size = 80,
@@ -63,6 +65,8 @@ function WW.refresh()
         WW.goal.Name = "Goal: " .. c.transformEnd .. " distinct endings on " .. c.difficulty
         WW.goal:SetOverlay(endings .. "/" .. c.transformEnd)
     end
+    WW.refresh_settings()
+    WW.refresh_hints()
 end
 
 local elapsed = 0

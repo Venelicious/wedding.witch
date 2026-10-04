@@ -20,7 +20,7 @@ Build 0.5.1: `release/WeddingWitch-AP-0.5.1-Windows.zip` enthält den neuen Clie
 
 **Installation / Setup:** [Deutsch](docs/installation-de.md) · [English](docs/installation-en.md). Launcher-Auswahl: Original oder Archipelago; Verbindung im Spiel mit F8.
 
-**PopTracker:** [TrackPack 0.1.0 herunterladen](https://github.com/Venelicious/wedding.witch/releases/download/tracker-v0.1.0/WeddingWitch-PopTracker-0.1.0.zip) · [Anleitung](poptracker/README.md). Für PopTracker 0.35.4+ und unsere Schema-4-Seeds mit 80 Checks; synchronisiert AP-Items, Errungenschaften, Runs, Transformationen und das Ending-Ziel. ZIP unverändert in den `packs`-Ordner legen und über **AP** mit demselben Spielslot verbinden.
+**PopTracker:** [TrackPack 0.2.0 herunterladen](https://github.com/Venelicious/wedding.witch/releases/download/tracker-v0.2.0/WeddingWitch-PopTracker-0.2.0.zip) · [Anleitung](poptracker/README.md). Für PopTracker 0.35.4+ und unsere Schema-4-Seeds mit 80 Checks; mit kompakten horizontalen/vertikalen Ansichten, reiner Itemansicht, Seed-Einstellungen und AP-Hinweisen. Synchronisiert AP-Items, Errungenschaften, Runs, Transformationen und das Ending-Ziel. ZIP unverändert in den `packs`-Ordner legen und über **AP** mit demselben Spielslot verbinden.
 
 Beide Launcher-Modi starten über Steam, damit die gewohnte Steam-Controller-Konfiguration verfügbar ist. Der Loader wird über Startargumente pro Spielprozess ein- oder ausgeschaltet.
 

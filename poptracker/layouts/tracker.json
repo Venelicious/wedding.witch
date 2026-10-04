@@ -1,4 +1,162 @@
 {
+  "ww_hints_panel": {
+    "type": "array",
+    "orientation": "vertical",
+    "background": "#101626",
+    "content": [
+      {
+        "type": "itemgrid",
+        "rows": [
+          [
+            "ww_hint_summary"
+          ]
+        ],
+        "item_size": "640,22",
+        "item_margin": "0,0",
+        "h_alignment": "left"
+      },
+      {
+        "type": "itemgrid",
+        "rows": [
+          [
+            "ww_hint_previous",
+            "ww_hint_next"
+          ]
+        ],
+        "item_size": "150,24",
+        "item_margin": "2,2"
+      },
+      {
+        "type": "itemgrid",
+        "rows": [
+          [
+            "ww_hint_1"
+          ],
+          [
+            "ww_hint_2"
+          ],
+          [
+            "ww_hint_3"
+          ],
+          [
+            "ww_hint_4"
+          ],
+          [
+            "ww_hint_5"
+          ],
+          [
+            "ww_hint_6"
+          ],
+          [
+            "ww_hint_7"
+          ],
+          [
+            "ww_hint_8"
+          ],
+          [
+            "ww_hint_9"
+          ],
+          [
+            "ww_hint_10"
+          ],
+          [
+            "ww_hint_11"
+          ],
+          [
+            "ww_hint_12"
+          ],
+          [
+            "ww_hint_13"
+          ],
+          [
+            "ww_hint_14"
+          ],
+          [
+            "ww_hint_15"
+          ],
+          [
+            "ww_hint_16"
+          ],
+          [
+            "ww_hint_17"
+          ],
+          [
+            "ww_hint_18"
+          ]
+        ],
+        "item_size": "640,22",
+        "item_margin": "0,0",
+        "h_alignment": "left"
+      },
+      {
+        "type": "text",
+        "text": "Maus über Zeile: vollständiger Text · Hinweise werden nur gelesen."
+      }
+    ]
+  },
+  "settings_popup": {
+    "type": "tabbed",
+    "background": "#101626",
+    "tabs": [
+      {
+        "title": "Seed-Einstellungen",
+        "content": {
+          "type": "array",
+          "orientation": "vertical",
+          "background": "#101626",
+          "content": [
+            {
+              "type": "text",
+              "text": "Wedding Witch AP · Automatische Seed-Einstellungen"
+            },
+            {
+              "type": "itemgrid",
+              "rows": [
+                [
+                  "ww_setting_1"
+                ],
+                [
+                  "ww_setting_2"
+                ],
+                [
+                  "ww_setting_3"
+                ],
+                [
+                  "ww_setting_4"
+                ],
+                [
+                  "ww_setting_5"
+                ],
+                [
+                  "ww_setting_6"
+                ],
+                [
+                  "ww_setting_7"
+                ],
+                [
+                  "ww_setting_8"
+                ]
+              ],
+              "item_size": "640,22",
+              "item_margin": "0,0",
+              "h_alignment": "left"
+            },
+            {
+              "type": "text",
+              "text": "Offline beim ersten Laden: Referenzwerte (3 Normal-Endings, Beast).\nMit AP verbinden, um deinen Seed zu übernehmen."
+            }
+          ]
+        }
+      },
+      {
+        "title": "AP-Hinweise",
+        "content": {
+          "type": "layout",
+          "key": "ww_hints_panel"
+        }
+      }
+    ]
+  },
   "tracker_default": {
     "type": "array",
     "orientation": "horizontal",
@@ -142,6 +300,13 @@
                   "maps": [
                     "achievements"
                   ]
+                }
+              },
+              {
+                "title": "Hinweise",
+                "content": {
+                  "type": "layout",
+                  "key": "ww_hints_panel"
                 }
               }
             ]

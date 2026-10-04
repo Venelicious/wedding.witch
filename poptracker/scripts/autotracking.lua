@@ -19,6 +19,7 @@ local function on_clear(slot)
         end
         WW.status:Set("revision", (tonumber(WW.status:Get("revision")) or 0) + 1)
     end)
+    WW.reset_hints()
     WW.refresh()
     if WW.error then print("Wedding Witch tracker: " .. WW.error) end
 end
