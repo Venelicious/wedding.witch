@@ -1,9 +1,12 @@
 """Contract and actual Lua callback tests. Run with Python + lupa + Pillow."""
 import json
+import hashlib
 import runpy
 import unittest
 import zipfile
 from pathlib import Path
+
+from PIL import Image
 
 from lupa.lua54 import LuaRuntime
 
@@ -123,6 +126,29 @@ class TrackerTests(unittest.TestCase):
         self.assertEqual(set(variants), {"standard", "compact_horizontal", "compact_vertical", "items_only"})
         for variant in variants.values():
             self.assertEqual(variant["flags"], ["ap"])  # Never send checks/scouts from the tracker.
+
+    def test_native_icon_sources_and_transparency(self):
+        assets = json.loads((PACK / "assets.json").read_text(encoding="utf-8"))["assets"]
+        expected = {item["code"] for item in CONTRACT["items"].values()} | {"progress", "goal"}
+        self.assertEqual(set(assets), expected)
+        for code, asset in assets.items():
+            image_path = PACK / asset["image"]
+            self.assertEqual(hashlib.sha256(image_path.read_bytes()).hexdigest(), asset["sha256"], code)
+            with Image.open(image_path) as image:
+                self.assertEqual(image.mode, "RGBA", code)
+                self.assertEqual(image.size, (128, 128), code)
+                alpha = image.getchannel("A")
+                self.assertEqual(alpha.getpixel((0, 0)), 0, code)
+                bounds = alpha.getbbox()
+                self.assertIsNotNone(bounds, code)
+                self.assertGreater(bounds[2] - bounds[0], 32, code)
+                self.assertGreater(bounds[3] - bounds[1], 32, code)
+        self.assertEqual(assets["hard"]["sprite"], "Wedding_Normal")
+        self.assertEqual(assets["nightmare"]["sprite"], "Wedding_Hard")
+        for code in ("hard", "nightmare"):
+            self.assertIn("SelectDifficultyCanvas", assets[code]["source"])
+        for exp in ("bigbreast", "smallbreast", "corruption", "beast", "muscle", "hip"):
+            self.assertIn("SelectModeBehaviour", assets["exp_" + exp]["source"])
 
     def test_all_layout_references_and_achievement_maps(self):
         codes = {entry["code"] for entry in CONTRACT["items"].values()}

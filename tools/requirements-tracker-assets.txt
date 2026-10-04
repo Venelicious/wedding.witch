@@ -1,0 +1,3 @@
+UnityPy[ttgen]==1.25.4
+typetreegeneratorapi==0.0.10
+Pillow==12.3.0

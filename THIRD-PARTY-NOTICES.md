@@ -2,11 +2,11 @@
 
 The original mod framework is chickentuna/WeddingWitchMod at commit e25c120f5bada2058af73f955e1122c502e20c77, https://github.com/chickentuna/WeddingWitchMod. No LICENSE was declared in the inspected upstream repository. This project retains attribution and does not grant a new blanket license over inherited files.
 
-The separately authored custom APWorld is licensed as stated in apworld/wedding_witch/LICENSE.md. Wedding Witch and its assets belong to their respective owners and are not distributed here.
+The separately authored custom APWorld is licensed as stated in apworld/wedding_witch/LICENSE.md. Wedding Witch and its assets belong to their respective owners. Game binaries, assemblies and asset bundles are not distributed here.
 
 The six-colour achievement charm in `src/res/achievement-check.png` was supplied by the project owner as `Sechsfarbiger Archipel-Zauberanhänger.png` on 2026-10-04 for use in this mod. It is embedded unchanged in the mod DLL and is not extracted game art.
 
-The PopTracker pack copies this charm unchanged as `poptracker/images/charm.png`. Its other tiles and overview diagrams were created for this project by `tools/build_tracker.py`; no game sprites are included. The pack uses PopTracker's documented APIs and does not distribute PopTracker itself.
+The PopTracker pack copies this charm unchanged as `poptracker/images/charm.png`. Starting with pack 0.2.1, it includes 27 selected UI sprites from Wedding Witch for its upgrade, transformation, difficulty, achievement and goal displays. These original sprites belong to Wedding Witch / CHOWBIE; this project does not grant a license over them. `poptracker/assets.json` records their native sources and exported hashes. They are extracted from a local installation by `tools/extract_tracker_assets.py`, with transparent padding and preserved proportions. Character illustrations and bulk game assets are not included. The overview diagrams and AP connection tile were created for this project by `tools/build_tracker.py`. The pack uses PopTracker's documented APIs and does not distribute PopTracker itself.
 
 ## Newtonsoft.Json 13.0.3
 

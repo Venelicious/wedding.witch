@@ -1,7 +1,8 @@
 """Build our self-contained PopTracker pack from the APWorld's public contract.
 
-Requires Pillow for the original diagram/tile artwork. Game sprites are never
-read. The user's existing charm is copied unchanged.
+Requires Pillow for the overview diagrams. Checked-in native UI icons come from
+extract_tracker_assets.py; this build never needs a game installation. The
+user's existing charm is copied unchanged.
 """
 import hashlib
 import argparse
@@ -64,6 +65,17 @@ def save_artwork(image, filename):
         raise FileNotFoundError(f"Missing artwork {filename}; run with --render-artwork")
 
 
+def native_icon(filename):
+    if not (PACK / "images" / filename).is_file():
+        raise FileNotFoundError(f"Missing native icon {filename}; run extract_tracker_assets.py")
+
+
+def draw_icon(board, filename, xy, size=32):
+    icon = Image.open(PACK / "images" / filename).convert("RGBA")
+    icon.thumbnail((size, size), Image.Resampling.LANCZOS)
+    board.paste(icon, xy, icon)
+
+
 def lua(value):
     if isinstance(value, dict):
         return "{\n" + "\n".join("[" + lua(k) + "] = " + lua(v) + "," for k, v in value.items()) + "\n}"
@@ -82,33 +94,33 @@ def build():
     (PACK / "images").mkdir(parents=True, exist_ok=True)
     shutil.copyfile(ROOT / "src/res/achievement-check.png", PACK / "images/charm.png")
     items, item_map, location_map, roots = [], {}, {}, []
-    abbreviations = ("HAT", "ORB", "GLV", "RNG", "CLK", "MIR", "SHO", "NEC", "EAR", "OPT", "CAP", "BRC", "BOK", "CAT", "BAG", "EYE", "DOL")
     upgrade_codes = []
-    for i, ((key, label, cap), short) in enumerate(zip(C["UPGRADES"], abbreviations)):
+    for i, (key, label, cap) in enumerate(C["UPGRADES"]):
         code = key.lower()
         upgrade_codes.append(code)
         filename = code + ".png"
-        tile(filename, short)
+        native_icon(filename)
         items.append({"name": label + f" (AP ranks, max {cap})", "type": "consumable",
                       "codes": code, "img": "images/" + filename, "max_quantity": cap,
                       "overlay_font_size": 18, "overlay_background": "#dd101626"})
         item_map[BASE + 2000 + i] = {"code": code, "kind": "consumable", "cap": cap}
     for i, (difficulty, label) in enumerate((("hard", "Hard Wedding"), ("nightmare", "Nightmare Wedding"))):
-        tile(difficulty + ".png", "HARD" if i == 0 else "NGHT", "#e997b5")
+        native_icon(difficulty + ".png")
         items.append({"name": label, "type": "toggle", "codes": difficulty, "img": "images/" + difficulty + ".png"})
         item_map[BASE + 2050 + i] = {"code": difficulty, "kind": "toggle"}
     exp_codes, exp_by_name = [], {}
-    for i, (exp, label, color) in enumerate(zip(C["EXP_TYPES"], ("BIG", "SML", "COR", "BST", "MUS", "HIP"), COLORS)):
+    for i, exp in enumerate(C["EXP_TYPES"]):
         code = "exp_" + exp.lower()
         exp_codes.append(code)
         exp_by_name[exp] = code
-        tile(code + ".png", label, color)
+        native_icon(code + ".png")
         items.append({"name": "EXP Unlock: " + exp, "type": "toggle", "codes": code,
                       "img": "images/" + code + ".png", "disabled_img": "images/charm.png",
                       "disabled_img_mods": "none", "initial_active_state": exp == "Beast"})
         item_map[BASE + 2100 + i] = {"code": code, "kind": "toggle"}
-    for filename, short in (("status.png", "LINK"), ("progress.png", "CHK"), ("goal.png", "GOAL")):
-        tile(filename, short, "#91ccad")
+    tile("status.png", "LINK", "#91ccad")
+    native_icon("progress.png")
+    native_icon("goal.png")
     save_artwork(Image.new("RGBA", (1, 1), (0, 0, 0, 0)), "blank.png")
     dump("items/items.json", items)
 
@@ -129,6 +141,7 @@ def build():
         x = 18 + 214 * d
         draw.rounded_rectangle((x, 91, x + 196, 343), 12, fill=PANEL)
         text(draw, (x + 16, 104), name.upper(), 19, GOLD)
+        draw_icon(runs, "goal.png" if d == 0 else ("hard.png" if d == 1 else "nightmare.png"), (x + 152, 98))
         text(draw, (x + 16, 136), "KARTEN", 13, MUTED)
         root = {"name": name, "access_rules": ["$ww_difficulty|" + name.lower()],
                 "visibility_rules": ["$ww_supported"], "children": []}
@@ -137,6 +150,7 @@ def build():
             text(draw, (mx, my + 16), str(n), 14, MUTED, "mt")
             child(root, "Map " + str(n), [(BASE + d * 100 + n, name + " Map " + str(n), "map", {}, [], [])], "runs", mx, my)
         text(draw, (x + 16, 313), "BLUMEN", 13, MUTED)
+        draw_icon(runs, "goal.png", (x + 109, 309), 28)
         entries = [(BASE + 5000 + d * 1000 + n, name + " Flower " + str(n), "flower", {"difficulty": d + 1, "number": n}, [], [f"$ww_flower|{d + 1}|{n}"]) for n in range(1, 18)]
         child(root, "Flowers", entries, "runs", x + 164, 326, visibility=[f"$ww_flower|{d + 1}|1"])
         roots.append(root)
@@ -158,20 +172,23 @@ def build():
         x, y = 18 + (i % 3) * 214, 105 + (i // 3) * 166
         draw.rounded_rectangle((x, y, x + 196, y + 142), 12, fill=PANEL, outline=COLORS[i], width=1)
         text(draw, (x + 98, y + 20), label, 19, COLORS[i], "mt")
-        text(draw, (x + 98, y + 52), "Vollstaendig verwandeln", 13, MUTED, "mt")
-        child(root, label, [(BASE + 400 + body, "Full Transformation " + label, "form", {}, [], [])], "forms", x + 98, y + 98, [exp_by_name[exp]])
-    text(draw, (22, 450), "Anhaenger = Tranktyp gesperrt · Farbsymbol = freigeschaltet", 14, MUTED)
+        draw_icon(forms, exp_by_name[exp] + ".png", (x + 30, y + 42), 72)
+        text(draw, (x + 98, y + 123), "6 Trankpunkte einer Art", 13, MUTED, "mt")
+        child(root, label, [(BASE + 400 + body, "Full Transformation " + label, "form", {}, [], [])], "forms", x + 153, y + 79, [exp_by_name[exp]])
+    text(draw, (22, 450), "Anhaenger = gesperrt · Originalsymbol = freigeschaltet", 14, MUTED)
     roots.append(root)
     save_artwork(forms, "forms.png")
 
     achievements, draw = canvas((760, 704))
     text(draw, (22, 20), "ERRUNGENSCHAFTEN  /  38 AP-CHECKS", 23, GOLD)
     text(draw, (22, 56), "Abgeschlossen laut Server · Teilzähler bleiben im Spiel", 14, MUTED)
+    draw_icon(achievements, "progress.png", (698, 14), 48)
     root = {"name": "Achievements", "children": [], "visibility_rules": ["$ww_supported"]}
     compact_boards = [canvas((660, 480)) for _ in range(2)]
     for page, (_, compact_draw) in enumerate(compact_boards, 1):
         text(compact_draw, (22, 18), f"ERRUNGENSCHAFTEN  /  {page} VON 2", 23, GOLD)
         text(compact_draw, (22, 51), "Abgeschlossene Checks laut AP-Server", 14, MUTED)
+        draw_icon(compact_boards[page - 1][0], "progress.png", (599, 14), 40)
     for i, (_, label, difficulty, exp) in enumerate(A, 1):
         x, y = 28 + ((i - 1) // 19) * 374, 97 + ((i - 1) % 19) * 31
         text(draw, (x + 23, y), label, 13, INK, "lm")

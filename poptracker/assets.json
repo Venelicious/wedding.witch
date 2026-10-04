@@ -1,0 +1,467 @@
+{
+  "game": "Wedding Witch",
+  "unity_version": "6000.3.19f1",
+  "extractor": "UnityPy 1.25.4",
+  "processing": "Native RGBA sprite, transparent bounds cropped; aspect preserved within 112x112 on a 128x128 transparent canvas.",
+  "assets": {
+    "exp_beast": {
+      "image": "images/exp_beast.png",
+      "sprite": "Sign_Beast2",
+      "source": "SelectModeBehaviour.BeastSlot.m_Sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 122,
+      "source_size": [
+        382,
+        267
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "86e4f1cae3abbd99e59e79068e81774d1548cbb7d0b958fba13bcb7fe6b0f3d4",
+      "sha256": "50ba837af58cabe21e70ad9b071bacc3aa92202391365583f287728f3e55daab"
+    },
+    "exp_bigbreast": {
+      "image": "images/exp_bigbreast.png",
+      "sprite": "Sign_Bigbreast2",
+      "source": "SelectModeBehaviour.BigBreastSlot.m_Sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 150,
+      "source_size": [
+        369,
+        432
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "a761ee22200f6199f70beb972975cc0317f99903b710d555d8077fab85b75c10",
+      "sha256": "0dca61446c54ee49a558b62681848c295c4edb963c82208c844b1a4042670a6e"
+    },
+    "exp_corruption": {
+      "image": "images/exp_corruption.png",
+      "sprite": "Sign_Corruption",
+      "source": "SelectModeBehaviour.CorruptionSlot.m_Sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 186,
+      "source_size": [
+        440,
+        277
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "c5ec117e4c3a42dd281ffe6b3ace81fa4e3f7ee8d92b96ea3a18127e6c93c98e",
+      "sha256": "415c98e6e51a31500a2774aeec5524d4fd8261f095b131ed84195b3aadfe9a9b"
+    },
+    "exp_hip": {
+      "image": "images/exp_hip.png",
+      "sprite": "Sign_Hip2",
+      "source": "SelectModeBehaviour.HipSlot.m_Sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 167,
+      "source_size": [
+        373,
+        344
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "ca3f4458dd2b82d95946703ace6836f335fb2e243feacbe1e73589b470021046",
+      "sha256": "86ba2d7382dd3b1537673feb40d7943fff09da6b969bf2c3e3605e34fbba623f"
+    },
+    "exp_muscle": {
+      "image": "images/exp_muscle.png",
+      "sprite": "Sign_Muscle2",
+      "source": "SelectModeBehaviour.Muscle.m_Sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 162,
+      "source_size": [
+        351,
+        350
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "e7bdf121cc1a36e76d5b32c483ee3aa2041c2021813b850ae2fedfc5db913beb",
+      "sha256": "e1256bc533cfd1795b5b101cae517eaf9191a6b74433dc35131a1ec5be083b6e"
+    },
+    "exp_smallbreast": {
+      "image": "images/exp_smallbreast.png",
+      "sprite": "Sign_SmallBreast2",
+      "source": "SelectModeBehaviour.SmallBreastSlot.m_Sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 164,
+      "source_size": [
+        290,
+        393
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "51193dbe69c1bf631a908b7eb255df068daf1d24a6c6d377b4720db3b5987fe7",
+      "sha256": "1c30269f91b2795358a91e0838b900da6042ba764a49ecc20c2bdb60f2ba93fd"
+    },
+    "goal": {
+      "image": "images/goal.png",
+      "sprite": "Flowers_Icon",
+      "source": "Sprite:Flowers_Icon",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 189,
+      "source_size": [
+        92,
+        64
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "e9ba42392266eb458307796f39d713303b7a163e87693be6c4c6a6d5b69e3864",
+      "sha256": "ec98e87b89e1221c263bc3c64bd1361a798aec0085c9708b95f159039d0cf471"
+    },
+    "hard": {
+      "image": "images/hard.png",
+      "sprite": "Wedding_Normal",
+      "source": "SelectDifficultyCanvas.hardMode.Image.m_Sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 163,
+      "source_size": [
+        163,
+        160
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "2487c89cf95b82973a2048a87978cb66efd1f41823c39817d0ca5b0e6ef46fea",
+      "sha256": "a9fafb4151fac6128b7e541ad7f8be92e6488270d8054b1cbfae2b4e92a4d6ef"
+    },
+    "nightmare": {
+      "image": "images/nightmare.png",
+      "sprite": "Wedding_Hard",
+      "source": "SelectDifficultyCanvas.nightmareMode.Image.m_Sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 159,
+      "source_size": [
+        185,
+        190
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "6e5235b6f923364d6d3f42c82f63f1a043cc0e1d8074525c359e5a75fd2d7d9b",
+      "sha256": "cd44d76510ba87e28e4ad661e8b4d103799222ea7ba6d863415032c95c613b2f"
+    },
+    "progress": {
+      "image": "images/progress.png",
+      "sprite": "AchivementIcon",
+      "source": "Sprite:AchivementIcon",
+      "asset_file": "sharedassets0.assets",
+      "path_id": 216,
+      "source_size": [
+        152,
+        150
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "e4025e27652383f6cbeceeac9c866f5b1762aaa114deb1bd72e8628ed7704149",
+      "sha256": "870d87460bc4deda020f16d5890bdbcf4cd44e05b07700c6abba4428c09e69db"
+    },
+    "upgrade_bag": {
+      "image": "images/upgrade_bag.png",
+      "sprite": "Research_CandyBag",
+      "source": "UpgradeData:Upgrade_Bag.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 161,
+      "source_size": [
+        118,
+        111
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "6fc10b8a269dafabc6298d830f34ff43e34fb5347a3b1761b0c8ddc74a002cd9",
+      "sha256": "90a8e408a64e4342bf172e0962124f79f7d417d0025a1c87dd60aa9af451adbd"
+    },
+    "upgrade_bracelet": {
+      "image": "images/upgrade_bracelet.png",
+      "sprite": "Bracelet",
+      "source": "UpgradeData:Upgrade_Bracelet.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 185,
+      "source_size": [
+        128,
+        127
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "aabe1134549d0a08ed80cb717ee36350e569e1817d42ff50a3039e539cb8cf4d",
+      "sha256": "77db03192c22afa306824a63de614ca5f72d27edc8d6a6e3f7782ea6ad4f1a86"
+    },
+    "upgrade_cape": {
+      "image": "images/upgrade_cape.png",
+      "sprite": "Cape",
+      "source": "UpgradeData:Upgrade_Cape.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 181,
+      "source_size": [
+        128,
+        119
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "5458311cb3fb036ba5829cff68cabd60ebfeeff1804e06e383ee61757073a127",
+      "sha256": "b8975419a9f8585ff05f2ebabd1f0af64f704b7e284ff8cca77435dd963ecc3f"
+    },
+    "upgrade_earring": {
+      "image": "images/upgrade_earring.png",
+      "sprite": "Earring",
+      "source": "UpgradeData:Upgrade_Earring.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 183,
+      "source_size": [
+        121,
+        121
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "f0bceef855d97a7207e8de2ab0cc9a3af94c67da628f206752cb92a2043506ea",
+      "sha256": "49b021256f2428e521dd0145b67449ba404da1c1b3925629bcfb2edd04ac8a3c"
+    },
+    "upgrade_eyeofbeholder": {
+      "image": "images/upgrade_eyeofbeholder.png",
+      "sprite": "Eye",
+      "source": "UpgradeData:Upgrade_EyeOfBeholder.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 141,
+      "source_size": [
+        119,
+        124
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "0a2fd98d37be0e50030cd60166732ea04180255b1fe4fd8844ab9557c71f50f3",
+      "sha256": "7aafcc1c419184e9c9a0bafd0cbd74ec8699e408454a420fc3dbc38c9fb07512"
+    },
+    "upgrade_glove": {
+      "image": "images/upgrade_glove.png",
+      "sprite": "Research_AttackSpeed",
+      "source": "UpgradeData:Upgrade_Glove.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 125,
+      "source_size": [
+        122,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "5db9e7095410298aa2c719c964dc5a1e27f809b3b47914c8b109bba08174fc54",
+      "sha256": "06c1b86d64f140e4482cc462bea149049cc3fafa636724057dd9954534c0d68b"
+    },
+    "upgrade_hitomibook": {
+      "image": "images/upgrade_hitomibook.png",
+      "sprite": "HitomiBook",
+      "source": "UpgradeData:Upgrade_HitomiBook.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 138,
+      "source_size": [
+        114,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "c628924612987c9b58875546970155676567739770b84990b66672d202b079f7",
+      "sha256": "74258c1cb9f76c564fb4744ed0b63dae80d2cde5987c2334ad206b1fb6a1dd3b"
+    },
+    "upgrade_maneki": {
+      "image": "images/upgrade_maneki.png",
+      "sprite": "Maneki",
+      "source": "UpgradeData:Upgrade_Maneki.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 136,
+      "source_size": [
+        96,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "47425fa71b76bac5feb240b7083070abe926cfbcccb84dc8e06b20c3c52f6968",
+      "sha256": "82b3decdb61bef85cb66ecced85e077ed3eeced8126100fb2380a9894100d755"
+    },
+    "upgrade_mirror": {
+      "image": "images/upgrade_mirror.png",
+      "sprite": "Mirror",
+      "source": "UpgradeData:Upgrade_Mirror.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 169,
+      "source_size": [
+        128,
+        110
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "48b98ccedf258566dffcba3e6ff8c8be4812c58f78c5b6df94f23d185f08bf68",
+      "sha256": "2ebfc4ede6d06166c8d690549d7a7db08fe001708ac37e120f53b09e97e57904"
+    },
+    "upgrade_monocle": {
+      "image": "images/upgrade_monocle.png",
+      "sprite": "Monocle",
+      "source": "UpgradeData:Upgrade_Monocle.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 139,
+      "source_size": [
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "a429ec71e0a38800ffcf8852766b27376aff3b0596c6fa8a2c063b82d6556375",
+      "sha256": "d8c8372958116a1035348d62da5bfa0e4c9e55b0e5df3d182f382245a36426e3"
+    },
+    "upgrade_necklace": {
+      "image": "images/upgrade_necklace.png",
+      "sprite": "Necklace",
+      "source": "UpgradeData:Upgrade_Necklace.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 134,
+      "source_size": [
+        128,
+        125
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "bba7aa3ca15fb8dd6d8a9e178b00b05a7b87eb066466688db61c9707bce5a9e6",
+      "sha256": "05360b1e16f8664b90ea4ec244b801854955a07d153a743f61842ae363901fee"
+    },
+    "upgrade_orb": {
+      "image": "images/upgrade_orb.png",
+      "sprite": "Orb",
+      "source": "UpgradeData:Upgrade_Orb.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 142,
+      "source_size": [
+        108,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "52133cf06a423be7a5f73f1b46ca7cfdc57fe97a6e3ce420014eb2c89f4d1d39",
+      "sha256": "d15ed690cb4f000aec54f9be51155ede361f69ce95ef39a7ce21e2f6df25a323"
+    },
+    "upgrade_ring": {
+      "image": "images/upgrade_ring.png",
+      "sprite": "Research_Ring",
+      "source": "UpgradeData:Upgrade_Ring.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 135,
+      "source_size": [
+        128,
+        119
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "73f4ee87df2434e1d3a182b3cce45eae40dfa2ea14cae7883f262700cf3465c1",
+      "sha256": "ee77e8ae197aeef120e2e2f8b513ec7d290fa7fbb195ec68b9311a7b5aa592b5"
+    },
+    "upgrade_shoes": {
+      "image": "images/upgrade_shoes.png",
+      "sprite": "MagicShoes",
+      "source": "UpgradeData:Upgrade_Shoes.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 178,
+      "source_size": [
+        128,
+        122
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "8f14cd4832f4147f85ddce4fc717114885daa675a1b672024d819b5c0c105b5c",
+      "sha256": "5a1d1d1ec13b9b515e5c62c775efb31c8a8143975355281e830adf4d552bca11"
+    },
+    "upgrade_watch": {
+      "image": "images/upgrade_watch.png",
+      "sprite": "Watch",
+      "source": "UpgradeData:Upgrade_Watch.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 175,
+      "source_size": [
+        113,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "01f9be2aa1018e1dbfebe18810bca0f84156a47302bdb896a3b3eea3175b7188",
+      "sha256": "edc9c9652627d781233d09efb08b62577b3a1bc458d9a4f21421b0d521465729"
+    },
+    "upgrade_witchdoll": {
+      "image": "images/upgrade_witchdoll.png",
+      "sprite": "VooDooDool",
+      "source": "UpgradeData:Upgrade_WitchDoll.sprite",
+      "asset_file": "sharedassets0.assets",
+      "path_id": 212,
+      "source_size": [
+        121,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "fa66ed3df62dc3128a314c099818b3e69ca3e1d9ac890cfdd6840cd6b90bd2ed",
+      "sha256": "219dc0d03e47f624a6ded500c75379aac4aaa09743c43d4ba7c342adc15cc17b"
+    },
+    "upgrade_witchhat": {
+      "image": "images/upgrade_witchhat.png",
+      "sprite": "WitchHat",
+      "source": "UpgradeData:Upgrade_WitchHat.sprite",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 170,
+      "source_size": [
+        128,
+        128
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "5f926797021b74e04dd116958920a988496546602fe09f57cdd4e267839e73bd",
+      "sha256": "5c2e6016cff70b774e46e573cf9c236c9fbb6bd33cd457517222bb9c3a58b98f"
+    }
+  }
+}

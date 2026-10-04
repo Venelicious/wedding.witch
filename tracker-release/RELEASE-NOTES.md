@@ -1,14 +1,16 @@
-# Wedding Witch PopTracker 0.2.0
+# Wedding Witch PopTracker 0.2.1
 
-Mehr Ansichten und AP-Hinweise für unsere Wedding-Witch-APWorld 0.5.0/0.5.1 (Schema 4, 80 Checks). Benötigt PopTracker 0.35.4+; der Spielmod bleibt unverändert.
+Originalgrafiken aus Wedding Witch ersetzen die bisherigen Kürzelsymbole. Für unsere APWorld 0.5.0–0.5.2 (Schema 4, 80 Checks), PopTracker 0.35.4+. Der Spielmod und bestehende Seeds bleiben unverändert.
 
-- Vier Pack-Varianten: kompakt horizontal, kompakt vertikal, nur Items und die vollständige bisherige Ansicht.
-- Kompakte Errungenschaftsübersichten mit zwei Seiten zu je 19 Checks.
-- Eigenes Fenster für automatische Seed-Einstellungen: Ending-Ziel, Zielschwierigkeit, Start-Tranktyp, Blumenverteilung und Schema.
-- AP-Hinweise mit Item, Empfänger, Fundort, Finder, Priorität/Fundstatus und Eingang; je sechs Hinweise pro Seite, inklusive Hinweisen aus anderen Welten.
-- Live-Aktualisierung der Hinweise und sauberer Reset beim Verbinden oder Slotwechsel. Es werden keine Checks, Scouts oder Hinweise an den Server gesendet.
-- Weiterhin 17 passive Upgrades mit Stufen, zwei Schwierigkeitsfreigaben, sechs Tranktypen, alle 80 Seed-Checks sowie die Broadcast-Ansicht.
+- Alle 17 passiven Upgrades zeigen ihre Originalgrafik aus dem Shop; die empfangenen AP-Stufen bleiben als Zähler sichtbar.
+- Alle sechs freigeschalteten Transformationstypen zeigen das Originalsymbol aus dem Spielmenü. Gesperrte Typen behalten den sechsfarbigen Anhänger.
+- Hard Wedding und Nightmare Wedding verwenden die Symbole ihrer tatsächlichen Schwierigkeitsknöpfe. Die interne Sprite-Benennung wird anhand der UI-Referenzen zugeordnet.
+- Das native Errungenschaftssymbol und die Story-Blume ersetzen die Check-/Goal-Kürzel. Die Übersichten für Runs, Formen und Errungenschaften verwenden ebenfalls die passenden Originalsymbole.
+- 27 ausgewählte UI-Grafiken mit transparenten Rändern und erhaltenen Proportionen. Quellen und Prüfsummen stehen in assets.json; ein Extraktionswerkzeug erlaubt die Wiederholung mit einer lokalen Spielinstallation. Keine Spiel-DLLs, Asset-Bundles oder Charakterillustrationen im Pack.
+- Vier Ansichten, Seed-Einstellungen, AP-Hinweise, Item-/Check-Synchronisation und Broadcast bleiben erhalten.
 
-Installation: Alte Pack-ZIP aus PopTrackers `packs`-Ordner entfernen und `WeddingWitch-PopTracker-0.2.0.zip` unverändert dort ablegen. **Wedding Witch AP** mit der gewünschten Variante laden und über **AP** mit dem Spielslot verbinden. Die Pack-Einstellungen bieten Seed-Details und Hinweise auch in der Itemansicht.
+Installation: Die alte Pack-ZIP aus PopTrackers packs-Ordner entfernen und WeddingWitch-PopTracker-0.2.1.zip unverändert dort ablegen. Das Pack Wedding Witch AP neu laden. Kein neuer AP-Seed erforderlich.
 
-Kompatibilität: Schema-4-Seeds mit 80 Checks. Alte 142-Check-Seeds und fremde APWorlds sind nicht unterstützt. Native Teilzähler und Run-Skill-Stufen bleiben im Spiel. Hinweise bleiben offline nur für die laufende Sitzung erhalten.
+Geprüft: elf Tracker-Tests einschließlich Bildprüfsummen, Transparenz, vollständiger Originalsymbol-Zuordnung und AP-Lua-Callbacks. Der native PopTracker 0.35.4 lädt und rendert alle vier Varianten sowie Hinweis- und Einstellungsansicht im automatisierten Test ohne Lua-/Referenzfehler. Originalsymbol- und Übersichtsbilder wurden visuell geprüft; wiederholte Builds ergeben dieselbe ZIP.
+
+Originalgrafiken: Wedding Witch / CHOWBIE. Der bereitgestellte AP-Anhänger und die eigenen Übersichtsgrafiken behalten ihre jeweilige Herkunft.
