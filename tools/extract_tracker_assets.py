@@ -34,31 +34,6 @@ def class_name(obj):
         return None
 
 
-def button_icons(button):
-    """Find the actual difficulty badge beneath a native button."""
-    icons = []
-
-    def walk(game_object):
-        tree = game_object.parse_as_dict()
-        for entry in tree["m_Component"]:
-            component = deref(entry["component"], game_object)
-            if component.type.name == "MonoBehaviour" and class_name(component) == "Image":
-                data = component.parse_as_dict()
-                if data["m_Sprite"]["m_PathID"]:
-                    sprite = deref(data["m_Sprite"], component)
-                    if sprite.parse_as_object().m_Name.startswith("Wedding_"):
-                        icons.append(sprite)
-            elif component.type.name == "RectTransform":
-                for child in component.parse_as_dict()["m_Children"]:
-                    transform = deref(child, component)
-                    walk(deref(transform.parse_as_dict()["m_GameObject"], transform))
-
-    walk(deref(button.parse_as_dict()["m_GameObject"], button))
-    if len(icons) != 1:
-        raise ValueError(f"Expected one native difficulty badge, found {len(icons)}")
-    return icons[0]
-
-
 def export(game_data, output, manifest, unity_version):
     if not (game_data / "data.unity3d").is_file() or not (game_data / "Managed").is_dir():
         raise ValueError("Pass the Wedding Witch_Data directory of the installed game")
@@ -83,19 +58,18 @@ def export(game_data, output, manifest, unity_version):
                 image = deref(tree[field], obj)
                 selected["exp_" + exp.lower()] = (deref(image.parse_as_dict()["m_Sprite"], image),
                     "SelectModeBehaviour." + field + ".m_Sprite")
-        elif name == "SelectDifficultyCanvas":
-            tree = obj.parse_as_dict()
-            for code, field in (("hard", "hardMode"), ("nightmare", "nightmareMode")):
-                selected[code] = (button_icons(deref(tree[field], obj)),
-                    "SelectDifficultyCanvas." + field + ".Image.m_Sprite")
-    for code, sprite_name in (("progress", "AchivementIcon"), ("goal", "Flowers_Icon")):
+    # Match the visible game badges: one eye, grinning face, then horned face.
+    # Serialized hardMode/nightmareMode child images contain the previous tier.
+    for code, sprite_name in (("normal", "Wedding_Normal"), ("hard", "Wedding_Hard"),
+                              ("nightmare", "Wedding_Hell"),
+                              ("progress", "AchivementIcon"), ("goal", "Flowers_Icon")):
         matches = [obj for obj in env.objects if obj.type.name == "Sprite"
                    and obj.parse_as_object().m_Name == sprite_name]
         if len(matches) != 1:
             raise ValueError(f"Expected one sprite named {sprite_name}, found {len(matches)}")
         selected[code] = (matches[0], "Sprite:" + sprite_name)
     required = {key.lower() for key in expected} | {"exp_" + exp.lower() for exp in EXP_FIELDS}
-    required |= {"hard", "nightmare", "progress", "goal"}
+    required |= {"normal", "hard", "nightmare", "progress", "goal"}
     if selected.keys() != required:
         raise ValueError(f"Incomplete tracker icons: missing {required - selected.keys()}")
     output.mkdir(parents=True, exist_ok=True)

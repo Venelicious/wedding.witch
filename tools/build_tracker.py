@@ -7,6 +7,7 @@ user's existing charm is copied unchanged.
 import hashlib
 import argparse
 import json
+import math
 import runpy
 import shutil
 import zipfile
@@ -70,6 +71,20 @@ def native_icon(filename):
         raise FileNotFoundError(f"Missing native icon {filename}; run extract_tracker_assets.py")
 
 
+def wifi_icon(filename, color):
+    image = Image.new("RGBA", (128, 128))
+    draw = ImageDraw.Draw(image)
+    for radius in (48, 32, 16):
+        draw.arc((64 - radius, 91 - radius, 64 + radius, 91 + radius),
+                 start=225, end=315, fill=color, width=9)
+        for angle in (225, 315):
+            radians = math.radians(angle)
+            x, y = 64 + (radius - 4) * math.cos(radians), 91 + (radius - 4) * math.sin(radians)
+            draw.ellipse((x - 4, y - 4, x + 4, y + 4), fill=color)
+    draw.ellipse((58, 87, 70, 99), fill=color)
+    save_artwork(image, filename)
+
+
 def draw_icon(board, filename, xy, size=32):
     icon = Image.open(PACK / "images" / filename).convert("RGBA")
     icon.thumbnail((size, size), Image.Resampling.LANCZOS)
@@ -117,7 +132,9 @@ def build():
         items.append({"name": "EXP Unlock: " + exp, "type": "toggle", "codes": code,
                       "img": "images/" + code + ".png", "initial_active_state": exp == "Beast"})
         item_map[BASE + 2100 + i] = {"code": code, "kind": "toggle"}
-    tile("status.png", "LINK", "#91ccad")
+    wifi_icon("status.png", "#91ccad")
+    wifi_icon("status_offline.png", MUTED)
+    wifi_icon("status_error.png", "#ef7070")
     native_icon("progress.png")
     native_icon("goal.png")
     save_artwork(Image.new("RGBA", (1, 1), (0, 0, 0, 0)), "blank.png")
@@ -140,7 +157,8 @@ def build():
         x = 18 + 214 * d
         draw.rounded_rectangle((x, 91, x + 196, 343), 12, fill=PANEL)
         text(draw, (x + 16, 104), name.upper(), 19, GOLD)
-        draw_icon(runs, "goal.png" if d == 0 else ("hard.png" if d == 1 else "nightmare.png"), (x + 152, 98))
+        native_icon(name.lower() + ".png")
+        draw_icon(runs, name.lower() + ".png", (x + 152, 98))
         text(draw, (x + 16, 136), "KARTEN", 13, MUTED)
         root = {"name": name, "access_rules": ["$ww_difficulty|" + name.lower()],
                 "visibility_rules": ["$ww_supported"], "children": []}
@@ -238,7 +256,7 @@ def build():
         return {"type": "tabbed", "tabs": result}
 
     sidebar = {"type": "array", "orientation": "vertical", "content": [
-        group("AP / Checks / Goal", grid([["ww_status", "ww_progress", "ww_goal"]], 72)),
+        group("Goal / Checks / AP", grid([["ww_goal", "ww_progress", "ww_status"]], 72)),
         group("Schwierigkeiten", grid([["hard", "nightmare"]])),
         group("Tranktypen", grid([exp_codes[:3], exp_codes[3:]])),
         group("AP-Upgrades", grid([upgrade_codes[i:i + 4] for i in range(0, 17, 4)])),
@@ -246,13 +264,13 @@ def build():
     tabs = map_tabs()
     board = {"type": "canvas", "width": 760, "height": 740, "margin": 0, "content": [tabs]}
     compact_items = array([
-        group("AP / Checks / Goal", grid([["ww_status", "ww_progress", "ww_goal"]], 56)),
+        group("Goal / Checks / AP", grid([["ww_goal", "ww_progress", "ww_status"]], 56)),
         group("Freigaben", grid([["hard", "nightmare"], exp_codes[:3], exp_codes[3:]], 48)),
         group("AP-Upgrades", grid([upgrade_codes[i:i + 4] for i in range(0, 17, 4)], 40))])
     wide_items = array([
-        grid([["ww_status", "ww_progress", "ww_goal", "hard", "nightmare", *exp_codes]], 48),
+        grid([["ww_goal", "ww_progress", "ww_status", "hard", "nightmare", *exp_codes]], 48),
         group("AP-Upgrades", grid([upgrade_codes[:9], upgrade_codes[9:]], 48))])
-    broadcast = array([grid([["ww_status", "ww_progress", "ww_goal", "hard", "nightmare"]]),
+    broadcast = array([grid([["ww_goal", "ww_progress", "ww_status", "hard", "nightmare"]]),
                        grid([exp_codes]), grid([upgrade_codes[i:i + 6] for i in range(0, 17, 6)])])
     dump("layouts/tracker.json", {
         "ww_hints_panel": hints,

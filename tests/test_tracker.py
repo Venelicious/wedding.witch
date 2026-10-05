@@ -70,7 +70,7 @@ class TrackerTests(unittest.TestCase):
             function ScriptHost:AddOnFrameHandler(name, fn) self.frames[name] = fn end
             function ScriptHost:AddOnLocationSectionChangedHandler(name, fn) self.changed[name] = fn end
             ImageReference = {FromPackRelativePath = function(_, path) return path end}
-            AutoTracker = {GetConnectionState = function() return 3 end}
+            AutoTracker = {connection = 3, GetConnectionState = function(self) return self.connection end}
             Archipelago = {handlers = {}, PlayerNumber = 1, TeamNumber = 0, game = 'Wedding Witch', queries = {}}
             function Archipelago:GetPlayerGame(slot) return slot == self.PlayerNumber and self.game or 'Other Game' end
             function Archipelago:GetPlayerAlias(slot) return 'Player ' .. slot end
@@ -129,7 +129,7 @@ class TrackerTests(unittest.TestCase):
 
     def test_native_icon_sources_and_transparency(self):
         assets = json.loads((PACK / "assets.json").read_text(encoding="utf-8"))["assets"]
-        expected = {item["code"] for item in CONTRACT["items"].values()} | {"progress", "goal"}
+        expected = {item["code"] for item in CONTRACT["items"].values()} | {"normal", "progress", "goal"}
         self.assertEqual(set(assets), expected)
         for code, asset in assets.items():
             image_path = PACK / asset["image"]
@@ -143,10 +143,11 @@ class TrackerTests(unittest.TestCase):
                 self.assertIsNotNone(bounds, code)
                 self.assertGreater(bounds[2] - bounds[0], 32, code)
                 self.assertGreater(bounds[3] - bounds[1], 32, code)
-        self.assertEqual(assets["hard"]["sprite"], "Wedding_Normal")
-        self.assertEqual(assets["nightmare"]["sprite"], "Wedding_Hard")
-        for code in ("hard", "nightmare"):
-            self.assertIn("SelectDifficultyCanvas", assets[code]["source"])
+        # Verified against the game's displayed Normal / Hard / Nightmare menu.
+        for code, sprite in (("normal", "Wedding_Normal"), ("hard", "Wedding_Hard"),
+                             ("nightmare", "Wedding_Hell")):
+            self.assertEqual(assets[code]["sprite"], sprite)
+            self.assertEqual(assets[code]["source"], "Sprite:" + sprite)
         for exp in ("bigbreast", "smallbreast", "corruption", "beast", "muscle", "hip"):
             self.assertIn("SelectModeBehaviour", assets["exp_" + exp]["source"])
 
@@ -260,6 +261,7 @@ class TrackerTests(unittest.TestCase):
         self.assertIsNone(self.ww.hints.key)
 
     def test_all_goal_difficulty_and_extreme_flower_layouts(self):
+        self.assertEqual(self.ww.progress.Icon, "images/charm.png")
         for goal in range(1, 8):
             for d in ("normal", "hard", "nightmare"):
                 for flowers in ([18 - goal, 0, 0], [0, 18 - goal, 0], [0, 0, 18 - goal]):
@@ -267,6 +269,14 @@ class TrackerTests(unittest.TestCase):
                     self.assertEqual(len(self.enabled()), 80)
                     self.assertEqual(self.ww.progress.overlay, "0/80")
                     self.assertEqual(self.ww.goal.overlay, f"0/{goal}")
+                    self.assertEqual(self.ww.goal.Icon, f"images/{d}.png")
+        tracker = self.lua.globals().AutoTracker
+        for connection, icon, overlay in ((0, "status_offline", "OFF"), (1, "status_offline", "OFF"),
+                                          (3, "status", "AP"), (0, "status_offline", "OFF")):
+            tracker.connection = connection
+            self.ww.refresh()
+            self.assertEqual(self.ww.status.Icon, f"images/{icon}.png")
+            self.assertEqual(self.ww.status.overlay, overlay)
 
     def test_replay_duplicate_caps_reset_and_starting_potion(self):
         self.handlers.clear(self.slot(starting_exp_type="Hip"))
@@ -321,6 +331,8 @@ class TrackerTests(unittest.TestCase):
             self.handlers.clear(self.slot(**change))
             self.assertEqual(self.enabled(), [])
             self.assertEqual(self.ww.status.overlay, "ERROR")
+            self.assertEqual(self.ww.status.Icon, "images/status_error.png")
+            self.assertEqual(self.ww.goal.Icon, "images/blank.png")
             self.handlers.item(0, BASE + 2000)
             self.assertEqual(self.item("upgrade_witchhat").AcquiredCount, 0)
             self.assertFalse(self.lua.globals().Tracker.BulkUpdate)
@@ -335,6 +347,7 @@ class TrackerTests(unittest.TestCase):
         self.ww.status.LoadFunc(self.ww.status, saved)
         self.assertEqual(len(self.enabled()), 80)
         self.assertEqual(self.ww.config.difficulty, "nightmare")
+        self.assertEqual(self.ww.goal.Icon, "images/nightmare.png")
         self.assertEqual(self.ww.config.flower_checks[2], 11)
         with self.assertRaises(Exception):
             self.ww.bulk(self.lua.eval("function() error('test failure') end"))

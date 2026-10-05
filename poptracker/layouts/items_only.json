@@ -8,9 +8,9 @@
         "type": "itemgrid",
         "rows": [
           [
-            "ww_status",
-            "ww_progress",
             "ww_goal",
+            "ww_progress",
+            "ww_status",
             "hard",
             "nightmare"
           ]

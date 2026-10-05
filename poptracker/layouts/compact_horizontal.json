@@ -11,14 +11,14 @@
         "content": [
           {
             "type": "group",
-            "header": "AP / Checks / Goal",
+            "header": "Goal / Checks / AP",
             "content": {
               "type": "itemgrid",
               "rows": [
                 [
-                  "ww_status",
+                  "ww_goal",
                   "ww_progress",
-                  "ww_goal"
+                  "ww_status"
                 ]
               ],
               "item_size": "56,56",

@@ -1,11 +1,11 @@
-# Wedding Witch AP · PopTracker 0.2.2
+# Wedding Witch AP · PopTracker 0.2.3
 
 Für Venelicious/wedding.witch, APWorld **0.5.0–0.5.2, Schema 4**, mit 80 Checks.
 Benötigt **PopTracker 0.35.4 oder neuer**. Alte 142-Check-Seeds und andere Wedding-Witch-APWorlds werden mit einer Fehlermeldung abgewiesen.
 
 ## Installation und Verbindung
 
-1. `WeddingWitch-PopTracker-0.2.2.zip` unverändert in PopTrackers `packs`-Ordner kopieren. Nicht entpacken. Die alte Pack-ZIP aus diesem Ordner entfernen.
+1. `WeddingWitch-PopTracker-0.2.3.zip` unverändert in PopTrackers `packs`-Ordner kopieren. Nicht entpacken. Die alte Pack-ZIP aus diesem Ordner entfernen.
 2. PopTracker starten und **Wedding Witch AP** mit einer der unten beschriebenen Ansichten laden.
 3. Oben die **AP**-Verbindung aktivieren. Dieselbe Serveradresse, denselben Slotnamen und gegebenenfalls dasselbe Raumpasswort wie im Mod eintragen. Die Verbindung funktioniert parallel zum Spiel.
 4. Sobald die Verbindung steht, übernimmt das Pack Ziel, Schwierigkeit, Start-Tranktyp und Blumenverteilung aus den Slotdaten. Empfangene Items und abgeschlossene Checks werden synchronisiert.
@@ -29,7 +29,7 @@ Neue Hinweise und Statusänderungen werden automatisch vom Server übernommen. B
 
 ## Anzeigen
 
-- **AP / Checks / Goal:** Verbindung, gesamte erledigte Checks und verschiedene erfolgreiche Endings auf der Seed-Zielschwierigkeit. Mit der Maus über das Verbindungssymbol fahren, um Blumenverteilung und Start-Tranktyp zu sehen. Das Goal-Symbol nennt die Zielschwierigkeit.
+- **Goal / Checks / AP:** Links das Originalsymbol der Seed-Zielschwierigkeit mit dem Ending-Zähler, in der Mitte der AP-Anhänger mit allen erledigten Checks und rechts das WLAN-Symbol für die Verbindung. WLAN ist grün bei Verbindung, grau offline und rot bei ungültigen Slotdaten. Mit der Maus darüber fahren, um Blumenverteilung und Start-Tranktyp zu sehen.
 - **Schwierigkeiten:** Hard Wedding und Nightmare Wedding mit ihren Originalsymbolen aus der Schwierigkeitsauswahl. Nightmare benötigt laut APWorld keine zusätzliche Hard-Freigabe.
 - **Tranktypen:** sechs Freigaben mit den Originalsymbolen aus dem Transformationsmenü. Gesperrte Typen sind ausgegraut, freigeschaltete farbig. Der Starttyp wird sofort gesetzt. Dieselben Symbole erscheinen auf der Formenübersicht.
 - **AP-Upgrades:** 17 passive Upgrades mit den Originalgrafiken aus dem Shop und ihren empfangenen Stufen, einschließlich Maximalstufen. Namen und Maximalstufen stehen im Tooltip. Die 13 Standard-Skills gehören zum normalen Level-up-Pool und haben keine AP-Anzeige.
@@ -54,6 +54,6 @@ Pack-Format und APIs: [PopTracker](https://github.com/black-sliver/PopTracker), 
 
 `python tools/build_tracker.py` erzeugt JSON/Lua-Verträge und die reproduzierbare ZIP aus `apworld/wedding_witch/constants.py`, `achievements.py` und den eingecheckten PNGs. Benötigt Python 3.13+ und Pillow 11.3.0; eine Spielinstallation ist dafür nicht erforderlich. Die eigenen Übersichtsbilder werden mit `--render-artwork` neu erzeugt, wobei die Originalsymbole erhalten bleiben; die Schriftrasterung kann zwischen Betriebssystemen variieren. `python -m unittest discover -s tests -p test_tracker.py -v` prüft die Lua-Callbacks mit lupa 2.6 / Lua 5.4.
 
-Zum erneuten Extrahieren der Originalsymbole in einer eigenen Python-Umgebung: `python -m pip install -r tools/requirements-tracker-assets.txt` installiert UnityPy 1.25.4 mit TypeTree-Unterstützung und die geprüften Bild-Abhängigkeiten. Dann `python tools/extract_tracker_assets.py --game-data "C:\Program Files (x86)\Steam\steamapps\common\Wedding Witch\Wedding Witch_Data"` ausführen. Das Werkzeug liest die installierten Spieldateien und exportiert ausschließlich die 27 benötigten UI-Symbole. Upgrade- und Transformationsgrafiken werden anhand der nativen Asset-Referenzen zugeordnet, ebenso die Symbole der beiden Schwierigkeitsknöpfe. `assets.json` nennt Quelle, Sprite, Bildgröße und Prüfsumme. Transparente Ränder werden zugeschnitten; die Proportionen bleiben auf quadratischen transparenten Tracker-Bildern erhalten.
+Zum erneuten Extrahieren der Originalsymbole in einer eigenen Python-Umgebung: `python -m pip install -r tools/requirements-tracker-assets.txt` installiert UnityPy 1.25.4 mit TypeTree-Unterstützung und die geprüften Bild-Abhängigkeiten. Dann `python tools/extract_tracker_assets.py --game-data "C:\Program Files (x86)\Steam\steamapps\common\Wedding Witch\Wedding Witch_Data"` ausführen. Das Werkzeug liest die installierten Spieldateien und exportiert ausschließlich die 28 benötigten UI-Symbole. Upgrade- und Transformationsgrafiken werden anhand der nativen Asset-Referenzen zugeordnet. Die sichtbaren Schwierigkeitssymbole sind Wedding_Normal (ein Auge), Wedding_Hard (grinsendes Gesicht) und Wedding_Hell (Hörner) für Normal, Hard und Nightmare. `assets.json` nennt Quelle, Sprite, Bildgröße und Prüfsumme. Transparente Ränder werden zugeschnitten; die Proportionen bleiben auf quadratischen transparenten Tracker-Bildern erhalten.
 
-Die 27 Originalsymbole gehören zu Wedding Witch / CHOWBIE. Diese Grafiken werden für die Anzeige des entsprechenden Spiels im Tracker verwendet; dieses Projekt vergibt dafür keine eigene Lizenz. Spielassemblies, Asset-Bundles, Charakterillustrationen und PopTracker-Programmdateien sind nicht Bestandteil des Packs. Die Diagramme und das AP-Verbindungssymbol wurden für dieses Pack erstellt. `images/charm.png` ist der unverändert kopierte, vom Projektinhaber bereitgestellte Anhänger aus `src/res/achievement-check.png`. Rechte an den jeweiligen Assets verbleiben bei ihren Inhabern.
+Die 28 Originalsymbole gehören zu Wedding Witch / CHOWBIE. Diese Grafiken werden für die Anzeige des entsprechenden Spiels im Tracker verwendet; dieses Projekt vergibt dafür keine eigene Lizenz. Spielassemblies, Asset-Bundles, Charakterillustrationen und PopTracker-Programmdateien sind nicht Bestandteil des Packs. Die Diagramme und WLAN-Symbole wurden für dieses Pack erstellt. `images/charm.png` ist der unverändert kopierte, vom Projektinhaber bereitgestellte Anhänger aus `src/res/achievement-check.png`. Rechte an den jeweiligen Assets verbleiben bei ihren Inhabern.

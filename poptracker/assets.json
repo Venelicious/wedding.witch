@@ -125,25 +125,8 @@
     },
     "hard": {
       "image": "images/hard.png",
-      "sprite": "Wedding_Normal",
-      "source": "SelectDifficultyCanvas.hardMode.Image.m_Sprite",
-      "asset_file": "sharedassets1.assets",
-      "path_id": 163,
-      "source_size": [
-        163,
-        160
-      ],
-      "size": [
-        128,
-        128
-      ],
-      "source_rgba_sha256": "2487c89cf95b82973a2048a87978cb66efd1f41823c39817d0ca5b0e6ef46fea",
-      "sha256": "a9fafb4151fac6128b7e541ad7f8be92e6488270d8054b1cbfae2b4e92a4d6ef"
-    },
-    "nightmare": {
-      "image": "images/nightmare.png",
       "sprite": "Wedding_Hard",
-      "source": "SelectDifficultyCanvas.nightmareMode.Image.m_Sprite",
+      "source": "Sprite:Wedding_Hard",
       "asset_file": "sharedassets1.assets",
       "path_id": 159,
       "source_size": [
@@ -156,6 +139,40 @@
       ],
       "source_rgba_sha256": "6e5235b6f923364d6d3f42c82f63f1a043cc0e1d8074525c359e5a75fd2d7d9b",
       "sha256": "cd44d76510ba87e28e4ad661e8b4d103799222ea7ba6d863415032c95c613b2f"
+    },
+    "nightmare": {
+      "image": "images/nightmare.png",
+      "sprite": "Wedding_Hell",
+      "source": "Sprite:Wedding_Hell",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 171,
+      "source_size": [
+        361,
+        218
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "f692daa7ae798c7c01a8d62115081b8f3d75372aa71425f2bfe64e98fec77dc8",
+      "sha256": "50b0f7b4212d921e94ecca07f92dcccd1360666d34c2f2a76eea7cfe248bc64b"
+    },
+    "normal": {
+      "image": "images/normal.png",
+      "sprite": "Wedding_Normal",
+      "source": "Sprite:Wedding_Normal",
+      "asset_file": "sharedassets1.assets",
+      "path_id": 163,
+      "source_size": [
+        163,
+        160
+      ],
+      "size": [
+        128,
+        128
+      ],
+      "source_rgba_sha256": "2487c89cf95b82973a2048a87978cb66efd1f41823c39817d0ca5b0e6ef46fea",
+      "sha256": "a9fafb4151fac6128b7e541ad7f8be92e6488270d8054b1cbfae2b4e92a4d6ef"
     },
     "progress": {
       "image": "images/progress.png",

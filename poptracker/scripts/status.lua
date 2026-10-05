@@ -12,9 +12,9 @@ local function display(code, name, icon)
 end
 WW.display = display
 
-WW.status = display("ww_status", "Offline: default reference layout (3 Normal endings; flowers 4/5/6). Connect AP for your seed.", "images/status.png")
-WW.progress = display("ww_progress", "Checked AP locations", "images/progress.png")
-WW.goal = display("ww_goal", "Distinct endings checked on the goal difficulty", "images/goal.png")
+WW.status = display("ww_status", "Offline: default reference layout (3 Normal endings; flowers 4/5/6). Connect AP for your seed.", "images/status_offline.png")
+WW.progress = display("ww_progress", "Checked AP locations", "images/charm.png")
+WW.goal = display("ww_goal", "Distinct endings checked on the goal difficulty", "images/normal.png")
 
 -- Preserve the seed's layout together with PopTracker's item/location save.
 -- AP reconnect always clears and replays authoritative state afterwards.
@@ -52,6 +52,16 @@ function WW.refresh()
     end
     WW.progress:SetOverlay(complete .. "/" .. total)
     local connection = AutoTracker:GetConnectionState("AP")
+    local connection_icon = WW.error and "status_error" or (connection == 3 and "status" or "status_offline")
+    if WW.connection_icon ~= connection_icon then
+        WW.status.Icon = ImageReference:FromPackRelativePath("images/" .. connection_icon .. ".png")
+        WW.connection_icon = connection_icon
+    end
+    local goal_icon = WW.config and WW.config.difficulty or "blank"
+    if WW.goal_icon ~= goal_icon then
+        WW.goal.Icon = ImageReference:FromPackRelativePath("images/" .. goal_icon .. ".png")
+        WW.goal_icon = goal_icon
+    end
     if WW.error then
         WW.status:SetOverlay("ERROR")
         WW.status.Name = WW.error

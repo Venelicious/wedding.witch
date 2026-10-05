@@ -168,14 +168,14 @@
         "content": [
           {
             "type": "group",
-            "header": "AP / Checks / Goal",
+            "header": "Goal / Checks / AP",
             "content": {
               "type": "itemgrid",
               "rows": [
                 [
-                  "ww_status",
+                  "ww_goal",
                   "ww_progress",
-                  "ww_goal"
+                  "ww_status"
                 ]
               ],
               "item_size": "72,72",
@@ -324,9 +324,9 @@
         "type": "itemgrid",
         "rows": [
           [
-            "ww_status",
-            "ww_progress",
             "ww_goal",
+            "ww_progress",
+            "ww_status",
             "hard",
             "nightmare"
           ]
