@@ -169,8 +169,6 @@
     "type": "toggle",
     "codes": "exp_bigbreast",
     "img": "images/exp_bigbreast.png",
-    "disabled_img": "images/charm.png",
-    "disabled_img_mods": "none",
     "initial_active_state": false
   },
   {
@@ -178,8 +176,6 @@
     "type": "toggle",
     "codes": "exp_smallbreast",
     "img": "images/exp_smallbreast.png",
-    "disabled_img": "images/charm.png",
-    "disabled_img_mods": "none",
     "initial_active_state": false
   },
   {
@@ -187,8 +183,6 @@
     "type": "toggle",
     "codes": "exp_corruption",
     "img": "images/exp_corruption.png",
-    "disabled_img": "images/charm.png",
-    "disabled_img_mods": "none",
     "initial_active_state": false
   },
   {
@@ -196,8 +190,6 @@
     "type": "toggle",
     "codes": "exp_beast",
     "img": "images/exp_beast.png",
-    "disabled_img": "images/charm.png",
-    "disabled_img_mods": "none",
     "initial_active_state": true
   },
   {
@@ -205,8 +197,6 @@
     "type": "toggle",
     "codes": "exp_muscle",
     "img": "images/exp_muscle.png",
-    "disabled_img": "images/charm.png",
-    "disabled_img_mods": "none",
     "initial_active_state": false
   },
   {
@@ -214,8 +204,6 @@
     "type": "toggle",
     "codes": "exp_hip",
     "img": "images/exp_hip.png",
-    "disabled_img": "images/charm.png",
-    "disabled_img_mods": "none",
     "initial_active_state": false
   }
 ]

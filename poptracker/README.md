@@ -1,11 +1,11 @@
-# Wedding Witch AP · PopTracker 0.2.1
+# Wedding Witch AP · PopTracker 0.2.2
 
 Für Venelicious/wedding.witch, APWorld **0.5.0–0.5.2, Schema 4**, mit 80 Checks.
 Benötigt **PopTracker 0.35.4 oder neuer**. Alte 142-Check-Seeds und andere Wedding-Witch-APWorlds werden mit einer Fehlermeldung abgewiesen.
 
 ## Installation und Verbindung
 
-1. `WeddingWitch-PopTracker-0.2.1.zip` unverändert in PopTrackers `packs`-Ordner kopieren. Nicht entpacken. Die alte Pack-ZIP aus diesem Ordner entfernen.
+1. `WeddingWitch-PopTracker-0.2.2.zip` unverändert in PopTrackers `packs`-Ordner kopieren. Nicht entpacken. Die alte Pack-ZIP aus diesem Ordner entfernen.
 2. PopTracker starten und **Wedding Witch AP** mit einer der unten beschriebenen Ansichten laden.
 3. Oben die **AP**-Verbindung aktivieren. Dieselbe Serveradresse, denselben Slotnamen und gegebenenfalls dasselbe Raumpasswort wie im Mod eintragen. Die Verbindung funktioniert parallel zum Spiel.
 4. Sobald die Verbindung steht, übernimmt das Pack Ziel, Schwierigkeit, Start-Tranktyp und Blumenverteilung aus den Slotdaten. Empfangene Items und abgeschlossene Checks werden synchronisiert.
@@ -31,7 +31,7 @@ Neue Hinweise und Statusänderungen werden automatisch vom Server übernommen. B
 
 - **AP / Checks / Goal:** Verbindung, gesamte erledigte Checks und verschiedene erfolgreiche Endings auf der Seed-Zielschwierigkeit. Mit der Maus über das Verbindungssymbol fahren, um Blumenverteilung und Start-Tranktyp zu sehen. Das Goal-Symbol nennt die Zielschwierigkeit.
 - **Schwierigkeiten:** Hard Wedding und Nightmare Wedding mit ihren Originalsymbolen aus der Schwierigkeitsauswahl. Nightmare benötigt laut APWorld keine zusätzliche Hard-Freigabe.
-- **Tranktypen:** sechs Freigaben. Gesperrte Typen zeigen den bereitgestellten sechsfarbigen Anhänger; freie Typen die Originalsymbole aus dem Transformationsmenü. Der Starttyp wird sofort gesetzt. Dieselben Symbole erscheinen auf der Formenübersicht.
+- **Tranktypen:** sechs Freigaben mit den Originalsymbolen aus dem Transformationsmenü. Gesperrte Typen sind ausgegraut, freigeschaltete farbig. Der Starttyp wird sofort gesetzt. Dieselben Symbole erscheinen auf der Formenübersicht.
 - **AP-Upgrades:** 17 passive Upgrades mit den Originalgrafiken aus dem Shop und ihren empfangenen Stufen, einschließlich Maximalstufen. Namen und Maximalstufen stehen im Tooltip. Die 13 Standard-Skills gehören zum normalen Level-up-Pool und haben keine AP-Anzeige.
 - **Runs:** 18 Kartenchecks, die Blumenchecks der drei Schwierigkeiten und die Ending-Meilensteine. Den Blumenmarker öffnen, um die einzelnen kumulativen Blumenchecks zu sehen. Die Anzahl passt sich dem Seed an, auch bei null Blumen auf einer Schwierigkeit.
 - **Formen:** sechs volle Transformationen als separate Checks. Ein freier Tranktyp bedeutet noch keinen abgeschlossenen Transformationscheck.

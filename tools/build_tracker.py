@@ -115,8 +115,7 @@ def build():
         exp_by_name[exp] = code
         native_icon(code + ".png")
         items.append({"name": "EXP Unlock: " + exp, "type": "toggle", "codes": code,
-                      "img": "images/" + code + ".png", "disabled_img": "images/charm.png",
-                      "disabled_img_mods": "none", "initial_active_state": exp == "Beast"})
+                      "img": "images/" + code + ".png", "initial_active_state": exp == "Beast"})
         item_map[BASE + 2100 + i] = {"code": code, "kind": "toggle"}
     tile("status.png", "LINK", "#91ccad")
     native_icon("progress.png")
@@ -175,7 +174,7 @@ def build():
         draw_icon(forms, exp_by_name[exp] + ".png", (x + 30, y + 42), 72)
         text(draw, (x + 98, y + 123), "6 Trankpunkte einer Art", 13, MUTED, "mt")
         child(root, label, [(BASE + 400 + body, "Full Transformation " + label, "form", {}, [], [])], "forms", x + 153, y + 79, [exp_by_name[exp]])
-    text(draw, (22, 450), "Anhaenger = gesperrt · Originalsymbol = freigeschaltet", 14, MUTED)
+    text(draw, (22, 450), "Tranktyp-Symbole: grau = gesperrt · farbig = freigeschaltet", 14, MUTED)
     roots.append(root)
     save_artwork(forms, "forms.png")
 
