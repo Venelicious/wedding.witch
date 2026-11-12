@@ -62,6 +62,31 @@ DeathLink: `dotnet run --project tests/DeathLinkTests/DeathLinkTests.csproj` pr�
 
 ## Herkunft
 
-Grundgerüst: [chickentuna/WeddingWitchMod](https://github.com/chickentuna/WeddingWitchMod), Commit e25c120f5bada2058af73f955e1122c502e20c77. Die ursprüngliche Autorenangabe bleibt erhalten. Upstream enthält zum geprüften Stand keine LICENSE; diese Variante behauptet keine pauschale Neulizenzierung übernommener Dateien. Drittanbieter-Abhängigkeiten behalten ihre jeweiligen Lizenzen. Das Spiel selbst und seine Assets werden nicht mitgeliefert.
+Grundgerüst: [chickentuna/WeddingWitchMod](https://github.com/chickentuna/WeddingWitchMod), Commit e25c120f5bada2058af73f955e1122c502e20c77. Die ursprüngliche Autorenangabe bleibt erhalten. Upstream enthält zum geprüften Stand keine LICENSE; diese Variante behauptet keine pauschale Neulizenzierung übernommener Dateien. Drittanbieter-Abhängigkeiten behalten ihre jeweiligen Lizenzen. Das vollständige Spiel und seine Assemblies werden nicht mitgeliefert; ausgewählte UI-Sprites sind im PopTracker enthalten.
 
 Diese Version ist ein Testrelease. Generator, Profile und Verbindung wurden geprüft; vollständige native Solo- und Multiworld-Abnahmen aller Endings stehen noch aus.
+
+## Repository-Aufbau und Prüfgrenzen
+
+| Verzeichnis | Inhalt |
+| --- | --- |
+| `src/` | C#-Mod, Harmony-Patches, AP-Verbindung und Profilverwaltung |
+| `apworld/wedding_witch/` | Python-Weltdefinition, Optionen und Generatorregeln |
+| `launcher/` | Windows-Launcher und eigener Build |
+| `poptracker/` | Tracker-Pack mit Lua-Callbacks, JSON-Daten und ausgewählten Symbolen |
+| `tests/`, `tools/` | Modell-/Vertragstests sowie Paket- und Asset-Werkzeuge |
+| `release/`, `tracker-release/` | Versionierte Distributionsartefakte; nicht der Quellcode-Build |
+
+Ein Quellcode-Klon benötigt die oben beschriebenen lokalen Spielreferenzen;
+ein Release-ZIP ersetzt diese Entwicklungsumgebung nicht. Für die
+Tracker-Vertragstests ist zusätzlich `python tests/test_tracker.py` mit Pillow
+und lupa vorgesehen. Asset-Extraktion benötigt die eigene Spielinstallation
+und die Abhängigkeiten aus `tools/requirements-tracker-assets.txt`.
+
+**Hinweis zu den Grafiken:** Der PopTracker enthält ausgewählte originale
+UI-Sprites; vollständiges Spiel und Spielassemblies fehlen.
+Herkunft und Rechte beschreibt [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+Die APWorld-Lizenz gilt nicht pauschal für den Mod oder Spielgrafiken.
+
+[Repository-Prüfung vom 13.11.2026](docs/REPOSITORY-AUDIT-2026-11-13.md)
+trennt statische Prüfungen von weiterhin offenen Tests im echten Spiel.
